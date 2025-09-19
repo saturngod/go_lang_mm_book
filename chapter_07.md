@@ -165,6 +165,20 @@ Closure ၏ အစွမ်းထက်ဆုံး အသုံးဝင်မ�
 
 ဥပမာကောင်းတစ်ခုမှာ တစ်ခုနှင့်တစ်ခုမတူညီသော ID များ ထုတ်ပေးသည့် generator တစ်ခု တည်ဆောက်ခြင်းဖြစ်သည်။
 
+```mermaid
+graph TD
+    A[intSeq() called] --> B{Create variable 'i = 0'}
+    B --> C{Return a new function (closure)}
+    
+    subgraph "Closure (nextInt)"
+        direction LR
+        D["'i' is captured<br/>(current value: 0)"]
+        E[Function Body<br/>i++<br/>return i]
+    end
+
+    C --> D
+    C --> E
+```
 ```go
 package main
 

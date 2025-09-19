@@ -88,11 +88,37 @@ func main() {
 
 ---
 
-## Embedded Structs (Struct ထပ်ခြင်း)
+## Embedded Structs (Struct ထပ်ခြင်း) - Composition
 
 Go တွင် အခြား language များကဲ့သို့ class inheritance မရှိပါ။ သို့သော် struct တစ်ခုကို အခြား struct တစ်ခုထဲတွင် ထည့်သွင်းခြင်း (embedding) ဖြင့် code များကို ပြန်လည်အသုံးပြုနိုင်သည့် composition ကို အားပေးသည်။
 
 Embedded struct ၏ fields များကို အပြင်ဘက် struct မှ တိုက်ရိုက်ခေါ်ယူသုံးစွဲနိုင်ပါသည်။
+
+```mermaid
+graph TD
+    subgraph Employee Struct
+        direction LR
+        A[Name: string]
+        B(Person)
+        C(ContactInfo)
+    end
+
+    subgraph Person Struct
+        P1[FirstName: string]
+        P2[LastName: string]
+    end
+
+    subgraph ContactInfo Struct
+        C1[Email: string]
+        C2[Phone: string]
+    end
+
+    B -- "is composed of" --> Person
+    C -- "is composed of" --> ContactInfo
+
+    Note["emp.FirstName<br/>(promoted field)"]
+    emp[Employee Instance] --> Note
+```
 
 ```go
 package main
@@ -106,7 +132,7 @@ type ContactInfo struct {
 
 type Employee struct {
     Name   string
-    Person // Person struct ကို embed လုပ်ခြင်း
+    Person      // Person struct ကို embed လုပ်ခြင်း (Promoted Fields)
     ContactInfo
 }
 

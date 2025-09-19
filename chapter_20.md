@@ -1,4 +1,4 @@
-# အခန်း ၁၈: အသုံးများသော Data Structures နှင့် Algorithms များ
+# အခန်း ၂၀: အသုံးများသော Data Structures နှင့် Algorithms များ
 
 Software engineering တွင် ထိရောက်ပြီး စွမ်းဆောင်ရည်မြင့်မားသော program များ ရေးသားနိုင်ရန်အတွက် Data Structures (အချက်အလက် တည်ဆောက်ပုံ) နှင့် Algorithms (တွက်ချက်နည်းစနစ်) များကို နားလည်တတ်ကျွမ်းခြင်းသည် အလွန်အရေးကြီးပါသည်။ ဤအခန်းတွင် Go language ကို အသုံးပြု၍ အသုံးအများဆုံး DSA concept များကို လက်တွေ့ code များနှင့်တကွ အသေးစိတ် လေ့လာသွားပါမည်။
 
@@ -210,7 +210,7 @@ func QuickSort(arr []int) []int {
 
 	for i := range arr {
 		if arr[i] < arr[right] {
-			arr[i], arr[left] = arr[left], arr.i]
+			arr[i], arr[left] = arr[left], arr[i]
 			left++
 		}
 	}

@@ -8,6 +8,14 @@
 
 `if`/`else` statement သည် အခြေအနေ (condition) တစ်ခု မှန်/မှား ပေါ်မူတည်၍ code block တစ်ခုကို run ရန် သို့မဟုတ် မ run ရန် ဆုံးဖြတ်ပေးသည်။
 
+```mermaid
+graph TD
+    A[Start] --> B{age >= 18 ?};
+    B -- True --> C[Print 'You are an adult.'];
+    B -- False --> D[Print 'You are a minor.'];
+    C --> E[End];
+    D --> E;
+```
 ```go
 package main
 
@@ -22,7 +30,7 @@ func main() {
         fmt.Println("You are a minor.")
     }
 
-    // Statement နှင့်အတူ if ကို အတို gọn ရေးသားခြင်း
+    // Statement နှင့်အတူ if ကို အတိုချုံး ရေးသားခြင်း
     // ဤနည်းလမ်းတွင် `num` variable ကို if/else block အတွင်းမှာသာ အသုံးပြုနိုင်သည်
     if num := 9; num < 0 {
         fmt.Println(num, "is negative")
@@ -40,6 +48,16 @@ func main() {
 
 `switch` statement သည် variable တစ်ခု၏ တန်ဖိုးကို `case` များစွာနှင့် နှိုင်းယှဉ်စစ်ဆေးရန် အသုံးပြုသည်။ အခြား language များကဲ့သို့ `break` keyword ကို case တိုင်းတွင် ရေးရန်မလိုပါ။ Go တွင် case တစ်ခုပြီးဆုံးပါက switch မှ အလိုအလျောက် ထွက်ခွာပါသည်။
 
+```mermaid
+graph TD
+    A[Start] --> B{Check 'day'};
+    B -- "'Saturday' or 'Sunday'" --> C[Print "It's the weekend!"];
+    B -- "'Monday'" --> D[Print "It's the start of the week."];
+    B -- "Other values (default)" --> E[Print "It's a weekday."];
+    C --> F[End];
+    D --> F;
+    E --> F;
+```
 ```go
 package main
 
@@ -89,5 +107,10 @@ for n < 5 {
 fruits := []string{"Apple", "Banana", "Cherry"}
 for index, value := range fruits {
     fmt.Printf("Index: %d, Value: %s\n", index, value)
+}
+
+// index သို့မဟုတ် value မလိုအပ်ပါက blank identifier (_) ကို အသုံးပြုနိုင်သည်
+for _, value := range fruits {
+    fmt.Println("Value:", value)
 }
 ```

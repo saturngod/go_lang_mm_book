@@ -1,4 +1,4 @@
-# အခန်း ၁၆: Project - Simple REST API တည်ဆောက်ခြင်း (အပိုင်း ၁)
+# အခန်း ၁၇: Project - Simple REST API တည်ဆောက်ခြင်း (အပိုင်း ၁)
 
 ယခုအခန်းမှစ၍ ယခင်လေ့လာခဲ့သော Go ၏ concepts များကို ပေါင်းစပ်ပြီး လက်တွေ့ project တစ်ခုကို စတင်တည်ဆောက်ပါမည်။ ကျွန်ုပ်တို့ တည်ဆောက်မည့် project မှာ To-Do List တစ်ခုကို စီမံခန့်ခွဲနိုင်သော ရိုးရှင်းသည့် REST API တစ်ခုဖြစ်သည်။
 
@@ -89,9 +89,6 @@ func tasksHandler(w http.ResponseWriter, r *http.Request) {
 
 // GET /tasks - Task အားလုံးကို ပြန်ပေးသည်
 func getTasks(w http.ResponseWriter, r *http.Request) {
-	mu.Lock()
-	defer mu.Unlock()
-
 	// Map မှ value များကို slice အဖြစ် ပြောင်းလဲခြင်း
 	var taskList []Task
 	for _, task := range tasks {
@@ -112,9 +109,6 @@ func createTask(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	mu.Lock()
-	defer mu.Unlock()
-
 	// ID အသစ်တစ်ခု သတ်မှတ်ပြီး tasks map ထဲသို့ ထည့်သွင်းခြင်း
 	newTask.ID = nextID
 	tasks[newTask.ID] = newTask
@@ -127,6 +121,12 @@ func createTask(w http.ResponseWriter, r *http.Request) {
 
 func main() {
     // Routing ကို အောက်တွင် ဆက်လက်ရေးသားပါမည်
+
+	// Data များကို thread-safe ဖြစ်စေရန် handler function တစ်ခုချင်းစီတွင်
+	// mutex ကို သီးခြားစီ ခေါ်ယူအသုံးပြုပါမည်။
+	// ဥပမာ:
+	// mu.Lock()
+	// defer mu.Unlock()
 }
 ```
 

@@ -217,9 +217,24 @@ func (e *Env) createProductHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	
+	p.ID = productID
+	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
-	fmt.Fprintf(w, "Product created with ID: %d", productID)
+	json.NewEncoder(w).Encode(p)
 }
+
+func (e *Env) updateProductHandler(w http.ResponseWriter, r *http.Request) {
+	// ... (To be implemented)
+}
+
+func (e *Env) deleteProductHandler(w http.ResponseWriter, r *http.Request) {
+	// ... (To be implemented)
+}
+
+func (e *Env) getProductHandler(w http.ResponseWriter, r *http.Request) {
+	// ... (To be implemented)
+}
+
 
 // ... အခြား handlers များကိုလည်း အလားတူ ပြင်ဆင်ပါ
 ```

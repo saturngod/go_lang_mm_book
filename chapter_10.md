@@ -111,7 +111,7 @@ func main() {
     fmt.Println("The sum is:", sum)
 
     // အောက်ပါ code line သည် compile error ဖြစ်စေပါမည်
-    // কারণ 'secretValue' သည် unexported ဖြစ်သောကြောင့် main package မှ ခေါ်ယူသုံးစွဲ၍မရပါ
+    // အဘယ်ကြောင့်ဆိုသော် 'secretValue' သည် unexported ဖြစ်သောကြောင့် main package မှ ခေါ်ယူသုံးစွဲ၍မရပါ
     // fmt.Println(calculator.secretValue)
 }
 ```

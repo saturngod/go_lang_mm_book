@@ -99,36 +99,34 @@
     * `net/http` (Web Server တည်ဆောက်ခြင်း)
 * အခန်း ၁၆: Testing in Go
     * `testing` package
-    * Unit Tests ရေးသားခြင်း
+    * Unit Tests ရေးသားခြင်း 
     * Table-Driven Tests
     * Benchmarking
 
 ---
 
-## အပိုင်း ၆: လက်တွေ့ Project
+## အပိုင်း ၆: လက်တွေ့ Project (Simple REST API)
 
 * အခန်း ၁၇: Project - Simple REST API တည်ဆောက်ခြင်း (အပိုင်း ၁)
     * Project Planning
     * HTTP Handlers များ ရေးသားခြင်း
     * Routing ပြုလုပ်ခြင်း
 * အခန်း ၁၈: Project - Simple REST API တည်ဆောက်ခြင်း (အပိုင်း ၂)
-    * JSON data ဖြင့် အပြန်အလှန် ဆက်သွယ်ခြင်း
-    * Gorilla/Mux ကဲ့သို့သော third-party router ကို အသုံးပြုခြင်း
+    * `gorilla/mux` ကို အသုံးပြု၍ Routing ကို တိုးချဲ့ခြင်း
+    * GET (by ID), PUT, DELETE Endpoints များ ထပ်တိုးခြင်း
 * အခန်း ၁၉: Project - Simple REST API တည်ဆောက်ခြင်း (အပိုင်း ၃) - Database Integration
     * `database/sql` package ကို အသုံးပြုခြင်း
-    * PostgreSQL/MySQL driver ထည့်သွင်းခြင်း
+    * PostgreSQL driver ထည့်သွင်းခြင်း
     * CRUD (Create, Read, Update, Delete) operations များ ရေးသားခြင်း
-    * API endpoints များကို Database နှင့် ချိတ်ဆက်ခြင်း
 ---
 
 ## အပိုင်း ၇: အဆင့်မြင့် Data Structures နှင့် Algorithms
 
-* အခန်း ၂၀: Common Data Structures and Algorithms in Go
+* အခန်း ၂၀: အသုံးများသော Data Structures နှင့် Algorithms များ
     * Linked Lists
     * Stacks and Queues
-    * Trees (e.g., Binary Search Tree)
-    * Sorting Algorithms (e.g., Bubble Sort, Quick Sort)
-    * Searching Algorithms (e.g., Linear Search, Binary Search)
+    * Trees (Binary Search Tree)
+    * Sorting Algorithms (Bubble Sort, Quick Sort)
     * Backtracking
     * Dynamic Programming
 
