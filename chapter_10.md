@@ -49,7 +49,7 @@ func main() {
 
 ### Import Aliases နှင့် Blank Imports
 
-*   **Alias:** Package name တူညီနေပါက သို့မဟုတ် ပိုတိုသော নামဖြင့် ခေါ်လိုပါက alias သတ်မှတ်နိုင်သည်။
+*   **Alias:** Package name တူညီနေပါက သို့မဟုတ် ပိုတိုသော အမည် ဖြင့် ခေါ်လိုပါက alias သတ်မှတ်နိုင်သည်။
     ```go
     import f "fmt" // "fmt" အစား "f" ဖြင့် ခေါ်နိုင်သည်
     ```

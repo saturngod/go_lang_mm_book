@@ -129,7 +129,7 @@ Go တွင် class inheritance (အမွေဆက်ခံခြင်း) �
 ```mermaid
 graph TD
     subgraph "type Employee struct"
-        Name["Position: string"]
+        Position["Position: string"]
         Person["Person (embedded)"]
         Contact["ContactInfo (embedded)"]
     end
