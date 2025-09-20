@@ -167,13 +167,13 @@ Closure ၏ အစွမ်းထက်ဆုံး အသုံးဝင်မ�
 
 ```mermaid
 graph TD
-    A[intSeq() called] --> B{Create variable 'i = 0'}
-    B --> C{Return a new function (closure)}
+    A["intSeq() called"] --> B["Create variable i = 0"]
+    B --> C["Return a new function (closure)"]
     
     subgraph "Closure (nextInt)"
         direction LR
-        D["'i' is captured<br/>(current value: 0)"]
-        E[Function Body<br/>i++<br/>return i]
+        D["i is captured<br/>(current value: 0)"]
+        E["Function Body<br/>i++<br/>return i"]
     end
 
     C --> D
@@ -213,4 +213,3 @@ func main() {
 ```
 
 ဤဥပမာတွင် `intSeq()` function ကို ခေါ်လိုက်သောအခါ `i` ဟူသော variable တစ်ခုကို 0 ဖြင့် စတင်ပြီး function တစ်ခုကို return ပြန်ပေးပါသည်။ `nextInt` သည် ထို return ပြန်လာသော function ဖြစ်ပြီး ၎င်းသည် `i` ကို မှတ်သားထားသည်။ `nextInt()` ကို ခေါ်လိုက်တိုင်း မှတ်သားထားသော `i` ၏ တန်ဖိုးကို တိုးခြင်း၊ ပြန်ပေးခြင်းတို့ကို လုပ်ဆောင်သောကြောင့် state ကို ဆက်တိုက် ထိန်းသိမ်းထားနိုင်ခြင်း ဖြစ်သည်။
-```
