@@ -29,7 +29,7 @@ var address string
 
 **2. Short Variable Declaration (`:=`)**
 
-ဤနည်းလမ်းသည် function များအတွင်းတွင် အသုံးအများဆုံးဖြစ်ပြီး `var` keyword နှင့် type ကို ရေးရန်မလိုဘဲ variable ကို အတို gọn ကြေညာနိုင်သည်။
+ဤနည်းလမ်းသည် function များအတွင်းတွင် အသုံးအများဆုံးဖြစ်ပြီး `var` keyword နှင့် type ကို ရေးရန်မလိုဘဲ variable ကို အတို ကြေညာနိုင်သည်။
 
 ```go
 func main() {

@@ -41,7 +41,7 @@ func add(a int, b int) int {
     return a + b
 }
 
-// Parameter type တွေ တူညီပါက အတို gọn ရေးနိုင်သည်
+// Parameter type တွေ တူညီပါက အတို ရေးနိုင်သည်
 func subtract(a, b int) int {
     return a - b
 }
