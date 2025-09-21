@@ -60,7 +60,7 @@ func main() {
 
 *   `package main`: ဤ file သည် executable program တစ်ခုဖြစ်ကြောင်း ကြေညာသည်။
 *   `import "fmt"`: "format" package ကို import လုပ်ခြင်းဖြစ်သည်။ ၎င်း package တွင် `Println` ကဲ့သို့သော printing functions များ ပါဝင်သည်။
-*   `func main()`: Program စတင်ដំណើរဆောင်ရွက်မည့် အဓိက function ဖြစ်သည်။
+*   `func main()`: Program စတင်ဆောင်ရွက်မည့် အဓိက function ဖြစ်သည်။
 *   `fmt.Println(...)`: Console တွင် စာသားများကို print ထုတ်ပေးသည်။
 
 ---
