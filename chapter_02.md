@@ -58,10 +58,10 @@ func main() {
 }
 ```
 
-*   `package main`: ဤ file သည် executable program တစ်ခုဖြစ်ကြောင်း ကြေညာသည်။
-*   `import "fmt"`: "format" package ကို import လုပ်ခြင်းဖြစ်သည်။ ၎င်း package တွင် `Println` ကဲ့သို့သော printing functions များ ပါဝင်သည်။
-*   `func main()`: Program စတင်ដំណើរဆောင်ရွက်မည့် အဓိက function ဖြစ်သည်။
-*   `fmt.Println(...)`: Console တွင် စာသားများကို print ထုတ်ပေးသည်။
+- `package main`: ဤ file သည် executable program တစ်ခုဖြစ်ကြောင်း ကြေညာသည်။
+- `import "fmt"`: "format" package ကို import လုပ်ခြင်းဖြစ်သည်။ ၎င်း package တွင် `Println` ကဲ့သို့သော printing functions များ ပါဝင်သည်။
+- `func main()`: Program စတင်အလုပ်လုပ်မည့် အဓိက function ဖြစ်သည်။
+- `fmt.Println(...)`: Console တွင် စာသားများကို print ထုတ်ပေးသည်။
 
 ---
 
@@ -69,11 +69,13 @@ func main() {
 
 Terminal တွင် `main.go` file ရှိသော directory ထဲ၌ အောက်ပါ command များကို စမ်းသပ်ကြည့်နိုင်ပါသည်။
 
-*   **`go run main.go`**
-    *   Code ကို compile လုပ်ပြီး တိုက်ရိုက် run ပေးသည်။ Executable file အသစ်ကို မဖန်တီးပါ။ Development ပြုလုပ်နေစဉ် program ကို အမြန်စမ်းသပ်ရန် အသုံးဝင်သည်။
+- **`go run main.go`**
 
-*   **`go build`**
-    *   Code ကို compile လုပ်ပြီး လက်ရှိ directory ထဲတွင် `hello` (Windows တွင် `hello.exe`) အမည်ဖြင့် executable file တစ်ခု တည်ဆောက်ပေးသည်။ ထို file ကို အခြားနေရာများသို့ copy ယူပြီး တိုက်ရိုက် run နိုင်ပါသည်။
+  - Code ကို compile လုပ်ပြီး တိုက်ရိုက် run ပေးသည်။ Executable file အသစ်ကို မဖန်တီးပါ။ Development ပြုလုပ်နေစဉ် program ကို အမြန်စမ်းသပ်ရန် အသုံးဝင်သည်။
 
-*   **`go install`**
-    *   Code ကို compile လုပ်ပြီး ရလာသော executable file ကို `$GOPATH/bin` (သို့မဟုတ် `GOBIN` သတ်မှတ်ထားလျှင် ထိုနေရာ) တွင် install ပြုလုပ်ပေးသည်။ ၎င်းသည် command-line tool များ ဖြန့်ဝေရန် အသုံးဝင်သည်။
+- **`go build`**
+
+  - Code ကို compile လုပ်ပြီး လက်ရှိ directory ထဲတွင် `hello` (Windows တွင် `hello.exe`) အမည်ဖြင့် executable file တစ်ခု တည်ဆောက်ပေးသည်။ ထို file ကို အခြားနေရာများသို့ copy ယူပြီး တိုက်ရိုက် run နိုင်ပါသည်။
+
+- **`go install`**
+  - Code ကို compile လုပ်ပြီး ရလာသော executable file ကို `$GOPATH/bin` (သို့မဟုတ် `GOBIN` သတ်မှတ်ထားလျှင် ထိုနေရာ) တွင် install ပြုလုပ်ပေးသည်။ ၎င်းသည် command-line tool များ ဖြန့်ဝေရန် အသုံးဝင်သည်။

@@ -16,6 +16,7 @@ graph TD
     C --> E[End];
     D --> E;
 ```
+
 ```go
 package main
 
@@ -51,13 +52,14 @@ func main() {
 ```mermaid
 graph TD
     A[Start] --> B{Check 'day'};
-    B -- "'Saturday' or 'Sunday'" --> C[Print "It's the weekend!"];
-    B -- "'Monday'" --> D[Print "It's the start of the week."];
-    B -- "Other values (default)" --> E[Print "It's a weekday."];
+    B -- "Saturday or Sunday" --> C["Print 'It's the weekend!'"];
+    B -- "Monday" --> D["Print 'It's the start of the week.'"];
+    B -- "Other values (default)" --> E["Print 'It's a weekday.'"];
     C --> F[End];
     D --> F;
     E --> F;
 ```
+
 ```go
 package main
 
