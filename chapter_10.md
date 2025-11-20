@@ -164,3 +164,38 @@ func main() {
 *   **`go.sum` file:**
     *   Dependency တိုင်း၏ cryptographic checksum (hash) ကို မှတ်သားထားသည်။
     *   `go build` လုပ်သည့်အခါ download လုပ်လာသော package သည် မူလ package အစစ်အမှန်ဖြစ်ကြောင်းနှင့် ကြားဖြတ်ပြောင်းလဲထားခြင်းမရှိကြောင်း ဤ file ဖြင့် တိုက်ဆိုင်စစ်ဆေးသည်။ ၎င်းသည် supply chain attacks များမှ ကာကွယ်ပေးသည်။
+
+---
+
+## Go Workspaces (Multi-Module Workspaces)
+
+Go 1.18 တွင် မိတ်ဆက်ခဲ့သော **Go Workspaces** သည် local machine ပေါ်ရှိ module များစွာကို တပြိုင်နက်တည်း အလုပ်လုပ်ရာတွင် လွယ်ကူစေသည်။ `go.mod` file များကို `replace` directive ဖြင့် ပြင်ဆင်စရာမလိုဘဲ local module များကို ညွှန်းဆိုနိုင်သည်။
+
+**အသုံးပြုပုံ:**
+
+1.  **Workspace ဖန်တီးခြင်း:**
+    ```sh
+    mkdir myworkspace
+    cd myworkspace
+    go work init
+    ```
+    ၎င်းသည် `go.work` file ကို ဖန်တီးပေးသည်။
+
+2.  **Module များ ထည့်သွင်းခြင်း:**
+    ```sh
+    go work use ./my-app
+    go work use ./my-library
+    ```
+
+**`go.work` File ဥပမာ:**
+
+```go
+go 1.18
+
+use (
+    ./my-app
+    ./my-library
+)
+```
+
+Workspace mode တွင် run သောအခါ Go command များသည် `go.work` ထဲရှိ module များကို အဓိကထား အလုပ်လုပ်မည်ဖြစ်ပြီး၊ local directory ထဲရှိ module များကို ဦးစားပေး ခေါ်ယူသုံးစွဲသွားမည်ဖြစ်သည်။

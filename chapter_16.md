@@ -139,3 +139,56 @@ ok      myproject/calculator    0.358s
 *   `BenchmarkAdd-12`: Benchmark function အမည်နှင့် အသုံးပြုခဲ့သော CPU core အရေအတွက်။
 *   `1000000000`: `b.N` ၏ တန်ဖိုး (loop ကို အကြိမ်ပေါင်း ဘီလီယံ ၁ ထောင် run ခဲ့သည်)။
 *   `0.2831 ns/op`: Operation တစ်ခု (loop တစ်ခါပတ်ခြင်း) အတွက် ပျမ်းမျှကြာချိန် (nanoseconds)။
+
+---
+
+## Fuzzing (Go 1.18+)
+
+**Fuzzing** သည် automated testing technique တစ်ခုဖြစ်ပြီး၊ မမျှော်လင့်ထားသော input များကို random ထည့်သွင်း၍ program ၏ stability နှင့် security ကို စစ်ဆေးခြင်းဖြစ်သည်။ Go 1.18 တွင် Fuzzing ကို `testing` package တွင် native support ပေးထားသည်။
+
+*   **Fuzz Function Signature:** `Fuzz` ဖြင့် စတင်ရမည်ဖြစ်ပြီး `*testing.F` ကို လက်ခံရမည် (e.g., `func FuzzReverse(f *testing.F)`)။
+*   **Seed Corpus:** `f.Add()` ကို အသုံးပြု၍ မှန်ကန်သော sample input များကို ထည့်သွင်းပေးရသည်။
+*   **Fuzz Target:** `f.Fuzz()` function အတွင်းတွင် random input များကို လက်ခံမည့် function ကို ရေးသားရသည်။
+
+**ဥပမာ:**
+
+```go
+package calculator
+
+import (
+    "testing"
+    "unicode/utf8"
+)
+
+func Reverse(s string) string {
+    // ... implementation ...
+    return "" // placeholder
+}
+
+func FuzzReverse(f *testing.F) {
+    // 1. Seed Corpus (Sample inputs)
+    f.Add("Hello")
+    f.Add("12345")
+
+    // 2. Fuzz Target
+    f.Fuzz(func(t *testing.T, orig string) {
+        rev := Reverse(orig)
+        doubleRev := Reverse(rev)
+
+        // Property: Reverse နှစ်ခါလုပ်ရင် မူလအတိုင်း ပြန်ဖြစ်ရမည်
+        if orig != doubleRev {
+            t.Errorf("Before: %q, after: %q, double: %q", orig, rev, doubleRev)
+        }
+
+        // Property: UTF-8 valid ဖြစ်ရမည်
+        if utf8.ValidString(orig) && !utf8.ValidString(rev) {
+            t.Errorf("Reverse produced invalid UTF-8 string %q", rev)
+        }
+    })
+}
+```
+
+Fuzzing run ရန်:
+```sh
+go test -fuzz=Fuzz
+```

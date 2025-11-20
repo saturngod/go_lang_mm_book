@@ -64,6 +64,7 @@
   - Standard Library မှ Packages များကို `import` လုပ်ခြင်း
   - ကိုယ်ပိုင် Package များ တည်ဆောက်ခြင်း
   - Go Modules (`go mod`) ကို အသုံးပြု၍ Dependencies များကို စီမံခန့်ခွဲခြင်း
+  - Go Workspaces (`go.work`) ဖြင့် Multi-module projects များ စီမံခန့်ခွဲခြင်း
 - အခန်း ၁၁: Generic
   - Generic ဆိုတာဘာလဲ။ Type Parameters
   - Generic Functions
@@ -94,6 +95,7 @@
 - အခန်း ၁၅: အသုံးများသော Standard Library Packages
   - `fmt` (Input/Output)
   - `os` (Operating System Interactions)
+  - `embed` (Static Files Embedding)
   - `strings`, `strconv` (String Manipulation)
   - `encoding/json` (JSON data ကိုင်တွယ်ခြင်း)
   - `net/http` (Web Server တည်ဆောက်ခြင်း)
@@ -101,6 +103,7 @@
   - `testing` package
   - Unit Tests ရေးသားခြင်း
   - Table-Driven Tests
+  - Fuzzing (Go 1.18+)
   - Benchmarking
 
 ---
@@ -138,7 +141,13 @@
 - အခန်း ၂၁: Context
   - `context` package ဆိုတာဘာလဲ။
   - Request-scoped values, cancellation, နှင့် timeouts
-- အခန်း ၂၂: နောက်ထပ် လေ့လာစရာများ (Next Steps)
+- အခန်း ၂၂: Web Development with Echo Framework
+  - Echo Framework မိတ်ဆက်
+  - Installation နှင့် Basic Server
+  - Routing (Path & Query Parameters)
+  - Context, Responses (JSON/HTML) နှင့် Middleware
+  - Simple REST API Example
+- အခန်း ၂၃: နောက်ထပ် လေ့လာစရာများ (Next Steps)
   - Go Community နှင့် Resources များ
   - အသုံးဝင်သော Third-party Libraries များ
   - ဆက်လက်လေ့လာရန် လမ်းညွှန်ချက်များ
