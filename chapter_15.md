@@ -69,6 +69,46 @@ func main() {
 
 ---
 
+## `embed` (Embedding Files)
+
+Go 1.16 မှစတင်၍ `embed` package ကို အသုံးပြုကာ static file များ (images, HTML, config files) ကို Go binary ထဲသို့ တိုက်ရိုက်ထည့်သွင်း (embed) လာနိုင်ပြီဖြစ်သည်။ ၎င်းသည် single-binary application များ deploy လုပ်ရာတွင် အလွန်အသုံးဝင်သည်။
+
+`//go:embed` directive ကို အသုံးပြုရသည်။
+
+```go
+package main
+
+import (
+    "embed"
+    "fmt"
+)
+
+//go:embed hello.txt
+var content string
+
+//go:embed config.json
+var config []byte
+
+//go:embed static/*
+var staticFiles embed.FS
+
+func main() {
+    // String အနေဖြင့် ဖတ်ခြင်း
+    fmt.Println("Content of hello.txt:", content)
+
+    // Byte slice အနေဖြင့် ဖတ်ခြင်း
+    fmt.Println("Config size:", len(config), "bytes")
+
+    // File System အနေဖြင့် ဖတ်ခြင်း
+    data, _ := staticFiles.ReadFile("static/index.html")
+    fmt.Println("Index HTML:", string(data))
+}
+```
+
+**သတိပြုရန်:** `//go:embed` နှင့် variable ကြေညာချက်ကြားတွင် space မရှိရပါ။
+
+---
+
 ## `strings` and `strconv`
 
 *   **`strings` package:** String များကို ကိုင်တွယ်ရန် အသုံးဝင်သော functions များစွာ ပါဝင်သည်။

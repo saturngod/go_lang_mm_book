@@ -18,6 +18,31 @@ Generic function ဆိုသည်မှာ type parameters တစ်ခု သ
 
 ### ဥပမာ: `PrintSlice` Function
 
+အောက်ပါ diagram သည် Generic function တစ်ခုက မတူညီသော data type များကို မည်သို့ ကိုင်တွယ်သည်ကို ပြသထားသည်။
+
+```mermaid
+graph TD
+    subgraph "Generic Function Definition"
+        Def["func PrintSlice[T any](s []T)"]
+    end
+
+    subgraph "Function Calls"
+        CallInt["PrintSlice([]int{1, 2})"]
+        CallStr["PrintSlice([]string{'a', 'b'})"]
+    end
+
+    subgraph "Type Instantiation (Compiler Logic)"
+        InstInt["T becomes int<br/>func PrintSlice(s []int)"]
+        InstStr["T becomes string<br/>func PrintSlice(s []string)"]
+    end
+
+    CallInt -->|"T = int"| InstInt
+    CallStr -->|"T = string"| InstStr
+    
+    InstInt -.-> Def
+    InstStr -.-> Def
+```
+
 မည်သည့် type မဆိုရှိသော slice ၏ elements များကို print ထုတ်နိုင်သော function တစ်ခု ရေးကြည့်ကြပါစို့။
 
 ```go

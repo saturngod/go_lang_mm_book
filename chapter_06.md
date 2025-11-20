@@ -193,3 +193,55 @@ func main() {
     fmt.Println("Full Info:", emp)
 }
 ```
+
+---
+
+## 4. Design Pattern: Singleton
+
+Struct များနှင့် ပတ်သက်၍ အသုံးများသော Design Pattern တစ်ခုမှာ **Singleton Pattern** ဖြစ်သည်။ Singleton ဆိုသည်မှာ Application တစ်ခုလုံးတွင် struct instance တစ်ခုတည်းသာ ရှိစေရန် ကန့်သတ်ထားခြင်းဖြစ်သည်။ ဥပမာ - Database Connection, Configuration Manager စသည်တို့တွင် သုံးလေ့ရှိသည်။
+
+Go တွင် Singleton ကို `sync.Once` အသုံးပြု၍ thread-safe ဖြစ်အောင် တည်ဆောက်လေ့ရှိသည်။
+
+```go
+package main
+
+import (
+    "fmt"
+    "sync"
+)
+
+// Singleton struct (exported မလုပ်ပါ၊ အပြင်က တိုက်ရိုက်မဆောက်နိုင်အောင်)
+type database struct {
+    connectionString string
+}
+
+var (
+    instance *database
+    once     sync.Once // Thread-safe ဖြစ်စေရန် အသုံးပြုသည်
+)
+
+// GetDatabaseInstance သည် database instance ကို ပြန်ပေးသည်
+// ပထမဆုံးအကြိမ် ခေါ်ချိန်တွင်သာ instance ကို ဖန်တီးပြီး၊ နောက်ပိုင်းတွင် ရှိပြီးသားကိုသာ ပြန်ပေးသည်
+func GetDatabaseInstance() *database {
+    once.Do(func() {
+        fmt.Println("Creating single database instance...")
+        instance = &database{connectionString: "mysql://user:pass@localhost:3306/mydb"}
+    })
+    return instance
+}
+
+func main() {
+    db1 := GetDatabaseInstance()
+    fmt.Println("DB1 Connection:", db1.connectionString)
+
+    db2 := GetDatabaseInstance() // "Creating..." ကို ထပ်မပြတော့ပါ
+    fmt.Println("DB2 Connection:", db2.connectionString)
+
+    if db1 == db2 {
+        fmt.Println("db1 and db2 are the same instance.")
+    }
+}
+```
+
+`sync.Once` သည် `Do` အတွင်းရှိ function ကို program တစ်ခုလုံးတွင် **တစ်ကြိမ်တည်းသာ** အလုပ်လုပ်စေရန် အာမခံပါသည်။ ထို့ကြောင့် goroutines များစွာက ပြိုင်တူခေါ်လျှင်သော်မှ instance တစ်ခုတည်းသာ ဖန်တီးမည်ဖြစ်ပြီး thread-safe ဖြစ်သည်။
+```
