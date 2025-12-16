@@ -38,8 +38,9 @@ func main() {
     population := 55000000
 
     fmt.Println(country, population)
-}
 ```
+
+> **Warning:** Go တွင် variable တစ်ခုကို ကြေညာပြီး မသုံးဘဲထားပါက compiler error တက်ပါမည်။ ထို့ကြောင့် မလိုအပ်သော variable များကို မကြေညာမိရန် သတိပြုပါ။
 
 ### Constants
 

@@ -13,9 +13,16 @@ package main
 
 import "fmt"
 
-// Parameter မရှိ၊ return value မရှိသော function
+// Title Case (အကြီးဖြင့်စခြင်း) -> Exported (Public)
+// Package အပြင်မှ လှမ်းခေါ်သုံးနိုင်သည်
+func SayHello() {
+    fmt.Println("Hello (Public)!")
+}
+
+// Lower Case (အသေးဖြင့်စခြင်း) -> Unexported (Private)
+// Package အတွင်းတွင်သာ သုံးနိုင်သည်
 func sayHello() {
-    fmt.Println("Hello from a function!")
+    fmt.Println("Hello (Private)!")
 }
 
 func main() {
@@ -23,6 +30,9 @@ func main() {
     sayHello()
 }
 ```
+
+> **မှတ်ချက်:** Go တွင် `public` / `private` keyword များ မရှိပါ။ Function အမည်၏ **ပထမစာလုံး အကြီး/အသေး (Capitalization)** ပေါ်မူတည်၍ ခွဲခြားပါသည်။
+
 
 ---
 
@@ -94,6 +104,69 @@ func main() {
         fmt.Println("Result:", result)
     }
 }
+```
+
+---
+
+## Named Return Values
+
+Go ၏ ထူးခြားချက်တစ်ခုမှာ Return ပြန်မည့် variable များကို function signature တွင် အမည်နှင့်တကွ ကြိုတင်ကြေညာထားနိုင်ခြင်း ဖြစ်သည်။ ၎င်းသည် code ကို ပိုမိုရှင်းလင်းစေပြီး `return` ဟု ရေးလိုက်ရုံဖြင့် (naked return) လက်ရှိတန်ဖိုးများကို အလိုအလျောက် return ပြန်ပေးပါသည်။
+
+```go
+package main
+
+import "fmt"
+
+func split(sum int) (x, y int) {
+    x = sum * 4 / 9
+    y = sum - x
+    return // Naked return (x နှင့် y ကို ပြန်ပေးမည်)
+}
+
+func main() {
+    fmt.Println(split(17)) // 7, 10
+}
+```
+
+---
+
+## Defer Statement
+
+`defer` statement သည် function တစ်ခု ပြီးဆုံးခါနီးအချိန် (return မပြန်ခင်) မှသာ လုပ်ဆောင်မည့် function call များကို သတ်မှတ်ရာတွင် အသုံးပြုသည်။ အဓိကအားဖြင့် resource များကို ရှင်းလင်းခြင်း (cleanup) အတွက် အလွန်အသုံးဝင်သည်။ ဥပမာ - file ပိတ်ခြင်း၊ database connection ပိတ်ခြင်း။
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    defer fmt.Println("world") // ဤလိုင်းသည် main function ပြီးခါနီးမှ အလုပ်လုပ်မည်
+
+    fmt.Println("hello")
+}
+// Output:
+// hello
+// world
+```
+
+`defer` များစွာကို အသုံးပြုပါက **LIFO (Last-In, First-Out)** ပုံစံဖြင့် ပြောင်းပြန် အလုပ်လုပ်ပါသည်။
+
+```go
+func main() {
+    fmt.Println("counting")
+
+    for i := 0; i < 3; i++ {
+        defer fmt.Println(i)
+    }
+
+    fmt.Println("done")
+}
+// Output:
+// counting
+// done
+// 2
+// 1
+// 0
 ```
 
 ---

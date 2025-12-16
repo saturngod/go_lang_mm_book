@@ -109,6 +109,37 @@ Struct ကဲ့သို့သော data structure ကြီးများက
 
 Pointer တစ်ခု၏ zero value (တန်ဖိုးမထည့်သွင်းရသေးခင် default တန်ဖိုး) မှာ `nil` ဖြစ်သည်။ `nil` pointer ဆိုသည်မှာ မည်သည့် memory address ကိုမှ ညွှန်ပြမထားသော pointer ဖြစ်သည်။
 
+
+---
+
+## The `new()` Function
+
+Go တွင် pointer အသစ်တစ်ခု ဖန်တီးရန် `new()` function ကိုလည်း အသုံးပြုနိုင်သည်။ `new(Type)` သည် Type ထဲရှိ zero value (ဥပမာ `int` ဆိုလျှင် `0`, `string` ဆိုလျှင် `""`) အတွက် memory နေရာချထားပေးပြီး၊ ထိုနေရာ၏ **memory address (pointer)** ကို ပြန်ပေးသည်။
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    // new() ကို အသုံးပြု၍ int pointer တစ်ခု ဖန်တီးခြင်း
+    // p သည် *int type ဖြစ်ပြီး၊ ၎င်းညွှန်ပြနေသော တန်ဖိုးမှာ 0 ဖြစ်သည်
+    p := new(int)
+    
+    fmt.Println("Value of p (address):", p)
+    fmt.Println("Value at *p (zero value):", *p) // Output: 0
+    
+    // တန်ဖိုးပြောင်းလဲခြင်း
+    *p = 100
+    fmt.Println("New value at *p:", *p) // Output: 100
+}
+```
+
+### `new()` vs `make()` ကွာခြားချက်
+
+*   **`new(T)`**: `T` type အတွက် memory နေရာချထားပြီး၊ zero value **(*T) pointer** ကို ပြန်ပေးသည်။ (Variable အသစ်/Pointer ဖန်တီးရန် သုံးသည်)
+*   **`make(T)`**: Slices, Maps, Channels ကဲ့သို့သော Reference type များအတွက်သာ သုံးပြီး၊ initialized လုပ်ထားသော **T value (Non-pointer)** ကို ပြန်ပေးသည်။ (အခန်း ၅ တွင် ပြန်ကြည့်နိုင်ပါသည်)
+
 ---
 
 ### Nil Pointer Dereference (အမှားများနှင့် ကာကွယ်ခြင်း)
