@@ -123,6 +123,60 @@ func main() {
 
 ---
 
+---
+
+## Checking Wrapped Errors (`errors.Is` and `errors.As`)
+
+Error များကို `fmt.Errorf` နှင့် `%w` အသုံးပြု၍ wrap လုပ်လိုက်သောအခါ၊ မူလ error type ကို တိုက်ရိုက်စစ်ဆေး၍မရတော့ပါ။ (ဥပမာ - `err == os.ErrNotExist` သည် false ဖြစ်သွားနိုင်သည်)။ ထိုအခါမျိုးတွင် `errors` package မှ helper function များကို အသုံးပြုရပါမည်။
+
+### 1. `errors.Is()`
+
+Error တစ်ခုသည် သီးခြား error value တစ်ခု ဟုတ်မဟုတ် (wrapped လုပ်ထားသည့်တိုင်) စစ်ဆေးရန် အသုံးပြုသည်။
+
+```go
+import (
+    "errors"
+    "fmt"
+    "os"
+)
+
+func main() {
+    // Error ကို wrap လုပ်ခြင်း
+    err := fmt.Errorf("file error: %w", os.ErrNotExist)
+
+    // errors.Is ဖြင့် စစ်ဆေးခြင်း
+    if errors.Is(err, os.ErrNotExist) {
+        fmt.Println("File does not exist")
+    }
+}
+```
+
+### 2. `errors.As()`
+
+Error တစ်ခုသည် သီးခြား error type တစ်ခု ဟုတ်မဟုတ် စစ်ဆေးပြီး၊ ဟုတ်မှန်ပါက ထို type သို့ cast လုပ်ရန် အသုံးပြုသည်။
+
+```go
+type MyError struct {
+    Code int
+}
+
+func (e *MyError) Error() string {
+    return fmt.Sprintf("error code: %d", e.Code)
+}
+
+func main() {
+    err := fmt.Errorf("wrapped: %w", &MyError{Code: 404})
+
+    var myErr *MyError
+    // errors.As သည် err chain ကို ရှာဖွေပြီး match ဖြစ်ပါက myErr ထဲသို့ တန်ဖိုးထည့်ပေးသည်
+    if errors.As(err, &myErr) {
+        fmt.Println("It is MyError with code:", myErr.Code)
+    }
+}
+```
+
+---
+
 ## `panic` နှင့် `recover`
 
 `panic` နှင့် `recover` သည် Go ၏ error handling mechanism ၏ အစိတ်အပိုင်းတစ်ခုဖြစ်သော်လည်း၊ ၎င်းတို့ကို နေ့စဉ် error handling အတွက် **အသုံးမပြုသင့်ပါ**။
@@ -168,7 +222,7 @@ func causePanic() {
     defer handlePanic()
     
     fmt.Println("About to panic...")
-    // nil array ကို access လုပ်ရန် ကြိုးစားခြင်းဖြင့် panic ဖြစ်စေသည်
+    // nil slice ကို access လုပ်ရန် ကြိုးစားခြင်းဖြင့် panic ဖြစ်စေသည်
     var arr []int
     fmt.Println(arr[0]) 
     

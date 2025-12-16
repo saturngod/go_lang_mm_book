@@ -100,6 +100,52 @@ func TestAddTableDriven(t *testing.T) {
 
 ---
 
+## Test Coverage
+
+Test များရေးသားပြီးပါက၊ ထို test များသည် code ၏ မည်မျှရာခိုင်နှုန်းကို စမ်းသပ်ပေးနိုင်သည် (cover ဖြစ်သည်) ကို သိရှိရန် အရေးကြီးသည်။ Go တွင် coverage ကို တိုင်းတာရန် built-in support ပါရှိသည်။
+
+`go test -cover` command ကို အသုံးပြု၍ coverage ကို ကြည့်ရှုနိုင်သည်။
+
+```sh
+$ go test -cover
+PASS
+coverage: 80.0% of statements
+ok      myproject/calculator    0.005s
+```
+
+အသေးစိတ် report လိုချင်ပါက `-coverprofile` flag ကို အသုံးပြု၍ file ထုတ်နိုင်ပြီး၊ `go tool cover` ဖြင့် browser တွင် ကြည့်ရှုနိုင်သည်။
+
+```sh
+go test -coverprofile=coverage.out
+go tool cover -html=coverage.out
+```
+
+---
+
+## TestMain (Setup and Teardown)
+
+Package တစ်ခုလုံးအတွက် initialization (setup) သို့မဟုတ် cleanup (teardown) လုပ်ရန် လိုအပ်ပါက (ဥပမာ - Database connection ဖွင့်ခြင်း/ပိတ်ခြင်း)၊ `TestMain` function ကို အသုံးပြုနိုင်သည်။
+
+**စည်းမျဉ်း:** `TestMain` သည် `*testing.M` ကို parameter အဖြစ်လက်ခံပြီး၊ `m.Run()` ကို ခေါ်ယူမှသာ အခြား test များ အလုပ်လုပ်မည်ဖြစ်သည်။ `os.Exit()` ဖြင့် exit code ကို ပြန်ပေးရမည်။
+
+```go
+func TestMain(m *testing.M) {
+    // 1. Setup (e.g., Database connect)
+    fmt.Println("Setting up resources...")
+
+    // 2. Run Tests
+    code := m.Run()
+
+    // 3. Teardown (e.g., Database close)
+    fmt.Println("Cleaning up resources...")
+
+    // 4. Exit with code
+    os.Exit(code)
+}
+```
+
+---
+
 ## Benchmarking
 
 Benchmarking ဆိုသည်မှာ code ၏ performance (အထူးသဖြင့် speed) ကို တိုင်းတာခြင်းဖြစ်သည်။ Go တွင် benchmark tests များကို `testing` package ဖြင့် အလွယ်တကူ ရေးသားနိုင်သည်။
@@ -139,3 +185,56 @@ ok      myproject/calculator    0.358s
 *   `BenchmarkAdd-12`: Benchmark function အမည်နှင့် အသုံးပြုခဲ့သော CPU core အရေအတွက်။
 *   `1000000000`: `b.N` ၏ တန်ဖိုး (loop ကို အကြိမ်ပေါင်း ဘီလီယံ ၁ ထောင် run ခဲ့သည်)။
 *   `0.2831 ns/op`: Operation တစ်ခု (loop တစ်ခါပတ်ခြင်း) အတွက် ပျမ်းမျှကြာချိန် (nanoseconds)။
+
+---
+
+## Fuzzing (Go 1.18+)
+
+**Fuzzing** သည် automated testing technique တစ်ခုဖြစ်ပြီး၊ မမျှော်လင့်ထားသော input များကို random ထည့်သွင်း၍ program ၏ stability နှင့် security ကို စစ်ဆေးခြင်းဖြစ်သည်။ Go 1.18 တွင် Fuzzing ကို `testing` package တွင် native support ပေးထားသည်။
+
+*   **Fuzz Function Signature:** `Fuzz` ဖြင့် စတင်ရမည်ဖြစ်ပြီး `*testing.F` ကို လက်ခံရမည် (e.g., `func FuzzReverse(f *testing.F)`)။
+*   **Seed Corpus:** `f.Add()` ကို အသုံးပြု၍ မှန်ကန်သော sample input များကို ထည့်သွင်းပေးရသည်။
+*   **Fuzz Target:** `f.Fuzz()` function အတွင်းတွင် random input များကို လက်ခံမည့် function ကို ရေးသားရသည်။
+
+**ဥပမာ:**
+
+```go
+package calculator
+
+import (
+    "testing"
+    "unicode/utf8"
+)
+
+func Reverse(s string) string {
+    // ... implementation ...
+    return "" // placeholder
+}
+
+func FuzzReverse(f *testing.F) {
+    // 1. Seed Corpus (Sample inputs)
+    f.Add("Hello")
+    f.Add("12345")
+
+    // 2. Fuzz Target
+    f.Fuzz(func(t *testing.T, orig string) {
+        rev := Reverse(orig)
+        doubleRev := Reverse(rev)
+
+        // Property: Reverse နှစ်ခါလုပ်ရင် မူလအတိုင်း ပြန်ဖြစ်ရမည်
+        if orig != doubleRev {
+            t.Errorf("Before: %q, after: %q, double: %q", orig, rev, doubleRev)
+        }
+
+        // Property: UTF-8 valid ဖြစ်ရမည်
+        if utf8.ValidString(orig) && !utf8.ValidString(rev) {
+            t.Errorf("Reverse produced invalid UTF-8 string %q", rev)
+        }
+    })
+}
+```
+
+Fuzzing run ရန်:
+```sh
+go test -fuzz=Fuzz
+```

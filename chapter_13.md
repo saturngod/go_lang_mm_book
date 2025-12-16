@@ -115,6 +115,67 @@ func main() {
 
 ---
 
+---
+
+## Closing Channels and Range
+
+Sender က ပေးပို့စရာ data ကုန်သွားတဲ့အခါ channel ကို `close()` function သုံးပြီး ပိတ်သိမ်းနိုင်ပါတယ်။ ဒါက Receiver ကို "နောက်ထပ် data မလာတော့ဘူး" လို့ အသိပေးလိုက်တာပါ။
+
+*   **`close(ch)`**: Channel ကို receiver ဘက်မှ မပိတ်ရပါ၊ sender ဘက်မှသာ ပိတ်ရပါမည်။
+*   **Panic Risk**: ပိတ်ထားပြီးသား channel ကို ထပ်ပြီး data ပို့ရင် panic ဖြစ်ပါမယ်။
+
+### `range` Loop
+
+Channel တစ်ခုမပိတ်မချင်း data များကို ဆက်တိုက်လက်ခံဖို့ `for range` loop ကို အသုံးပြုနိုင်ပါတယ်။
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    ch := make(chan int, 5)
+    ch <- 1
+    ch <- 2
+    close(ch) // Data ပို့ပြီးကြောင်း အသိပေးသည်
+
+    // Channel ပိတ်သွားပြီး buffer ထဲက data ကုန်တဲ့အထိ loop ပတ်မည်
+    for n := range ch {
+        fmt.Println(n)
+    }
+}
+```
+
+---
+
+## Directional Channels (လမ်းကြောင်းတစ်ဖက်တည်း Channels)
+
+Function parameters တွေမှာ channel ကို "ပို့ဖို့သီးသန့်" (Send-only) သို့မဟုတ် "လက်ခံဖို့သီးသန့်" (Receive-only) ဆိုပြီး ကန့်သတ်နိုင်ပါတယ်။ ဒါက Type-safety ကို ပိုမိုခိုင်မာစေပါတယ်။
+
+*   **`chan<- T`**: Send-only channel (ပို့ရန်သာ)
+*   **`<-chan T`**: Receive-only channel (လက်ခံရန်သာ)
+
+```go
+// ဒီ function က message ပို့ဖို့ပဲ လုပ်ခွင့်ရှိမယ် (Send-only)
+func send(p chan<- string) {
+    p <- "Secret Message"
+}
+
+// ဒီ function က message လက်ခံဖို့ပဲ လုပ်ခွင့်ရှိမယ် (Receive-only)
+func receive(c <-chan string) {
+    msg := <-c
+    fmt.Println(msg)
+}
+
+func main() {
+    ch := make(chan string)
+    go send(ch)
+    receive(ch)
+}
+```
+
+---
+
 ## `select` Statement ဖြင့် Channels များကို ကိုင်တွယ်ခြင်း
 
 `select` statement သည် goroutine တစ်ခုကို multiple channel operations များပေါ်တွင် တစ်ပြိုင်နက်တည်း စောင့်ဆိုင်းစေနိုင်သည်။ ၎င်းသည် `switch` statement နှင့် ဆင်တူသော်လည်း channels များအတွက်သာ ဖြစ်သည်။
