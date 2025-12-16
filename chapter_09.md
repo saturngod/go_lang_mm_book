@@ -115,8 +115,6 @@ func (d Dog) Speak() {
 
 ---
 
----
-
 ## Polymorphism ကို Interfaces ဖြင့် အကောင်အထည်ဖော်ခြင်း
 
 Interface ၏ အဓိကအသုံးဝင်မှုမှာ polymorphism ကို အကောင်အထည်ဖော်နိုင်ခြင်းဖြစ်သည်။ Polymorphism ဆိုသည်မှာ code တစ်ခုတည်းက မတူညီသော data types များစွာနှင့် အလုပ်လုပ်နိုင်စွမ်းရှိခြင်း ဖြစ်သည်။
@@ -212,7 +210,29 @@ func main() {
 }
 ```
 
----
+
+## Interface Embedding (Interface များကို ပေါင်းစပ်ခြင်း)
+
+Go တွင် struct များကို embed လုပ်သကဲ့သို့ပင်၊ **Interface** များကိုလည်း အခြား Interface တစ်ခုအတွင်းသို့ embed လုပ်၍ ပေါင်းစပ်နိုင်ပါသည်။ ၎င်းသည် ကြီးမားသော Interface များကို သေးငယ်သော Interface များမှတစ်ဆင့် တည်ဆောက်ခြင်း (Composition) ကို အားပေးသည်။
+
+Go ၏ standard library ဖြစ်သော `io` package မှ နာမည်ကြီးဥပမာတစ်ခုကို လေ့လာကြည့်ကြပါစို့။
+
+```go
+type Reader interface {
+    Read(p []byte) (n int, err error)
+}
+
+type Writer interface {
+    Write(p []byte) (n int, err error)
+}
+
+// ReadWriter interface သည် Reader နှင့် Writer ကို ပေါင်းစပ်ထားခြင်းဖြစ်သည်
+// ၎င်း interface ကို satisfy လုပ်ရန် Read() ရော Write() ပါ ရှိရန်လိုအပ်သည်
+type ReadWriter interface {
+    Reader // Embedded interface
+    Writer // Embedded interface
+}
+```
 
 ## Interface ၏ လက်တွေ့အသုံးဝင်ပုံ: Database Drivers
 

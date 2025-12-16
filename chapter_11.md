@@ -176,3 +176,43 @@ func main() {
 ```
 
 ဤဥပမာတွင်၊ ကျွန်ုပ်တို့သည် အမျိုးမျိုးသော integer နှင့် float type များ ပါဝင်သော `Number` interface ကို သတ်မှတ်သည်။ `~` သင်္ကေတသည် `int` သာမက၊ underlying type မှာ `int` ဖြစ်သော မည်သည့် type (custom type `type MyInt int` ကဲ့သို့) ကိုမဆို ခွင့်ပြုသည်ဟု ဆိုလိုသည်။ `[T Number]` ကို အသုံးပြုခြင်းဖြင့်၊ `SumNumbers` ကို `Number` constraint ၏ အစိတ်အပိုင်းဖြစ်သော type များ၏ slice များဖြင့်သာ ခေါ်ဆိုနိုင်သည်ဟု compiler ကို ပြောပြသည်။
+
+---
+
+## Built-in `comparable` Constraint
+
+Go တွင် `equality` (`==` နှင့် `!=`) ကို စစ်ဆေးရန်အတွက် အသင့်ပါရှိပြီးသား `comparable` constraint ကို အသုံးပြုနိုင်သည်။ `any` constraint သည် အရာအားလုံးကို လက်ခံသော်လည်း `==` စစ်ဆေးခြင်းကို ခွင့်မပြုပါ။
+
+### ဥပမာ: Slice Index ရှာဖွေခြင်း Function
+
+Slice တစ်ခုထဲတွင် element တစ်ခု ရှိမရှိ ရှာဖွေသော function ကို ရေးကြည့်ကြပါစို့။ ဤနေရာတွင် value များကို နှိုင်းယှဉ်ရန် လိုအပ်သောကြောင့် `comparable` ကို သုံးရပါမည်။
+
+```go
+package main
+
+import "fmt"
+
+// Index သည် slice s ထဲတွင် x ရှိသော index ကို ပြန်ပေးသည်။ မရှိလျှင် -1 ပြန်ပေးသည်။
+// T သည် comparable ဖြစ်ရမည် (ဆိုလိုသည်မှာ == နှင့် != ကို support လုပ်ရမည်)
+func Index[T comparable](s []T, x T) int {
+    for i, v := range s {
+        // v နှင့် x ကို နှိုင်းယှဉ်နိုင်သည်
+        if v == x {
+            return i
+        }
+    }
+    return -1
+}
+
+func main() {
+    // Int slice
+    si := []int{10, 20, 15, -10}
+    fmt.Println(Index(si, 15)) // Output: 2
+
+    // String slice
+    ss := []string{"foo", "bar", "baz"}
+    fmt.Println(Index(ss, "hello")) // Output: -1
+}
+```
+
+ဤ function သည် `int`, `string`, `bool`, `pointer` စသည့် `comparable` ဖြစ်သော မည်သည့် type နှင့်မဆို အလုပ်လုပ်သည်။

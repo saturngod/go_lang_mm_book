@@ -137,3 +137,203 @@ func main() {
 ```
 
 ဤ code တွင် `main` function သည် `wg.Wait()` နေရာတွင် worker goroutines ၃ ခုလုံး `wg.Done()` ကို ခေါ်ပြီးသည်အထိ စောင့်ဆိုင်းနေမည်ဖြစ်သောကြောင့် worker များအားလုံး၏ output များကို စနစ်တကျ မြင်တွေ့ရမည်ဖြစ်သည်။
+
+---
+
+---
+
+## Race Conditions နှင့် `sync.Mutex`
+
+Goroutines များစွာက variable တစ်ခုတည်းကို တစ်ပြိုင်နက်တည်း ပြောင်းလဲရန် ကြိုးစားသောအခါ **Race Condition** ဖြစ်ပေါ်တတ်သည်။ ၎င်းသည် program ၏ ရလဒ်ကို မမှန်ကန်စေဘဲ၊ ရှာဖွေရခက်ခဲသော bug များကို ဖြစ်စေသည်။
+
+ဤပြဿနာကို ဖြေရှင်းရန် `sync.Mutex` (Mutual Exclusion lock) ကို အသုံးပြုသည်။ `Mutex` သည် ကုဒ်၏ အစိတ်အပိုင်းတစ်ခုကို တစ်ချိန်တည်းတွင် goroutine တစ်ခုတည်းကသာ လုပ်ဆောင်ခွင့်ရစေရန် lock ချပေးသည်။
+
+### Race Condition ဥပမာ (ပြဿနာ)
+
+အောက်ပါ code တွင် goroutine 1000 ခုက `counter` ကို တိုးရန် ကြိုးစားသည်။ Lock မရှိသောကြောင့် `counter` ၏ တန်ဖိုးသည် 1000 ဖြစ်လာမည် မဟုတ်ပါ။
+
+```go
+var counter = 0
+
+func increment(wg *sync.WaitGroup) {
+    defer wg.Done()
+    counter++ // Race Condition ဖြစ်မည့်နေရာ
+}
+// ရလဒ်: 1000 ထက် လျော့နည်းနေလေ့ရှိသည် (ဥပမာ - 980)
+```
+
+### `sync.Mutex` ဖြင့် ဖြေရှင်းခြင်း
+
+```go
+package main
+
+import (
+    "fmt"
+    "sync"
+)
+
+var (
+    counter = 0
+    mu      sync.Mutex // Mutex ကြေညာခြင်း
+)
+
+func increment(wg *sync.WaitGroup) {
+    defer wg.Done()
+
+    // Critical Section မစမီ Lock ချသည်
+    mu.Lock()
+    counter++
+    // ပြီးဆုံးပါက Unlock ပြန်လုပ်သည်
+    mu.Unlock()
+}
+
+func main() {
+    var wg sync.WaitGroup
+    for i := 0; i < 1000; i++ {
+        wg.Add(1)
+        go increment(&wg)
+    }
+    wg.Wait()
+    fmt.Println("Final Counter:", counter) // Output: 1000 (Correct)
+}
+```
+
+---
+
+## Singleton Pattern (`sync.Once`)
+
+Struct များနှင့် ပတ်သက်၍ အသုံးများသော Design Pattern တစ်ခုမှာ **Singleton Pattern** ဖြစ်သည်။ Singleton ဆိုသည်မှာ Application တစ်ခုလုံးတွင် struct instance တစ်ခုတည်းသာ ရှိစေရန် ကန့်သတ်ထားခြင်းဖြစ်သည်။ Concurrency ပါဝင်သော Application များတွင် Singleton ကို thread-safe ဖြစ်စေရန် `sync` package မှ `Once` ကို အသုံးပြုတည်ဆောက်လေ့ရှိသည်။
+
+```go
+package main
+
+import (
+    "fmt"
+    "sync"
+)
+
+type database struct {
+    connectionString string
+}
+
+var (
+    instance *database
+    once     sync.Once // Thread-safe ဖြစ်စေရန် အသုံးပြုသည်
+)
+
+// GetDatabaseInstance သည် database instance ကို ပြန်ပေးသည်
+// ပထမဆုံးအကြိမ် ခေါ်ချိန်တွင်သာ instance ကို ဖန်တီးပြီး၊ နောက်ပိုင်းတွင် ရှိပြီးသားကိုသာ ပြန်ပေးသည်
+func GetDatabaseInstance() *database {
+    once.Do(func() {
+        fmt.Println("Creating single database instance...")
+        instance = &database{connectionString: "mysql://user:pass@localhost:3306/mydb"}
+    })
+    return instance
+}
+
+func main() {
+    var wg sync.WaitGroup
+
+    // Goroutines များစွာက တပြိုင်နက်တည်း Instance ကို ရယူရန် ကြိုးစားခြင်း
+    for i := 0; i < 10; i++ {
+        wg.Add(1)
+        go func() {
+            defer wg.Done()
+            db := GetDatabaseInstance()
+            // အားလုံးသည် memory address အတူတူကိုသာ ရရှိမည်
+            fmt.Printf("DB Instance Address: %p\n", db)
+        }()
+    }
+    wg.Wait()
+}
+```
+
+`sync.Once` သည် `Do` အတွင်းရှိ function ကို program တစ်ခုလုံးတွင် **တစ်ကြိမ်တည်းသာ** အလုပ်လုပ်စေရန် အာမခံပါသည်။ ထို့ကြောင့် goroutines များစွာက ပြိုင်တူခေါ်လျှင်သော်မှ instance တစ်ခုတည်းသာ ဖန်တီးမည်ဖြစ်ပြီး thread-safe ဖြစ်သည်။
+
+### နောက်ထပ် ဥပမာ: Global Configuration
+
+Database connection သာမက Application ၏ Configuration (ဥပမာ - API Keys, App Settings) များကို load လုပ်ရာတွင်လည်း Singleton Pattern ကို အသုံးပြုလေ့ရှိသည်။
+
+```go
+type Config struct {
+    APIKey    string
+    DebugMode bool
+}
+
+var (
+    configInstance *Config
+    configOnce     sync.Once
+)
+
+func GetConfig() *Config {
+    configOnce.Do(func() {
+        configInstance = &Config{
+            APIKey:    "AABBCC123",
+            DebugMode: true,
+        }
+    })
+    return configInstance
+}
+```
+
+**သတိပြုရန်:** အထက်ပါ Code တွင် `APIKey` နှင့် `DebugMode` သည် Public fields (အကြီးဖြင့်စထားသည်) ဖြစ်သောကြောင့် အပြင်မှ တိုက်ရိုက် ပြင်ဆင်နိုင်သည်။
+
+```go
+cfg := GetConfig()
+cfg.DebugMode = false // ဤသို့ပြင်လိုက်ပါက Application တစ်ခုလုံးမှ Config ပြောင်းလဲသွားမည်
+```
+
+ဤကဲ့သို့ မလိုလားအပ်သော ပြောင်းလဲမှုများကို ကာကွယ်ရန် **Read-Only Singleton** ပုံစံကို ပြောင်းလဲအသုံးပြုသင့်သည်။
+
+### Safe Global Configuration (Read-Only)
+
+Field များကို private (အသေးဖြင့်စ) အဖြစ်ပြောင်းပြီး၊ တန်ဖိုးယူရန် **Getter methods** များကိုသာ ထုတ်ပေးသင့်သည်။
+
+```go
+package main
+
+import (
+    "fmt"
+    "sync"
+)
+
+type Config struct {
+    apiKey    string // Private field (ပြင်ခွင့်မပေးပါ)
+    debugMode bool   // Private field
+}
+
+var (
+    safeConfigInstance *Config
+    safeConfigOnce     sync.Once
+)
+
+// Getter Method for APIKey
+func (c *Config) APIKey() string {
+    return c.apiKey
+}
+
+// Getter Method for DebugMode
+func (c *Config) DebugMode() bool {
+    return c.debugMode
+}
+
+func GetSafeConfig() *Config {
+    safeConfigOnce.Do(func() {
+        fmt.Println("Loading safe configuration...")
+        safeConfigInstance = &Config{
+            apiKey:    "AABBCC123",
+            debugMode: true,
+        }
+    })
+    return safeConfigInstance
+}
+
+func main() {
+    cfg := GetSafeConfig()
+    
+    // Method မှတဆင့် တန်ဖိုးကို ရယူသဖြင့် လုံခြုံမှုရှိသည်
+    fmt.Println("API Key:", cfg.APIKey())
+
+    // cfg.apiKey = "NewKey" // Error: field သည် private ဖြစ်သောကြောင့် ပြင်၍မရပါ
+}
+```

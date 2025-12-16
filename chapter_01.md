@@ -1,6 +1,6 @@
 # အခန်း ၁: Go ဘာသာစကား မိတ်ဆက်
 
-Go (Golang ဟုလည်း ခေါ်ကြသည်) သည် Google မှ Robert Griesemer, Rob Pike, နှင့် Ken Thompson တို့က ၂၀၀၉ ခုနှစ်တွင် စတင်ဖန်တီးခဲ့သော open-source programming language တစ်ခုဖြစ်သည်။ Go သည် ရိုးရှင်းမှု (simplicity), စွမ်းဆောင်ရည်မြင့်မားမှု (high performance), နှင့် concurrency (တစ်ပြိုင်နက်တည်း အလုပ်များစွာ လုပ်ဆောင်နိုင်မှု) တို့ကို အဓိကထား၍ ဒီဇိုင်းထုတ်ထားပါသည်။
+Go (Golang ဟုလည်း ခေါ်ကြသည်) သည် Google မှ Robert Griesemer, Rob Pike, နှင့် Ken Thompson တို့က ၂၀၀၇ ခုနှစ်တွင် စတင်ရေးဆွဲခဲ့ပြီး ၂၀၀၉ ခုနှစ်တွင် အများပြည်သူသို့ မိတ်ဆက်ခဲ့သော open-source programming language တစ်ခုဖြစ်သည်။ Go သည် ရိုးရှင်းမှု (simplicity), စွမ်းဆောင်ရည်မြင့်မားမှု (high performance), နှင့် concurrency (တစ်ပြိုင်နက်တည်း အလုပ်များစွာ လုပ်ဆောင်နိုင်မှု) တို့ကို အဓိကထား၍ ဒီဇိုင်းထုတ်ထားပါသည်။
 
 ---
 

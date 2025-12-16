@@ -10,6 +10,7 @@ Programming language တစ်ခုကို သင်ယူရာတွင် 
 
 *   **The Go Website (go.dev):** Go ၏ တရားဝင် website ဖြစ်ပြီး documentation, tutorials, နှင့် standard library reference များအတွက် အဓိကနေရာဖြစ်သည်။
 *   **The Go Blog (go.dev/blog):** Go team မှ တရားဝင်ရေးသားသော blog ဖြစ်ပြီး language updates, best practices, နှင့် case studies များကို ဖတ်ရှုနိုင်သည်။
+*   **Effective Go (go.dev/doc/effective_go):** Go language ကို idiomatic (Go ဆန်ဆန်) ဖြစ်အောင် မည်သို့ရေးသားရမည်ကို လမ်းညွှန်ထားသော မဖြစ်မနေ ဖတ်ရှုသင့်သည့် စာတမ်းဖြစ်သည်။
 *   **Go Playground (go.dev/play):** Go code များကို browser ထဲမှာပင် တိုက်ရိုက် run ကြည့်နိုင်သော online editor ဖြစ်သည်။ Code snippet များကို အလွယ်တကူ share ရန် အလွန်အသုံးဝင်သည်။
 *   **Gophers Slack:** ကမ္ဘာတစ်ဝှမ်းမှ Go developer များ စုဝေးရာ Slack workspace ဖြစ်သည်။ မေးခွန်းများမေးရန်နှင့် ဆွေးနွေးမှုများတွင် ပါဝင်ရန် အကောင်းဆုံးနေရာတစ်ခုဖြစ်သည်။
 *   **Reddit (r/golang):** Go နှင့်ပတ်သက်သော သတင်းများ၊ ဆွေးနွေးမှုများ၊ နှင့် project showcases များအတွက် တက်ကြွသော subreddit တစ်ခုဖြစ်သည်။
@@ -42,6 +43,9 @@ Standard library သည် အစွမ်းထက်သော်လည်း�
 
 သင်၏ Go ကျွမ်းကျင်မှုကို နောက်တစ်ဆင့်သို့ တက်လှမ်းရန်အတွက် အောက်ပါတို့ကို ဆက်လက်လုပ်ဆောင်သင့်သည်။
 
+*   **Standard Tools များကို အသုံးပြုပါ:**
+    *   `go fmt`: Code များကို standard format အတိုင်း အလိုအလျောက် ပြင်ဆင်ပေးသည်။ Editor တိုင်းတွင် save လုပ်လျှင် run အောင် setup လုပ်ထားသင့်သည်။
+    *   `go vet`: Code တွင် ဖြစ်နိုင်ခြေရှိသော အမှားများ (bugs) ကို static analysis ဖြင့် ရှာဖွေပေးသည်။
 *   **Project များ ပိုမိုတည်ဆောက်ပါ:** သင်ယူခဲ့သော အသိပညာများကို လက်တွေ့အသုံးချရန် အကောင်းဆုံးနည်းလမ်းမှာ project များ တည်ဆောက်ခြင်းဖြစ်သည်။ ဥပမာ-
     *   Command-Line Interface (CLI) tool တစ်ခု။
     *   Database ပါဝင်သော ပိုမိုရှုပ်ထွေးသည့် REST API တစ်ခု။

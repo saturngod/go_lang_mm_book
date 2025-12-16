@@ -118,6 +118,56 @@ func main() {
 
 ---
 
+## `init()` Function (Initialization)
+
+`init()` function သည် အထူး function တစ်ခုဖြစ်ပြီး package တစ်ခု initialize လုပ်ရာတွင် အသုံးပြုသည်။ `main()` function မစလုပ်မီ Go runtime က `init()` ကို အလိုအလျောက် ခေါ်ယူပေးသည်။
+
+*   Parameter နှင့် Return value မရှိရပါ။
+*   Package တစ်ခုတွင် `init()` function တစ်ခုထက်ပို၍ ရှိနိုင်သည် (သို့သော် တစ်ခုသာထားရန် အကြံပြုသည်)။
+*   အဓိကအားဖြင့် setup variable များသတ်မှတ်ရန်၊ database connection အစပျိုးရန် သို့မဟုတ် registry များတွင် register လုပ်ရန် အသုံးပြုသည်။
+
+```go
+package main
+
+import "fmt"
+
+var config string
+
+// main မတိုင်မီ အလုပ်လုပ်သည်
+func init() {
+    config = "LOADED"
+    fmt.Println("Initializing...")
+}
+
+func main() {
+    fmt.Println("Main started with config:", config)
+}
+
+// Output:
+// Initializing...
+// Main started with config: LOADED
+```
+
+---
+
+## Circular Dependencies (သတိပြုရန်)
+
+Go တွင် Package A က Package B ကို import လုပ်ပြီး၊ Package B က Package A ကို ပြန်လည် import လုပ်ခြင်း (Circular Dependency) ကို **ခွင့်မပြုပါ**။ Compiler error တက်ပါလိမ့်မည်။
+
+```mermaid
+graph LR
+    A[Package A] -- imports --> B[Package B]
+    B -- imports --> A
+    style A fill:#ffcccc,stroke:#333,stroke-width:2px
+    style B fill:#ffcccc,stroke:#333,stroke-width:2px
+```
+
+**ဖြေရှင်းနည်း:**
+1.  Shared code များကို Package C (Third package) အဖြစ် ခွဲထုတ်ပြီး A နှင့် B နှစ်ခုလုံးက C ကို import လုပ်ပါ။
+2.  Package structure ကို ပြန်လည်သုံးသပ်ပြီး design ပြောင်းလဲပါ။
+
+---
+
 ## Go Modules ကို အသုံးပြု၍ Dependencies များကို စီမံခန့်ခွဲခြင်း
 
 **Go Modules** သည် Go project များ၏ dependencies (အခြား packages များအပေါ် မှီခိုမှု) များကို စီမံခန့်ခွဲသည့် စနစ်ဖြစ်သည်။ Project တစ်ခုကို module အဖြစ် သတ်မှတ်လိုက်သည်နှင့် Go က လိုအပ်သော packages များကို download လုပ်ခြင်း၊ version များကို မှတ်သားခြင်းတို့ကို အလိုအလျောက် ပြုလုပ်ပေးသည်။

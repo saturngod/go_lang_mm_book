@@ -12,7 +12,30 @@ Go တွင် concurrent programming နှင့် network applications မ�
 2.  **Timeouts/Deadlines:** Operation တစ်ခုကို အချိန်အကန့်အသတ်တစ်ခုအတွင်း ပြီးမြောက်ရန် သတ်မှတ်ပြီး၊ အချိန်ကျော်လွန်ပါက အလိုအလျောက် cancel လုပ်ခြင်း။
 3.  **Request-scoped Values:** Request တစ်ခုနှင့်သာ သက်ဆိုင်သော data (e.g., request ID, user token) များကို function call chain တစ်လျှောက် လက်ဆင့်ကမ်း သယ်ဆောင်သွားခြင်း။
 
+> [!TIP]
+> **Best Practice:** Google ၏ အဆိုအရ `context.Context` ကို function ၏ ပထမဆုံး argument အဖြစ်သာ ထားရှိသင့်သည်။
+> ```go
+> func DoSomething(ctx context.Context, arg string) error { ... }
+> ```
+> Struct များထဲတွင် Context ကို သိမ်းဆည်းခြင်းမပြုသင့်ပါ။
+
 `Context` သည် immutable ဖြစ်သည်။ `context` အသစ်တစ်ခုကို ဖန်တီးလိုပါက ရှိပြီးသား parent context မှ child context အသစ်တစ်ခုကို ထုတ်ယူ (derive) ရသည်။
+
+
+
+---
+
+## Context ဖန်တီးခြင်း
+
+Context empty ဖြစ်နေသောနေရာ (Root of the context tree) တွင် စတင်အသုံးပြုရန် function နှစ်ခုရှိသည်။
+
+1.  `context.Background()`:
+    *   အသုံးအများဆုံးဖြစ်သည်။
+    *   Main functional, init function, tests, နှင့် incoming requests များ၏ top-level တွင် အသုံးပြုသည်။
+
+2.  `context.TODO()`:
+    *   မည်သည့် context ကို သုံးရမည်မသိသေးချိန်၊ သို့မဟုတ် code ကို မပြီးပြတ်သေးချိန် (work in progress) တွင် ယာယီအသုံးပြုသည်။
+    *   `nil` context ကို ဘယ်တော့မှ မသုံးသင့်ပါ။
 
 ---
 

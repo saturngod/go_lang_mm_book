@@ -52,6 +52,27 @@ func (ll *LinkedList) Append(data int) {
 	current.Next = newNode
 }
 
+// DeleteWithValue method သည် ပထမဆုံးတွေ့ရသော value ကို list မှ ဖျက်ပစ်သည်
+func (ll *LinkedList) DeleteWithValue(value int) {
+	if ll.Head == nil {
+		return
+	}
+	// Head node ကိုယ်တိုင်က ဖျက်ရမည့် value ဖြစ်ပါက
+	if ll.Head.Data == value {
+		ll.Head = ll.Head.Next
+		return
+	}
+	// List ထဲတွင် ရှာဖွေပြီး ဖျက်ခြင်း
+	current := ll.Head
+	for current.Next != nil {
+		if current.Next.Data == value {
+			current.Next = current.Next.Next // Bypass the node
+			return
+		}
+		current = current.Next
+	}
+}
+
 func main() {
 	list := LinkedList{}
 	list.Append(10)
@@ -165,6 +186,19 @@ func (n *TreeNode) Insert(value int) {
 			n.Right.Insert(value)
 		}
 	}
+}
+
+// Search method သည် tree ထဲတွင် value ရှိ/မရှိ ရှာဖွေပေးသည်
+func (n *TreeNode) Search(value int) bool {
+	if n == nil {
+		return false
+	}
+	if value < n.Value {
+		return n.Left.Search(value)
+	} else if value > n.Value {
+		return n.Right.Search(value)
+	}
+	return true // value == n.Value
 }
 ```
 

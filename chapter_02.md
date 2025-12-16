@@ -18,6 +18,8 @@ go version
 
 `go version go1.xx.x` ကဲ့သို့သော စာကြောင်းကို မြင်ရပါက Go ကို အောင်မြင်စွာ install ပြုလုပ်ပြီးဖြစ်ပါသည်။
 
+> **Note:** အကယ်၍ `command not found` ဟုပြနေပါက သင်၏ terminal ကို ပိတ်ပြီး ပြန်ဖွင့်ပါ (restart)၊ သို့မဟုတ် log out လုပ်ပြီး log in ပြန်ဝင်ကြည့်ပါ။
+
 ---
 
 ## Workspace နှင့် GOPATH ကို နားလည်ခြင်း
@@ -36,6 +38,7 @@ Go code များကို ရေးသားရန်အတွက် text ed
 2.  VS Code ကိုဖွင့်ပြီး Extensions view (Ctrl+Shift+X) သို့ သွားပါ။
 3.  Search bar တွင် `Go` ဟု ရိုက်ရှာပြီး **Go Team at Google** မှ ထုတ်ဝေသော extension ကို install ပြုလုပ်ပါ။
 4.  ၎င်း extension က code completion, debugging, testing နှင့် အခြားသော အသုံးဝင်သည့် feature များစွာကို ထောက်ပံ့ပေးပါလိမ့်မည်။
+5.  Extension ကို Install ပြုလုပ်ပြီးနောက်ညာဘက်အောက်ထောင့်တွင် Analysis Tools များ install လုပ်ရန် message box ပေါ်လာပါက **Install All** ကို နှိပ်၍ install လုပ်ပေးပါ။
 
 ---
 
