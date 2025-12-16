@@ -13,7 +13,7 @@ Project တစ်ခုကို မစတင်မီ ဘာတွေလုပ�
 **1. Project ၏ ရည်ရွယ်ချက်:**
 *   To-Do tasks များကို စီမံခန့်ခွဲရန်အတွက် RESTful API တစ်ခု တည်ဆောက်ရန်။
 
-**2. အဓိက Features (สำหรับ Part 1):**
+**2. အဓိက Features (For Part 1):**
 *   Task အားလုံးကို list အဖြစ် ကြည့်ရှုနိုင်ခြင်း။
 *   Task အသစ်တစ်ခု ဖန်တီးနိုင်ခြင်း။
 
@@ -66,7 +66,7 @@ my-todo-app/
 
 ## HTTP Handlers များ ရေးသားခြင်း
 
-HTTP Handler ဆိုသည်မှာ নির্দিষ্ট URL path သို့ ရောက်ရှိလာသော HTTP request များကို လက်ခံပြီး response ပြန်ပေးရန် တာဝန်ရှိသော function ဖြစ်သည်။
+HTTP Handler ဆိုသည်မှာ specific URL path သို့ ရောက်ရှိလာသော HTTP request များကို လက်ခံပြီး response ပြန်ပေးရန် တာဝန်ရှိသော function ဖြစ်သည်။
 
 ဤ project ၏ ပထမပိုင်းတွင် data များကို database တွင် မသိမ်းဆည်းဘဲ၊ program run နေစဉ်အတွင်း memory ထဲတွင်သာ သိမ်းဆည်းထားရန် in-memory slice တစ်ခုကို အသုံးပြုပါမည်။
 
