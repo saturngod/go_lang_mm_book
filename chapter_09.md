@@ -18,7 +18,7 @@ import (
     "math"
 )
 
-// Shape interface သည် Area() method တစ်ခုရှိရမည်ဟု သတ်မှတ်သည်
+// Shape interface သည် Area()  method တစ်ခုရှိရမည်ဟု သတ်မှတ်သည်
 type Shape interface {
     Area() float64
 }

@@ -13,7 +13,7 @@ Project တစ်ခုကို မစတင်မီ ဘာတွေလုပ�
 **1. Project ၏ ရည်ရွယ်ချက်:**
 *   To-Do tasks များကို စီမံခန့်ခွဲရန်အတွက် RESTful API တစ်ခု တည်ဆောက်ရန်။
 
-**2. အဓိက Features (For Part 1):**
+**2. အဓိက Features (Part 1):**
 *   Task အားလုံးကို list အဖြစ် ကြည့်ရှုနိုင်ခြင်း။
 *   Task အသစ်တစ်ခု ဖန်တီးနိုင်ခြင်း။
 
@@ -185,4 +185,4 @@ func main() {
 ယခု `main.go` file ကို `go run main.go` ဖြင့် run ပြီးနောက် `curl` သို့မဟုတ် Postman ကဲ့သို့သော tool များကို အသုံးပြု၍ API ကို စမ်းသပ်နိုင်ပြီဖြစ်သည်။
 
 *   **Get all tasks:** `curl http://localhost:8080/tasks`
-*   **Create a new task:** `curl -X POST -d '{"title":"Learn Go", "completed":false}' http://localhost:8080/tasks`
+*   **Create a new task:** `curl -X POST -H "Content-Type: application/json" -d '{"title":"Learn Go", "completed":false}' http://localhost:8080/tasks`

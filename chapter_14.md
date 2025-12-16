@@ -75,11 +75,11 @@ import (
 )
 
 func readFile() error {
-    _, err := os.Open("non-existent-file.txt")
+    file, err := os.Open("non-existent-file.txt")
     if err != nil {
-        // မူလ os.PathError ကို wrap လုပ်ခြင်း
         return fmt.Errorf("failed to read file: %w", err)
     }
+    defer file.Close()
     return nil
 }
 ```
