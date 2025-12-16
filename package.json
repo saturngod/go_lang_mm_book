@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "scripts": {
+    "build:print": "node scripts/build-print.js"
+  }
+}

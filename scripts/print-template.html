@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="my">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mermaid@11.12.0/dist/mermaid.min.css">
+    <title>Golang</title>
+    <style>
+        :root {
+            --page-margin: 1in;
+            --text: #111;
+            --muted: #666;
+            --border: #ddd;
+            --bg: #fff;
+            --code-bg: #f6f8fa;
+            --font: "Myanmar Sangam MN", ui-serif, "Iowan Old Style", "Apple Garamond", "Palatino Linotype",
+                Palatino, "Times New Roman", Times, serif;
+            --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                "Liberation Mono", "Courier New", monospace;
+            --line-height: 2rem;
+        }
+
+        html {
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        body {
+            margin: 0;
+            font: 11pt/1.5 var(--font);
+            line-height: var(--line-height);
+        }
+
+        @page {
+            margin: var(--page-margin);
+        }
+
+        @page :first {
+
+            /* Hide page number on title page when supported. */
+            @bottom-right {
+                content: "";
+            }
+        }
+
+        @page {
+
+            /* CSS Paged Media margin boxes (supported by some PDF engines). */
+            @bottom-right {
+                content: "Page " counter(page);
+                font: 10pt/1 var(--font);
+                color: var(--muted);
+            }
+        }
+
+        @media screen {
+            body {
+                padding: var(--page-margin);
+            }
+        }
+
+        .title-page {
+            break-after: page;
+            page-break-after: always;
+            text-align: center;
+        }
+
+        .title-page h1 {
+            font: 38pt/1.1 var(--font);
+            margin: 35vh 0 0;
+        }
+
+        .title-page .subtitle {
+            margin-top: 10pt;
+            color: var(--muted);
+            font-size: 12pt;
+        }
+
+        .content h1 {
+            break-before: page;
+            page-break-before: always;
+            margin: 0 0 12pt;
+            padding-top: 12px;
+        }
+
+        .content h1:first-of-type {
+            break-before: auto;
+            page-break-before: auto;
+        }
+
+        h2,
+        h3,
+        h4 {
+            break-after: avoid-page;
+            page-break-after: avoid;
+            margin: 18pt 0 8pt;
+        }
+
+        p,
+        li {
+            orphans: 3;
+            widows: 3;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 14pt 0;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        pre,
+        blockquote,
+        table,
+        img {
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        pre {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 6pt;
+            padding: 10pt 12pt;
+            margin: 10pt 0;
+            font: 9.5pt/1.45 var(--mono);
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+        }
+
+        code {
+            font-family: var(--mono);
+            font-size: 0.95em;
+        }
+
+        :not(pre)>code {
+            background: rgba(0, 0, 0, 0.04);
+            padding: 0.1em 0.25em;
+            border-radius: 4pt;
+        }
+
+        blockquote {
+            margin: 10pt 0;
+            padding: 0 0 0 10pt;
+            border-left: 3pt solid var(--border);
+            color: #333;
+        }
+
+        ul,
+        ol {
+            padding-left: 1.2em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10pt 0;
+        }
+
+        th,
+        td {
+            border: 1px solid var(--border);
+            padding: 6pt 8pt;
+            vertical-align: top;
+        }
+
+        th {
+            background: rgba(0, 0, 0, 0.03);
+        }
+    </style>
+  </head>
+  <body>
+    <section class="title-page">
+      <h1>Golang</h1>
+      <div class="subtitle">By Gemini 3</div>
+    </section>
+    <article class="content">
+      <!--MARKDOWN_CONTENT-->
+    </article>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.12.0/dist/mermaid.min.js"></script>
+    <script>
+        // Convert all language-mermaid code blocks to mermaid class
+        document.querySelectorAll('code.lang-mermaid').forEach(code => {
+            const pre = code.parentElement;
+            pre.classList.add('mermaid');
+            // Remove the code wrapper if needed
+            pre.innerHTML = code.textContent;
+        });
+    </script>
+    <script>hljs.highlightAll();</script>
+  </body>
+</html>
+
