@@ -79,6 +79,56 @@ graph TD
     end
 ```
 
+### `make()` Function အသုံးပြု၍ Slice တည်ဆောက်ခြင်း
+
+Slice များကို `make()` function အသုံးပြု၍လည်း တည်ဆောက်နိုင်သည်။ ၎င်းသည် slice တစ်ခုကို ဖန်တီးရာတွင် `length` နှင့် `capacity` ကို ကြိုတင်သတ်မှတ်ထားလိုသည့်အခါ အလွန်အသုံးဝင်သည်။
+
+```go
+// make([]Type, len, cap)
+// Length 5 နှင့် Capacity 10 ရှိသော slice တစ်ခုကို ဖန်တီးခြင်း
+scores := make([]int, 5, 10) 
+
+names := make([]string, 5) // len=5, cap=5
+```
+
+**Length vs Capacity: အဆောက်အဦး ဥပမာ (Analogy)**
+
+**အဆောက်အဦးတစ်ခုတွင် အခန်း ၁၀ ခန်းရှိသည် (Capacity = 10)**
+- သို့သော် ပထမ ၅ ခန်းကိုသာ ပရိဘောဂများထည့်သွင်းပြီး အသုံးပြုရန် အဆင်သင့်ပြင်ထားသည် (Length = 5)
+- ကျန်ရှိသော ၅ ခန်းသည် အဆောက်အဦးထဲတွင် ရှိနေသော်လည်း "ဖွင့်လှစ်ခြင်း" မရှိသေးပါ (Reserved space)
+
+**Visual representation:**
+```text
+[0] [1] [2] [3] [4] | [5] [6] [7] [8] [9]
+ 0   0   0   0   0  |  ?   ?   ?   ?   ?
+├─────────────────┤  ├─────────────────┤
+   Length = 5          Reserved space
+```
+
+**Example Code:**
+
+```go
+scores := make([]int, 5, 10)
+
+// 1. Initialized ဖြစ်ပြီးသား ပထမ ၅ ခန်း (Index 0-4) ကို ချက်ချင်းအသုံးပြုနိုင်သည်
+scores[0] = 95
+scores[1] = 87
+scores[4] = 92
+// scores[5] = 100 // Error: index out of range (အခန်းမဖွင့်ရသေးသောကြောင့် သုံးမရပါ)
+
+fmt.Println(scores[0])  // Output: 95
+fmt.Println(scores)     // Output: [95 87 0 0 92]
+
+// 2. append() ကိုသုံးမှသာ နောက်ထပ်အခန်းများကို တစ်ခန်းချင်းစီ ထပ်ဖွင့်နိုင်သည်
+scores = append(scores, 100)  // ယခုအခါ length သည် 6 ဖြစ်သွားပြီ (Index 5 ပွင့်သွားပြီ)
+scores = append(scores, 200)  // ယခုအခါ length သည် 7 ဖြစ်သွားပြီ (Index 6 ပွင့်သွားပြီ)
+
+fmt.Println(scores)       // Output: [95 87 0 0 92 100 200]
+fmt.Println(len(scores))  // 7 (ဖွင့်ပြီးသားအခန်း)
+fmt.Println(cap(scores))  // 10 (ရှိရင်းစွဲအခန်း)
+```
+
+
 ### `append` ဖြင့် Slice ကို Element ထပ်ထည့်ခြင်း
 
 `append` function သည် slice ၏ အရေးကြီးဆုံး အစိတ်အပိုင်းဖြစ်သည်။ ၎င်း၏ အလုပ်လုပ်ပုံကို `capacity` နှင့် ဆက်စပ်၍ နားလည်ရန် အရေးကြီးသည်။
@@ -142,10 +192,8 @@ func main() {
 
     // 3. Append within Capacity
     mySlice = append(mySlice, 70)
-    fmt.Println("
---- After appending 70 (within capacity) ---")
-    fmt.Printf("Slice: %v, Length: %d, Capacity: %d
-", mySlice, len(mySlice), cap(mySlice))
+    fmt.Println("\n--- After appending 70 (within capacity) ---")
+    fmt.Printf("Slice: %v, Length: %d, Capacity: %d\n", mySlice, len(mySlice), cap(mySlice))
     // Underlying array ပါ ပြောင်းလဲသွားသည်ကို သတိပြုပါ
     fmt.Println("Underlying Array is now:", numbersArray) // Output: [10 20 30 40 70 60]
 
@@ -154,11 +202,9 @@ func main() {
     mySlice = append(mySlice, 80) // cap ပြည့်သွားပြီ
     mySlice = append(mySlice, 90) // cap ကျော်လွန်သွားပြီ
     
-    fmt.Println("
---- After appending 80 and 90 (exceeding capacity) ---")
+    fmt.Println("\n--- After appending 80 and 90 (exceeding capacity) ---")
     // Go က array အသစ်တစ်ခု (size 8) ကို တည်ဆောက်ပြီး data တွေ copy ကူးထည့်ပါမည်။
-    fmt.Printf("Slice: %v, Length: %d, Capacity: %d
-", mySlice, len(mySlice), cap(mySlice))
+    fmt.Printf("Slice: %v, Length: %d, Capacity: %d\n", mySlice, len(mySlice), cap(mySlice))
     
     // array အသစ်ကို ညွှန်းဆိုသွားသောကြောင့် မူလ array ကို ထိခိုက်တော့မည် မဟုတ်ပါ။
     fmt.Println("Underlying Array remains unchanged:", numbersArray)
@@ -221,8 +267,7 @@ func main() {
         "Bob":     72,
     }
 
-    fmt.Println("
-Unordered Iteration:")
+    fmt.Println("\nUnordered Iteration:")
     // ဤ loop ကို run တိုင်း ရလဒ်အစီအစဉ် ပြောင်းလဲနိုင်သည်
     for name, score := range testScores {
         fmt.Printf("Name: %s, Score: %d", name, score)
