@@ -193,3 +193,87 @@ func main() {
     fmt.Println("Full Info:", emp)
 }
 ```
+
+---
+
+## 4. Constructor Functions
+
+Go တွင် class မရှိသကဲ့သို့ `constructor` ဟူ၍လည်း သီးသန့်မရှိပါ။ သို့သော် struct အသစ်တစ်ခု ဆောက်လုပ်ရာတွင် လွယ်ကူစေရန်နှင့် default value များ သတ်မှတ်ပေးနိုင်ရန် **Factory Pattern** သဘောတရားဖြစ်သည့် Help function များကို ရေးသားလေ့ရှိကြသည်။ 
+
+Convention အရ ထို helper function များကို `New` ဟု အစပြုလေ့ရှိသည်။
+
+```go
+package main
+
+import "fmt"
+
+type Person struct {
+    Name string
+    Age  int
+}
+
+// Constructor function
+// နာမည်ပြောင်းလို့ရသော်လည်း New သို့မဟုတ် NewPerson ဟု ပေးလေ့ရှိကြသည်
+func NewPerson(name string, age int) *Person {
+    // Default logic များကို ဤနေရာတွင် ထည့်သွင်းနိုင်သည်
+    if age < 0 {
+        age = 0
+    }
+    return &Person{
+        Name: name,
+        Age:  age,
+    }
+}
+
+func main() {
+    // Constructor ကို အသုံးပြု၍ struct တည်ဆောက်ခြင်း
+    p := NewPerson("Mg Mg", 25)
+    fmt.Println(p)
+}
+```
+
+---
+
+## 5. Struct Tags
+
+Struct tag များသည် struct field များ၏ metadata (အချက်အလက်အပို) များကို သိမ်းဆည်းပေးထားခြင်းဖြစ်သည်။ ၎င်းတို့ကို `reflection` အသုံးပြု၍ run-time တွင် ဖတ်ရှုအလုပ်လုပ်နိုင်သည်။
+
+အသုံးအများဆုံး ဥပမာမှာ **JSON** data များနှင့် အလုပ်လုပ်ရာတွင် ဖြစ်သည်။
+
+```go
+package main
+
+import (
+    "encoding/json"
+    "fmt"
+)
+
+type Student struct {
+    // JSON သို့ပြောင်းလျှင် "first_name" ဟူသော key ကို သုံးမည်
+    FirstName string `json:"first_name"`
+    
+    // JSON သို့ပြောင်းလျှင် "last_name" ဟူသော key ကို သုံးမည်
+    LastName  string `json:"last_name"`
+    
+    // "omitempty" သည် value မရှိလျှင် (zero-value) JSON ထဲတွင် ထည့်မသွင်းဟု ဆိုလိုသည်
+    Age       int    `json:"age,omitempty"`
+    
+    // "-" သည် ဤ field ကို JSON အဖြစ် မပြောင်းလဲဟု ဆိုလိုသည်
+    Password  string `json:"-"`
+}
+
+func main() {
+    s := Student{
+        FirstName: "Su Su",
+        LastName:  "Hlaing",
+        Password:  "secret123",
+    }
+
+    // Struct မှ JSON သို့ ပြောင်းခြင်း (Marshaling)
+    jsonData, _ := json.Marshal(s)
+    fmt.Println(string(jsonData))
+    // Output: {"first_name":"Su Su","last_name":"Hlaing"}
+    // Age မပါဝင်ခြင်းမှာ 0 (zero-value) ဖြစ်ပြီး omitempty ပါသောကြောင့်ဖြစ်သည်
+    // Password မပါဝင်ခြင်းမှာ "-" သတ်မှတ်ထားသောကြောင့်ဖြစ်သည်
+}
+```
