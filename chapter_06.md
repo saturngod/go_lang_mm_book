@@ -196,52 +196,84 @@ func main() {
 
 ---
 
-## 4. Design Pattern: Singleton
+## 4. Constructor Functions
 
-Struct များနှင့် ပတ်သက်၍ အသုံးများသော Design Pattern တစ်ခုမှာ **Singleton Pattern** ဖြစ်သည်။ Singleton ဆိုသည်မှာ Application တစ်ခုလုံးတွင် struct instance တစ်ခုတည်းသာ ရှိစေရန် ကန့်သတ်ထားခြင်းဖြစ်သည်။ ဥပမာ - Database Connection, Configuration Manager စသည်တို့တွင် သုံးလေ့ရှိသည်။
+Go တွင် class မရှိသကဲ့သို့ `constructor` ဟူ၍လည်း သီးသန့်မရှိပါ။ သို့သော် struct အသစ်တစ်ခု ဆောက်လုပ်ရာတွင် လွယ်ကူစေရန်နှင့် default value များ သတ်မှတ်ပေးနိုင်ရန် **Factory Pattern** သဘောတရားဖြစ်သည့် Help function များကို ရေးသားလေ့ရှိကြသည်။ 
 
-Go တွင် Singleton ကို `sync.Once` အသုံးပြု၍ thread-safe ဖြစ်အောင် တည်ဆောက်လေ့ရှိသည်။
+Convention အရ ထို helper function များကို `New` ဟု အစပြုလေ့ရှိသည်။
+
+```go
+package main
+
+import "fmt"
+
+type Person struct {
+    Name string
+    Age  int
+}
+
+// Constructor function
+// နာမည်ပြောင်းလို့ရသော်လည်း New သို့မဟုတ် NewPerson ဟု ပေးလေ့ရှိကြသည်
+func NewPerson(name string, age int) *Person {
+    // Default logic များကို ဤနေရာတွင် ထည့်သွင်းနိုင်သည်
+    if age < 0 {
+        age = 0
+    }
+    return &Person{
+        Name: name,
+        Age:  age,
+    }
+}
+
+func main() {
+    // Constructor ကို အသုံးပြု၍ struct တည်ဆောက်ခြင်း
+    p := NewPerson("Mg Mg", 25)
+    fmt.Println(p)
+}
+```
+
+---
+
+## 5. Struct Tags
+
+Struct tag များသည် struct field များ၏ metadata (အချက်အလက်အပို) များကို သိမ်းဆည်းပေးထားခြင်းဖြစ်သည်။ ၎င်းတို့ကို `reflection` အသုံးပြု၍ run-time တွင် ဖတ်ရှုအလုပ်လုပ်နိုင်သည်။
+
+အသုံးအများဆုံး ဥပမာမှာ **JSON** data များနှင့် အလုပ်လုပ်ရာတွင် ဖြစ်သည်။
 
 ```go
 package main
 
 import (
+    "encoding/json"
     "fmt"
-    "sync"
 )
 
-// Singleton struct (exported မလုပ်ပါ၊ အပြင်က တိုက်ရိုက်မဆောက်နိုင်အောင်)
-type database struct {
-    connectionString string
-}
-
-var (
-    instance *database
-    once     sync.Once // Thread-safe ဖြစ်စေရန် အသုံးပြုသည်
-)
-
-// GetDatabaseInstance သည် database instance ကို ပြန်ပေးသည်
-// ပထမဆုံးအကြိမ် ခေါ်ချိန်တွင်သာ instance ကို ဖန်တီးပြီး၊ နောက်ပိုင်းတွင် ရှိပြီးသားကိုသာ ပြန်ပေးသည်
-func GetDatabaseInstance() *database {
-    once.Do(func() {
-        fmt.Println("Creating single database instance...")
-        instance = &database{connectionString: "mysql://user:pass@localhost:3306/mydb"}
-    })
-    return instance
+type Student struct {
+    // JSON သို့ပြောင်းလျှင် "first_name" ဟူသော key ကို သုံးမည်
+    FirstName string `json:"first_name"`
+    
+    // JSON သို့ပြောင်းလျှင် "last_name" ဟူသော key ကို သုံးမည်
+    LastName  string `json:"last_name"`
+    
+    // "omitempty" သည် value မရှိလျှင် (zero-value) JSON ထဲတွင် ထည့်မသွင်းဟု ဆိုလိုသည်
+    Age       int    `json:"age,omitempty"`
+    
+    // "-" သည် ဤ field ကို JSON အဖြစ် မပြောင်းလဲဟု ဆိုလိုသည်
+    Password  string `json:"-"`
 }
 
 func main() {
-    db1 := GetDatabaseInstance()
-    fmt.Println("DB1 Connection:", db1.connectionString)
-
-    db2 := GetDatabaseInstance() // "Creating..." ကို ထပ်မပြတော့ပါ
-    fmt.Println("DB2 Connection:", db2.connectionString)
-
-    if db1 == db2 {
-        fmt.Println("db1 and db2 are the same instance.")
+    s := Student{
+        FirstName: "Su Su",
+        LastName:  "Hlaing",
+        Password:  "secret123",
     }
-}
-```
 
-`sync.Once` သည် `Do` အတွင်းရှိ function ကို program တစ်ခုလုံးတွင် **တစ်ကြိမ်တည်းသာ** အလုပ်လုပ်စေရန် အာမခံပါသည်။ ထို့ကြောင့် goroutines များစွာက ပြိုင်တူခေါ်လျှင်သော်မှ instance တစ်ခုတည်းသာ ဖန်တီးမည်ဖြစ်ပြီး thread-safe ဖြစ်သည်။
+    // Struct မှ JSON သို့ ပြောင်းခြင်း (Marshaling)
+    jsonData, _ := json.Marshal(s)
+    fmt.Println(string(jsonData))
+    // Output: {"first_name":"Su Su","last_name":"Hlaing"}
+    // Age မပါဝင်ခြင်းမှာ 0 (zero-value) ဖြစ်ပြီး omitempty ပါသောကြောင့်ဖြစ်သည်
+    // Password မပါဝင်ခြင်းမှာ "-" သတ်မှတ်ထားသောကြောင့်ဖြစ်သည်
+}
 ```

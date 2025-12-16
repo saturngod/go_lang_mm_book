@@ -5,27 +5,18 @@
 ယခုအခန်းတွင် API ကို ပိုမိုစွမ်းဆောင်ရည်ပြည့်ဝအောင် တိုးချဲ့တည်ဆောက်သွားပါမည်။
 
 1.  Task တစ်ခုချင်းစီကို ID ဖြင့် `GET`, `PUT`, `DELETE` လုပ်နိုင်သော endpoints များ ထပ်မံထည့်သွင်းပါမည်။
-2.  Standard `net/http` router ထက် ပိုမိုအစွမ်းထက်သော third-party router ဖြစ်သည့် `gorilla/mux` ကို အသုံးပြု၍ routing ကို ပြန်လည်တည်ဆောက်ပါမည်။
+2.  Go 1.22+ တွင် စတင်မိတ်ဆက်ခဲ့သော **Enhanced `net/http` ServeMux** ကို အသုံးပြု၍ routing ကို ပြန်လည်တည်ဆောက်ပါမည်။
 
 ---
 
-## `gorilla/mux` ကို အသုံးပြုခြင်း
+## Go 1.22+ Standard Library Router
 
-Standard `net/http` router သည် ရိုးရှင်းသော routing များအတွက် ကောင်းမွန်သော်လည်း၊ URL path တွင် variables များ (e.g., `/tasks/{id}`) ပါဝင်လာသည့်အခါ ကိုင်တွယ်ရန် ခက်ခဲပါသည်။
+Go 1.22 မတိုင်မီက၊ URL path parameters (e.g., `/tasks/{id}`) များကို ကိုင်တွယ်ရန် `gorilla/mux` သို့မဟုတ် `chi` ကဲ့သို့သော third-party library များကို အသုံးပြုလေ့ရှိခဲ့သည်။
 
-`gorilla/mux` သည် Go community တွင် အလွန်ရေပန်းစားသော HTTP router တစ်ခုဖြစ်ပြီး အောက်ပါကဲ့သို့သော အစွမ်းထက်သည့် features များ ပါဝင်သည်။
+သို့သော် Go 1.22 တွင် standard `net/http` router သည် သိသိသာသာ အဆင့်မြှင့်တင်မှုများ ပါဝင်လာပြီး၊ external dependencies မလိုဘဲ အောက်ပါတို့ကို လုပ်ဆောင်နိုင်ပြီဖြစ်သည်။
 
-*   URL path variables များကို အလွယ်တကူ parsing လုပ်နိုင်ခြင်း (e.g., `/tasks/{id}`).
-*   HTTP method (`GET`, `POST`, `PUT`, `DELETE`) အလိုက် route များကို သီးခြားသတ်မှတ်နိုင်ခြင်း။
-*   Hostnames, schemes, headers, နှင့် query parameters များပေါ်တွင် အခြေခံ၍ routing ပြုလုပ်နိုင်ခြင်း။
-
-### `gorilla/mux` ကို Install ပြုလုပ်ခြင်း
-
-Terminal တွင် အောက်ပါ command ကို run ၍ `gorilla/mux` package ကို သင်၏ project ထဲသို့ ထည့်သွင်းပါ။
-
-```sh
-go get github.com/gorilla/mux
-```
+*   **Method Matching:** HTTP method (`GET`, `POST` etc.) ကို pattern တွင် တိုက်ရိုက်သတ်မှတ်နိုင်ခြင်း (e.g., `"GET /tasks"`).
+*   **Path Variables:** URL path အတွင်းရှိ dynamic တန်ဖိုးများကို `{name}` ပုံစံဖြင့် ဖမ်းယူနိုင်ခြင်း (e.g., `/tasks/{id}`).
 
 ---
 
@@ -46,7 +37,7 @@ graph TD
 
 ## Code ကို Refactor လုပ်ခြင်း နှင့် Handlers အသစ်များ ရေးသားခြင်း
 
-ယခုအခါ `main.go` file ကို `gorilla/mux` router ကို အသုံးပြုရန်နှင့် endpoints အသစ်များအတွက် handler functions များ ထပ်တိုးရန် ပြန်လည်ပြင်ဆင်ပါမည်။
+အောက်ပါ code သည် Go 1.22 ၏ router feature အသစ်များကို အသုံးပြု၍ ရေးသားထားသော `main.go` ၏ ပြီးပြည့်စုံသော version ဖြစ်သည်။
 
 **`main.go` (Updated Version)**
 
@@ -60,8 +51,6 @@ import (
 	"net/http"
 	"strconv"
 	"sync"
-
-	"github.com/gorilla/mux" // gorilla/mux ကို import လုပ်ခြင်း
 )
 
 type Task struct {
@@ -109,9 +98,9 @@ func createTask(w http.ResponseWriter, r *http.Request) {
 
 // GET /tasks/{id}
 func getTask(w http.ResponseWriter, r *http.Request) {
-	// URL path မှ "id" variable ကို ရယူခြင်း
-	vars := mux.Vars(r)
-	id, err := strconv.Atoi(vars["id"])
+	// Go 1.22: r.PathValue("id") ကို အသုံးပြု၍ path variable ကို ရယူသည်
+	idStr := r.PathValue("id")
+	id, err := strconv.Atoi(idStr)
 	if err != nil {
 		http.Error(w, "Invalid task ID", http.StatusBadRequest)
 		return
@@ -132,8 +121,8 @@ func getTask(w http.ResponseWriter, r *http.Request) {
 
 // PUT /tasks/{id}
 func updateTask(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	id, err := strconv.Atoi(vars["id"])
+	idStr := r.PathValue("id")
+	id, err := strconv.Atoi(idStr)
 	if err != nil {
 		http.Error(w, "Invalid task ID", http.StatusBadRequest)
 		return
@@ -162,8 +151,8 @@ func updateTask(w http.ResponseWriter, r *http.Request) {
 
 // DELETE /tasks/{id}
 func deleteTask(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	id, err := strconv.Atoi(vars["id"])
+	idStr := r.PathValue("id")
+	id, err := strconv.Atoi(idStr)
 	if err != nil {
 		http.Error(w, "Invalid task ID", http.StatusBadRequest)
 		return
@@ -182,28 +171,28 @@ func deleteTask(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	// gorilla/mux router အသစ်တစ်ခု တည်ဆောက်ခြင်း
-	r := mux.NewRouter()
+	// Go 1.22: NewServeMux ကို အသုံးပြုခြင်း
+	mux := http.NewServeMux()
 
-	// Routes များကို router တွင် register လုပ်ခြင်း
-	r.HandleFunc("/tasks", getTasks).Methods(http.MethodGet)
-	r.HandleFunc("/tasks", createTask).Methods(http.MethodPost)
-	r.HandleFunc("/tasks/{id}", getTask).Methods(http.MethodGet)
-	r.HandleFunc("/tasks/{id}", updateTask).Methods(http.MethodPut)
-	r.HandleFunc("/tasks/{id}", deleteTask).Methods(http.MethodDelete)
+	// Pattern တွင် Method နှင့် Path Variable `{id}` ကို ထည့်သွင်းသတ်မှတ်ခြင်း
+	mux.HandleFunc("GET /tasks", getTasks)
+	mux.HandleFunc("POST /tasks", createTask)
+	mux.HandleFunc("GET /tasks/{id}", getTask)
+	mux.HandleFunc("PUT /tasks/{id}", updateTask)
+	mux.HandleFunc("DELETE /tasks/{id}", deleteTask)
 
 	fmt.Println("Starting REST API server on http://localhost:8080")
-	// http.ListenAndServe တွင် router ကို pass လုပ်သည်
-	if err := http.ListenAndServe(":8080", r); err != nil {
+	// http.ListenAndServe တွင် mux ကို pass လုပ်သည်
+	if err := http.ListenAndServe(":8080", mux); err != nil {
 		log.Fatalf("Could not start server: %s\n", err.Error())
 	}
 }
 ```
 
-**Code ရှင်းလင်းချက်:**
-*   `main` function တွင် `mux.NewRouter()` ဖြင့် router အသစ်တစ်ခု တည်ဆောက်သည်။
-*   `r.HandleFunc()` ကို အသုံးပြု၍ URL path နှင့် handler function ကို ချိတ်ဆက်သည်။ `.Methods()` ကို ဆက်လက်အသုံးပြုခြင်းဖြင့် ထို path အတွက် သီးခြား HTTP method ကို သတ်မှတ်နိုင်သည်။
-*   `getTask`, `updateTask`, `deleteTask` functions များတွင် `mux.Vars(r)` ကို အသုံးပြု၍ URL path မှ `{id}` variable ကို ရယူပြီး `strconv.Atoi` ဖြင့် integer သို့ ပြောင်းလဲသည်။
-*   `http.ListenAndServe` ၏ ဒုတိယ argument တွင် `nil` အစား ကျွန်ုပ်တို့ ဖန်တီးထားသော `r` (router) ကို ထည့်သွင်းပေးရသည်။
+**Code ရှင်းလင်းချက် (Go 1.22 Features):**
 
-ယခုအခါ ကျွန်ုပ်တို့၏ API သည် CRUD (Create, Read, Update, Delete) operations အားလုံးကို လုပ်ဆောင်နိုင်ပြီဖြစ်သည်။
+1.  **`http.NewServeMux()`:** Standard library ၏ multiplexer အသစ်ကို အသုံးပြုသည်။
+2.  **Strict Routing Patterns:** `mux.HandleFunc` တွင် `"GET /tasks"` သို့မဟုတ် `"DELETE /tasks/{id}"` ကဲ့သို့ Method နှင့် Path ကို တိုက်ရိုက်တွဲလျက် သတ်မှတ်နိုင်သည်။ HTTP Method မှားယွင်းပါက `405 Method Not Allowed` ကို အလိုအလျောက် ပြန်ပေးသည်။
+3.  **`r.PathValue("id")`:** Request object မှ `PathValue` methood ကို ခေါ်ယူ၍ URL path variable (`{id}`) ၏ တန်ဖိုးကို အလွယ်တကူ ရယူနိုင်သည်။
+
+ယခုအခါ Third-party library များကို အားကိုးစရာမလိုဘဲ Standard Library သက်သက်ဖြင့် Modern REST API တစ်ခုကို တည်ဆောက်နိုင်ပြီဖြစ်သည်။

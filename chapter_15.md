@@ -46,6 +46,7 @@ package main
 
 import (
     "fmt"
+    "log"
     "os"
 )
 
@@ -54,14 +55,14 @@ func main() {
     data := []byte("Hello from Go standard library!")
     err := os.WriteFile("test.txt", data, 0644)
     if err != nil {
-        panic(err)
+        log.Fatal(err)
     }
     fmt.Println("Successfully wrote to test.txt")
 
     // File မှ ဖတ်ရှုခြင်း
     readData, err := os.ReadFile("test.txt")
     if err != nil {
-        panic(err)
+        log.Fatal(err)
     }
     fmt.Println("Read from test.txt:", string(readData))
 }
@@ -105,7 +106,67 @@ func main() {
 }
 ```
 
-**သတိပြုရန်:** `//go:embed` နှင့် variable ကြေညာချက်ကြားတွင် space မရှိရပါ။
+> **သတိပြုရန်:** `//` နှင့် `go:embed` ကြားတွင် space မရှိရပါ (ဥပမာ `// go:embed` ဟု မရေးရပါ)။ ထို့ပြင် directive နှင့် variable ကြားတွင် empty line မရှိရပါ။
+
+---
+
+---
+
+## `log` Package
+
+`log` package သည် program ၏ status message များနှင့် error များကို timestamp နှင့်တကွ မှတ်တမ်းတင်ရန် (print ထုတ်ရန်) အသုံးပြုသည်။ Production code များတွင် `fmt.Println` ထက် `log` package ကို ပိုမိုအသုံးပြုသင့်သည်။
+
+*   `log.Println()`: Standard output သို့ timestamp နှင့်တကွ စာသားကို print ထုတ်သည်။
+*   `log.Printf()`: Format specifier များကို အသုံးပြု၍ print ထုတ်သည်။
+*   `log.Fatal()`: Error message ကို print ထုတ်ပြီးနောက် program ကို ချက်ချင်းရပ်တန့်သည် (`os.Exit(1)` ကို ခေါ်သည်)။
+
+```go
+package main
+
+import (
+    "log"
+    "os"
+)
+
+func main() {
+    file, err := os.Open("config.txt")
+    if err != nil {
+        // Error ဖြစ်ပါက log ထုတ်ပြီး program ကို ရပ်တန့်မည်
+        log.Fatal("Error opening file: ", err)
+    }
+    log.Println("Successfully opened file:", file.Name())
+}
+```
+
+---
+
+## `time` Package
+
+`time` package သည် အချိန်နှင့်ပတ်သက်သော တွက်ချက်မှုများ၊ formatting နှင့် waiting (sleep) တို့ကို ကိုင်တွယ်သည်။
+
+*   `time.Now()`: လက်ရှိအချိန်ကို ရယူသည်။
+*   `time.Sleep(duration)`: Program ကို သတ်မှတ်ထားသော ကြာချိန်တစ်ခုအထိ ခေတ္တရပ်နားသည်။
+*   `time.Parse(layout, value)`: String မှ Time object သို့ ပြောင်းလဲသည်။
+
+```go
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    start := time.Now()
+    fmt.Println("Start time:", start.Format("2006-01-02 15:04:05"))
+
+    // 2 စက္ကန့် စောင့်မည်
+    time.Sleep(2 * time.Second)
+
+    elapsed := time.Since(start)
+    fmt.Println("Program took:", elapsed)
+}
+```
 
 ---
 
@@ -168,6 +229,7 @@ package main
 import (
     "encoding/json"
     "fmt"
+    "log"
 )
 
 // Struct field များကို JSON key များနှင့် mapping လုပ်ရန် struct tags များကို အသုံးပြုသည်
@@ -183,7 +245,7 @@ func main() {
     user := User{ID: 1, Name: "Aung Aung", Email: "aung@example.com", Password: "secret-password"}
     jsonData, err := json.MarshalIndent(user, "", "  ") // MarshalIndent for pretty-printing
     if err != nil {
-        panic(err)
+        log.Fatal(err) // panic အစား log.Fatal ကို အသုံးပြုခြင်းက ပိုကောင်းသည်
     }
     fmt.Println("Marshalled JSON:\n", string(jsonData))
 
@@ -192,7 +254,7 @@ func main() {
     var anotherUser User
     err = json.Unmarshal([]byte(jsonString), &anotherUser)
     if err != nil {
-        panic(err)
+        log.Fatal(err)
     }
     fmt.Println("\nUnmarshalled User:", anotherUser)
     fmt.Println("Unmarshalled User's Name:", anotherUser.Name)
@@ -220,6 +282,7 @@ package main
 
 import (
     "fmt"
+    "log"
     "net/http"
 )
 
@@ -238,7 +301,7 @@ func main() {
     // ဤ function သည် error return ပြန်မှသာ ပြီးဆုံးမည် (e.g., port is already in use)
     err := http.ListenAndServe(":8080", nil)
     if err != nil {
-        panic(err)
+        log.Fatal(err)
     }
 }
 ```

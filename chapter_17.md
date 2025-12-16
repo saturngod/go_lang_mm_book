@@ -41,6 +41,29 @@ graph TD
 
 ---
 
+## Project Structure (Standard Layout)
+
+Go community တွင် တွင်ကျယ်စွာအသုံးပြုသော project structure ပုံစံတစ်ခုရှိသည်။ ဤ project သည် သေးငယ်သော်လည်း၊ လုပ်ငန်းခွင်သုံး project ကြီးများအတွက် အဆင်သင့်ဖြစ်စေရန် standard layout ကို မိတ်ဆက်ပေးချင်ပါသည်။
+
+```
+my-todo-app/
+├── cmd/
+│   └── api/
+│       └── main.go       // Entry point of the application
+├── internal/             // Private application code
+│   ├── handlers/         // HTTP handlers
+│   └── models/           // Data structures
+└── go.mod                // Module definition
+```
+
+*   **`cmd/`:** Application ၏ main entry point များထားရှိရာနေရာ (e.g., `cmd/api/main.go`).
+*   **`internal/`:** Library အနေဖြင့် import လုပ်၍ မရစေချင်သော private code များ (handlers, business logic) ထားရှိရာ။
+*   **`pkg/`:** အခြား project များမှပါ အသုံးပြုနိုင်သော public library code များ (ဤ project တွင် လောလောဆယ် မပါဝင်ပါ)။
+
+သို့သော် ယခုအပိုင်း (Part 1) တွင် လေ့လာရလွယ်ကူစေရန် code များကို `main.go` တစ်ခုတည်းတွင် စုစည်းရေးသားပါမည်။ နောက်ပိုင်းအပိုင်းများတွင် code များကို အထက်ပါ structure အတိုင်း refactor လုပ်သွားပါမည်။
+
+---
+
 ## HTTP Handlers များ ရေးသားခြင်း
 
 HTTP Handler ဆိုသည်မှာ নির্দিষ্ট URL path သို့ ရောက်ရှိလာသော HTTP request များကို လက်ခံပြီး response ပြန်ပေးရန် တာဝန်ရှိသော function ဖြစ်သည်။

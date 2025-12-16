@@ -100,6 +100,52 @@ func TestAddTableDriven(t *testing.T) {
 
 ---
 
+## Test Coverage
+
+Test များရေးသားပြီးပါက၊ ထို test များသည် code ၏ မည်မျှရာခိုင်နှုန်းကို စမ်းသပ်ပေးနိုင်သည် (cover ဖြစ်သည်) ကို သိရှိရန် အရေးကြီးသည်။ Go တွင် coverage ကို တိုင်းတာရန် built-in support ပါရှိသည်။
+
+`go test -cover` command ကို အသုံးပြု၍ coverage ကို ကြည့်ရှုနိုင်သည်။
+
+```sh
+$ go test -cover
+PASS
+coverage: 80.0% of statements
+ok      myproject/calculator    0.005s
+```
+
+အသေးစိတ် report လိုချင်ပါက `-coverprofile` flag ကို အသုံးပြု၍ file ထုတ်နိုင်ပြီး၊ `go tool cover` ဖြင့် browser တွင် ကြည့်ရှုနိုင်သည်။
+
+```sh
+go test -coverprofile=coverage.out
+go tool cover -html=coverage.out
+```
+
+---
+
+## TestMain (Setup and Teardown)
+
+Package တစ်ခုလုံးအတွက် initialization (setup) သို့မဟုတ် cleanup (teardown) လုပ်ရန် လိုအပ်ပါက (ဥပမာ - Database connection ဖွင့်ခြင်း/ပိတ်ခြင်း)၊ `TestMain` function ကို အသုံးပြုနိုင်သည်။
+
+**စည်းမျဉ်း:** `TestMain` သည် `*testing.M` ကို parameter အဖြစ်လက်ခံပြီး၊ `m.Run()` ကို ခေါ်ယူမှသာ အခြား test များ အလုပ်လုပ်မည်ဖြစ်သည်။ `os.Exit()` ဖြင့် exit code ကို ပြန်ပေးရမည်။
+
+```go
+func TestMain(m *testing.M) {
+    // 1. Setup (e.g., Database connect)
+    fmt.Println("Setting up resources...")
+
+    // 2. Run Tests
+    code := m.Run()
+
+    // 3. Teardown (e.g., Database close)
+    fmt.Println("Cleaning up resources...")
+
+    // 4. Exit with code
+    os.Exit(code)
+}
+```
+
+---
+
 ## Benchmarking
 
 Benchmarking ဆိုသည်မှာ code ၏ performance (အထူးသဖြင့် speed) ကို တိုင်းတာခြင်းဖြစ်သည်။ Go တွင် benchmark tests များကို `testing` package ဖြင့် အလွယ်တကူ ရေးသားနိုင်သည်။

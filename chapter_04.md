@@ -76,6 +76,39 @@ func main() {
     default:
         fmt.Println("It's a weekday.")
     }
+
+    // `fallthrough` keyword အသုံးပြုခြင်း
+    // Case တစ်ခုမှန်ပါက အောက်ရှိ case ကိုပါ Condition ထပ်မစစ်ဆေးဘဲ ဆက်လက်လုပ်ဆောင်စေလိုလျှင် အသုံးပြုသည်။
+    role := "admin"
+    fmt.Println("Permissions for " + role + ":")
+
+    switch role {
+    case "admin":
+        fmt.Println("- Delete Users")
+        fallthrough // admin ဖြစ်လျှင် edit လုပ်ခွင့်ပါ ရရှိစေရန် ဆက်သွားမည်
+    case "editor":
+        fmt.Println("- Edit Content")
+        fallthrough // editor ဖြစ်လျှင် view လုပ်ခွင့်ပါ ရရှိစေရန် ဆက်သွားမည်
+    case "viewer":
+        fmt.Println("- View Content")
+    default:
+        fmt.Println("- No Access")
+    }
+
+    // တူညီသော Logic ကို `if/else` ဖြင့် ရေးသားလျှင် code များ ပိုရှည်နိုင်သည် (Comparison)
+    fmt.Println("\n--- Same Logic with if/else ---")
+    if role == "admin" {
+        fmt.Println("- Delete Users")
+        fmt.Println("- Edit Content") // Code repeating
+        fmt.Println("- View Content") // Code repeating
+    } else if role == "editor" {
+        fmt.Println("- Edit Content")
+        fmt.Println("- View Content") // Code repeating
+    } else if role == "viewer" {
+        fmt.Println("- View Content")
+    } else {
+        fmt.Println("- No Access")
+    }
 }
 ```
 

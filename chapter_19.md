@@ -49,6 +49,9 @@ const (
 	dbName = "your_dbname"   // သင်၏ database name ကို ပြောင်းပါ
 )
 
+> [!TIP]
+> **Security Best Practice**: Production တွင် password များကို code ထဲတွင် hardcode မရေးသင့်ပါ။ `os.Getenv("DB_PASSWORD")` ကဲ့သို့သော environment variable များမှတဆင့် ဖတ်ယူအသုံးပြုခြင်းသည် ပိုမိုလုံခြုံစိတ်ချရသည်။
+
 func main() {
 	// Connection string ကို တည်ဆောက်ခြင်း
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
@@ -158,7 +161,23 @@ func GetProducts(db *sql.DB) ([]Product, error) {
 	return products, nil
 }
 
-// ... UpdateProduct နှင့် DeleteProduct functions များကို အလားတူပုံစံဖြင့် ရေးသားနိုင်သည်
+// UpdateProduct သည် product အချက်အလက်များကို ပြင်ဆင်သည်
+func UpdateProduct(db *sql.DB, id int, product *Product) (int64, error) {
+	res, err := db.Exec("UPDATE products SET name = $1, price = $2 WHERE id = $3", product.Name, product.Price, id)
+	if err != nil {
+		return 0, err
+	}
+	return res.RowsAffected()
+}
+
+// DeleteProduct သည် product တစ်ခုကို ဖျက်ပစ်သည်
+func DeleteProduct(db *sql.DB, id int) (int64, error) {
+	res, err := db.Exec("DELETE FROM products WHERE id = $1", id)
+	if err != nil {
+		return 0, err
+	}
+	return res.RowsAffected()
+}
 ```
 
 ---
@@ -224,15 +243,92 @@ func (e *Env) createProductHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func (e *Env) updateProductHandler(w http.ResponseWriter, r *http.Request) {
-	// ... (To be implemented)
+	if r.Method != http.MethodPut {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+
+	idStr := r.URL.Path[len("/products/"):]
+	id, err := strconv.Atoi(idStr)
+	if err != nil {
+		http.Error(w, "Invalid product ID", http.StatusBadRequest)
+		return
+	}
+
+	var p Product
+	if err := json.NewDecoder(r.Body).Decode(&p); err != nil {
+		http.Error(w, "Invalid request body", http.StatusBadRequest)
+		return
+	}
+
+	rowsAffected, err := UpdateProduct(e.db, id, &p)
+	if err != nil {
+		http.Error(w, "Failed to update product", http.StatusInternalServerError)
+		return
+	}
+
+	if rowsAffected == 0 {
+		http.Error(w, "Product not found", http.StatusNotFound)
+		return
+	}
+
+	// Updated product with ID
+	p.ID = id
+	json.NewEncoder(w).Encode(p)
 }
 
 func (e *Env) deleteProductHandler(w http.ResponseWriter, r *http.Request) {
-	// ... (To be implemented)
+	if r.Method != http.MethodDelete {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+
+	idStr := r.URL.Path[len("/products/"):]
+	id, err := strconv.Atoi(idStr)
+	if err != nil {
+		http.Error(w, "Invalid product ID", http.StatusBadRequest)
+		return
+	}
+
+	rowsAffected, err := DeleteProduct(e.db, id)
+	if err != nil {
+		http.Error(w, "Failed to delete product", http.StatusInternalServerError)
+		return
+	}
+
+	if rowsAffected == 0 {
+		http.Error(w, "Product not found", http.StatusNotFound)
+		return
+	}
+
+	w.WriteHeader(http.StatusNoContent)
 }
 
 func (e *Env) getProductHandler(w http.ResponseWriter, r *http.Request) {
-	// ... (To be implemented)
+	if r.Method != http.MethodGet {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+
+	idStr := r.URL.Path[len("/products/"):]
+	id, err := strconv.Atoi(idStr)
+	if err != nil {
+		http.Error(w, "Invalid product ID", http.StatusBadRequest)
+		return
+	}
+
+	product, err := GetProduct(e.db, id)
+	if err != nil {
+		http.Error(w, "Failed to get product", http.StatusInternalServerError)
+		return
+	}
+
+	if product == nil {
+		http.Error(w, "Product not found", http.StatusNotFound)
+		return
+	}
+
+	json.NewEncoder(w).Encode(product)
 }
 
 

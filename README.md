@@ -79,6 +79,7 @@
   - Concurrency နှင့် Parallelism ကွာခြားချက်
   - Goroutine ဆိုတာဘာလဲ။ (`go` keyword)
   - `sync.WaitGroup` ကို အသုံးပြုခြင်း
+  - Singleton Pattern (`sync.Once`)
 - အခန်း ၁၃: Channels
   - Channel ဆိုတာဘာလဲ။ (Goroutines များကြား ဆက်သွယ်ရေး)
   - Buffered vs. Unbuffered Channels

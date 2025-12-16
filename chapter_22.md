@@ -14,6 +14,27 @@ go get github.com/labstack/echo/v4
 
 ---
 
+## Data Binding
+
+Echo သည် request payload (JSON, XML, Form) မှ data များကို Go struct သို့ပြောင်းလဲရန် `Bind` method ကို ထောက်ပံ့ပေးထားသည်။ ၎င်းသည် Content-Type header ကို ကြည့်ရှုပြီး အလိုအလျောက် mapping လုပ်ပေးသည်။
+
+```go
+type User struct {
+    Name  string `json:"name" form:"name" query:"name"`
+    Email string `json:"email" form:"email" query:"email"`
+}
+
+e.POST("/users", func(c echo.Context) error {
+    u := new(User)
+    if err := c.Bind(u); err != nil {
+        return err
+    }
+    return c.JSON(http.StatusOK, u)
+})
+```
+
+---
+
 ## Basic Echo Server
 
 အောက်ပါ code သည် အရိုးရှင်းဆုံး Echo web server တစ်ခုဖြစ်သည်။
@@ -133,6 +154,25 @@ import "github.com/labstack/echo/v4/middleware"
 // Root level middleware
 e.Use(middleware.Logger())  // Request တိုင်းကို log မှတ်ပေးသည်
 e.Use(middleware.Recover()) // Panic ဖြစ်သွားလျှင် server မကျသွားအောင် ကာကွယ်ပေးသည်
+```
+
+### Custom Middleware ရေးသားခြင်း
+
+မိမိကိုယ်ပိုင် middleware များကိုလည်း လွယ်ကူစွာ ရေးသားနိုင်သည်။
+
+```go
+func ServerHeader(next echo.HandlerFunc) echo.HandlerFunc {
+    return func(c echo.Context) error {
+        c.Response().Header().Set("X-Server", "Echo/4.0")
+        return next(c)
+    }
+}
+
+func main() {
+    e := echo.New()
+    e.Use(ServerHeader)
+    // ...
+}
 ```
 
 ---
