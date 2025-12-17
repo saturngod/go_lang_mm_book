@@ -16,7 +16,7 @@
             --border: #ddd;
             --bg: #fff;
             --code-bg: #f6f8fa;
-            --font: "Myanmar Sangam MN", ui-serif, "Iowan Old Style", "Apple Garamond", "Palatino Linotype",
+            --font: "PDA17-Burma Press", "Myanmar Sangam MN", "Noto Sans Myanmar", "Myanmar MN", "Myanmar Text", ui-serif, "Iowan Old Style", "Apple Garamond", "Palatino Linotype",
                 Palatino, "Times New Roman", Times, serif;
             --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
                 "Liberation Mono", "Courier New", monospace;
@@ -184,11 +184,9 @@
     <article class="content">
       <h1 id="-go-">အခန်း ၁: Go ဘာသာစကား မိတ်ဆက်</h1>
 <p>Go (Golang ဟုလည်း ခေါ်ကြသည်) သည် Google မှ Robert Griesemer, Rob Pike, နှင့် Ken Thompson တို့က ၂၀၀၇ ခုနှစ်တွင် စတင်ရေးဆွဲခဲ့ပြီး ၂၀၀၉ ခုနှစ်တွင် အများပြည်သူသို့ မိတ်ဆက်ခဲ့သော open-source programming language တစ်ခုဖြစ်သည်။ Go သည် ရိုးရှင်းမှု (simplicity), စွမ်းဆောင်ရည်မြင့်မားမှု (high performance), နှင့် concurrency (တစ်ပြိုင်နက်တည်း အလုပ်များစွာ လုပ်ဆောင်နိုင်မှု) တို့ကို အဓိကထား၍ ဒီဇိုင်းထုတ်ထားပါသည်။</p>
-<hr>
 <h2 id="go-">Go ဆိုတာဘာလဲ။</h2>
 <p>Go သည် statically typed, compiled programming language တစ်ခုဖြစ်ပြီး C++ သို့မဟုတ် Java ကဲ့သို့သော language များ၏ performance နှင့် C-like syntax ကို Python သို့မဟုတ် JavaScript ကဲ့သို့သော dynamic language များ၏ ရိုးရှင်းလွယ်ကူမှုနှင့် ပေါင်းစပ်ထားပါသည်။</p>
 <p>၎င်း၏ အဓိကရည်ရွယ်ချက်မှာ ခေတ်မီ multi-core processor များ၊ computer network များနှင့် large codebases များအတွက် software များကို လွယ်ကူစွာ တည်ဆောက်နိုင်ရန် ဖြစ်သည်။</p>
-<hr>
 <h2 id="-go-">ဘာကြောင့် Go ကို ရွေးချယ်သင့်သလဲ။</h2>
 <p>Go ကို software developer များစွာက နှစ်သက်စွာ အသုံးပြုလာကြရခြင်း၏ အဓိကအကြောင်းအရင်းများမှာ-</p>
 <ul>
@@ -199,7 +197,6 @@
 <li><p><strong>Simplicity:</strong> Go ၏ syntax သည် ရိုးရှင်းပြီး သင်ယူရန် လွယ်ကူသည်။ Language တွင် keywords အနည်းငယ်သာ ပါရှိသောကြောင့် code များကို ဖတ်ရှုရန်နှင့် ပြုပြင်ထိန်းသိမ်းရန် (maintain) လွယ်ကူစေပါသည်။</p>
 </li>
 </ul>
-<hr>
 <h2 id="go-">Go ၏ အားသာချက်များနှင့် အသုံးဝင်မှုများ</h2>
 <h3 id="-">အားသာချက်များ</h3>
 <ul>
@@ -215,7 +212,6 @@
 <li>Web Development (Backend APIs)</li>
 <li>DevOps &amp; Site Reliability Engineering (SRE)</li>
 </ul>
-<hr>
 <h2 id="go-company-">Go ကို အသုံးပြုနေသော နာမည်ကြီး Company များ</h2>
 <p>Go ၏ စွမ်းဆောင်ရည်နှင့် ယုံကြည်စိတ်ချရမှုတို့ကြောင့် ကမ္ဘာ့ထိပ်တန်း နည်းပညာ company များစွာက ၎င်းတို့၏ systems များတွင် Go ကို ကျယ်ပြန့်စွာ အသုံးပြုနေကြပါသည်။ ဥပမာအချို့မှာ-</p>
 <ul>
@@ -224,11 +220,10 @@
 <li>Twitch</li>
 <li>Dropbox</li>
 <li>SoundCloud</li>
-<li>Netflix<h1 id="-development-environment-">အခန်း ၂: Development Environment တည်ဆောက်ခြင်း</h1>
-</li>
+<li>Netflix</li>
 </ul>
+<h1 id="-development-environment-">အခန်း ၂: Development Environment တည်ဆောက်ခြင်း</h1>
 <p>Go programming language ဖြင့် software များ စတင်ရေးသားရန်အတွက် လိုအပ်သော development environment ကို မည်သို့တည်ဆောက်ရမည်ကို ဤအခန်းတွင် လေ့လာသွားပါမည်။ Go ကို install ပြုလုပ်ခြင်းမှစ၍ သင်၏ ပထမဆုံး &quot;Hello, World!&quot; program ကို ရေးသား run ကြည့်ခြင်းအထိ အဆင့်ဆင့် လမ်းညွှန်ပေးသွားပါမည်။</p>
-<hr>
 <h2 id="go-install-windows-macos-linux-">Go ကို Install ပြုလုပ်ခြင်း (Windows, macOS, Linux)</h2>
 <p>Go ကို စတင်အသုံးပြုရန်အတွက် သင်၏ ကွန်ပျူတာတွင် Go compiler နှင့် tools များကို install ပြုလုပ်ရန် လိုအပ်ပါသည်။</p>
 <p>Go ၏ တရားဝင် website ဖြစ်သော <a href="https://go.dev/dl/">go.dev/dl/</a> တွင် သင်၏ operating system (Windows, macOS, Linux) အတွက် installer များကို အလွယ်တကူ download ရယူပြီး install ပြုလုပ်နိုင်ပါသည်။</p>
@@ -238,11 +233,9 @@
 <blockquote>
 <p><strong>Note:</strong> အကယ်၍ <code>command not found</code> ဟုပြနေပါက သင်၏ terminal ကို ပိတ်ပြီး ပြန်ဖွင့်ပါ (restart)၊ သို့မဟုတ် log out လုပ်ပြီး log in ပြန်ဝင်ကြည့်ပါ။</p>
 </blockquote>
-<hr>
 <h2 id="workspace-gopath-">Workspace နှင့် GOPATH ကို နားလည်ခြင်း</h2>
 <p>ယခင် Go version များတွင် <code>GOPATH</code> သည် Go projects များ၏ workspace ကို သတ်မှတ်ပေးသော environment variable တစ်ခုဖြစ်ပြီး အရေးပါခဲ့ပါသည်။ သို့သော် Go version 1.11 မှစ၍ <strong>Go Modules</strong> စနစ်ကို စတင်မိတ်ဆက်ခဲ့ပြီးနောက်ပိုင်းတွင် <code>GOPATH</code> ၏ အရေးပါမှုမှာ လျော့ကျသွားခဲ့သည်။</p>
 <p>ယခုခေတ် Go development တွင် project များကို သင်၏ computer ရှိ မည်သည့် directory တွင်မဆို တည်ဆောက်နိုင်ပြီး <code>go mod</code> command ဖြင့် dependency များကို စီမံခန့်ခွဲနိုင်ပြီ ဖြစ်သောကြောင့် ပိုမိုလွယ်ကူလာပါသည်။ ဤစာအုပ်တွင်လည်း Go Modules ကို အခြေခံ၍ ဆက်လက်ရှင်းလင်းသွားပါမည်။</p>
-<hr>
 <h2 id="code-editor-vs-code-setup-">Code Editor (VS Code) Setup ပြုလုပ်ခြင်း</h2>
 <p>Go code များကို ရေးသားရန်အတွက် text editor အမျိုးမျိုးကို အသုံးပြုနိုင်သော်လည်း Visual Studio Code (VS Code) သည် Go developer များကြားတွင် ရေပန်းအစားဆုံး editor တစ်ခုဖြစ်သည်။</p>
 <ol>
@@ -252,7 +245,6 @@
 <li>၎င်း extension က code completion, debugging, testing နှင့် အခြားသော အသုံးဝင်သည့် feature များစွာကို ထောက်ပံ့ပေးပါလိမ့်မည်။</li>
 <li>Extension ကို Install ပြုလုပ်ပြီးနောက်ညာဘက်အောက်ထောင့်တွင် Analysis Tools များ install လုပ်ရန် message box ပေါ်လာပါက <strong>Install All</strong> ကို နှိပ်၍ install လုပ်ပေးပါ။</li>
 </ol>
-<hr>
 <h2 id="-hello-world-">သင်၏ ပထမဆုံး ပရိုဂရမ်: &quot;Hello, World!&quot;</h2>
 <p>သင်၏ ပထမဆုံး Go program ကို စတင်ရေးသားကြည့်ကြပါစို့။</p>
 <ol>
@@ -274,7 +266,6 @@ func main() {
 <li><code>func main()</code>: Program စတင်ဆောင်ရွက်မည့် အဓိက function ဖြစ်သည်။</li>
 <li><code>fmt.Println(...)</code>: Console တွင် စာသားများကို print ထုတ်ပေးသည်။</li>
 </ul>
-<hr>
 <h2 id="-go-run-go-build-go-install-commands-"><code>go run</code>, <code>go build</code>, <code>go install</code> Commands များ</h2>
 <p>Terminal တွင် <code>main.go</code> file ရှိသော directory ထဲ၌ အောက်ပါ command များကို စမ်းသပ်ကြည့်နိုင်ပါသည်။</p>
 <ul>
@@ -296,7 +287,6 @@ func main() {
 </ul>
 <h1 id="-go-syntax-">အခန်း ၃: Go ၏ အခြေခံ Syntax များ</h1>
 <p>ယခုအခန်းတွင် Go programming language ၏ အခြေခံအကျဆုံးနှင့် အရေးအကြီးဆုံးဖြစ်သော syntax များကို လေ့လာသွားပါမည်။ Variables, constants, data types, operators နှင့် comments များ မည်သို့ရေးသားရမည်ကို ဥပမာများနှင့်တကွ ရှင်းလင်းဖော်ပြသွားပါမည်။</p>
-<hr>
 <h2 id="variables-constants-">Variables နှင့် Constants များ ကြေညာခြင်း</h2>
 <p>Go တွင် တန်ဖိုးများကို မှတ်သားသိမ်းဆည်းရန်အတွက် variables နှင့် constants များကို အသုံးပြုပါသည်။</p>
 <h3 id="variables">Variables</h3>
@@ -326,7 +316,6 @@ var address string</code></pre>
 <p>Constant ဆိုသည်မှာ program တစ်ခုလုံးတွင် တန်ဖိုး လုံးဝမပြောင်းလဲသော variable တစ်မျိုးဖြစ်သည်။ <code>const</code> keyword ကို အသုံးပြု၍ ကြေညာသည်။</p>
 <pre><code class="lang-go">const PI = 3.14159
 const AppVersion = &quot;1.0.2&quot;</code></pre>
-<hr>
 <h2 id="-data-types">အခြေခံ Data Types</h2>
 <p>Go သည် statically typed language ဖြစ်သောကြောင့် variable တိုင်းတွင် data type တစ်ခုရှိရပါမည်။</p>
 <ul>
@@ -350,7 +339,6 @@ const AppVersion = &quot;1.0.2&quot;</code></pre>
 </ul>
 </li>
 </ul>
-<hr>
 <h2 id="operators">Operators</h2>
 <p>Operators များသည် variables နှင့် values များအပေါ်တွင် လုပ်ဆောင်ချက်များ (operations) ကို ပြုလုပ်ရန် အသုံးပြုသော သင်္ကေတများဖြစ်သည်။</p>
 <ul>
@@ -358,7 +346,6 @@ const AppVersion = &quot;1.0.2&quot;</code></pre>
 <li><strong>Comparison Operators:</strong> <code>==</code> (ညီမျှ), <code>!=</code> (မညီမျှ), <code>&lt;</code> (ငယ်သည်), <code>&gt;</code> (ကြီးသည်), <code>&lt;=</code> (ငယ်သည် သို့မဟုတ် ညီမျှသည်), <code>&gt;=</code> (ကြီးသည် သို့မဟုတ် ညီမျှသည်)</li>
 <li><strong>Logical Operators:</strong> <code>&amp;&amp;</code> (and), <code>||</code> (or), <code>!</code> (not)</li>
 </ul>
-<hr>
 <h2 id="comments-">Comments ရေးသားခြင်း</h2>
 <p>Comment ဆိုသည်မှာ code ၏ လုပ်ဆောင်ချက်ကို ရှင်းပြရန် ရေးသားသော စာသားများဖြစ်ပြီး compiler က ၎င်းတို့ကို ထည့်သွင်းစဉ်းစားခြင်းမရှိပါ။</p>
 <pre><code class="lang-go">// ဤသည်မှာ single-line comment ဖြစ်သည်။
@@ -369,7 +356,6 @@ const AppVersion = &quot;1.0.2&quot;</code></pre>
 */</code></pre>
 <h1 id="-control-flow-">အခန်း ၄: Control Flow (စီးဆင်းမှု ထိန်းချုပ်ခြင်း)</h1>
 <p><code>Control Flow</code> ဆိုသည်မှာ program တစ်ခု၏ code များ မည်သည့်အစဉ်အတိုင်း လုပ်ဆောင်ရမည်ကို ထိန်းချုပ်သော statements များ ဖြစ်သည်။ Go တွင် <code>if</code>/<code>else</code>, <code>switch</code>, နှင့် <code>for</code> တို့ကို အသုံးပြု၍ program ၏ စီးဆင်းမှုကို ထိန်းချုပ်နိုင်ပါသည်။</p>
-<hr>
 <h2 id="-if-else-statements"><code>if</code>/<code>else</code> Statements</h2>
 <p><code>if</code>/<code>else</code> statement သည် အခြေအနေ (condition) တစ်ခု မှန်/မှား ပေါ်မူတည်၍ code block တစ်ခုကို run ရန် သို့မဟုတ် မ run ရန် ဆုံးဖြတ်ပေးသည်။</p>
 <pre><code class="lang-mermaid">graph TD
@@ -401,7 +387,6 @@ func main() {
         fmt.Println(num, &quot;has multiple digits&quot;)
     }
 }</code></pre>
-<hr>
 <h2 id="-switch-statements"><code>switch</code> Statements</h2>
 <p><code>switch</code> statement သည် variable တစ်ခု၏ တန်ဖိုးကို <code>case</code> များစွာနှင့် နှိုင်းယှဉ်စစ်ဆေးရန် အသုံးပြုသည်။ အခြား language များကဲ့သို့ <code>break</code> keyword ကို case တိုင်းတွင် ရေးရန်မလိုပါ။ Go တွင် case တစ်ခုပြီးဆုံးပါက switch မှ အလိုအလျောက် ထွက်ခွာပါသည်။</p>
 <pre><code class="lang-mermaid">graph TD
@@ -461,7 +446,6 @@ func main() {
         fmt.Println(&quot;- No Access&quot;)
     }
 }</code></pre>
-<hr>
 <h2 id="-for-loops"><code>for</code> Loops</h2>
 <p>Go တွင် loop အမျိုးအစား တစ်မျိုးတည်းသာရှိပြီး ၎င်းမှာ <code>for</code> loop ဖြစ်သည်။ သို့သော် <code>for</code> loop ကို ပုံစံအမျိုးမျိုးဖြင့် အသုံးပြုနိုင်ပါသည်။</p>
 <p><strong>1. Classic <code>for</code> loop (C-style)</strong></p>
@@ -486,7 +470,6 @@ for _, value := range fruits {
 }</code></pre>
 <h1 id="-composite-types-arrays-slices-and-maps">အခန်း ၅: Composite Types - Arrays, Slices, and Maps</h1>
 <p>ယခုအခန်းတွင် Go ၏ အသုံးအများဆုံး composite data types များဖြစ်သော Arrays, Slices, နှင့် Maps တို့အကြောင်းကို လေ့လာသွားပါမည်။ ဤ data types များသည် data အစုအဝေးများကို စုစည်းသိမ်းဆည်းရန်အတွက် အလွန်အရေးပါပါသည်။</p>
-<hr>
 <h2 id="1-arrays">1. Arrays</h2>
 <p>Array ဆိုသည်မှာ <strong>data type တစ်မျိုးတည်းကိုသာ</strong> သိမ်းဆည်းနိုင်သော၊ <strong>အရွယ်အစား (size) ပုံသေ</strong> သတ်မှတ်ထားသည့် data collection တစ်ခုဖြစ်သည်။ Array တစ်ခုကို ကြေညာလိုက်သည်နှင့် ၎င်း၏ အရွယ်အစားကို ပြောင်းလဲ၍မရပါ။</p>
 <p>Go တွင် Array ကို Slices များလောက် အသုံးမများသော်လည်း၊ Slices ၏ အလုပ်လုပ်ပုံကို နားလည်ရန်အတွက် Array သည် အခြေခံကျပါသည်။</p>
@@ -519,7 +502,6 @@ func main() {
     primes := [3]int{2, 3, 5}
     fmt.Println(&quot;Primes Array:&quot;, primes) // Output: [2 3 5]
 }</code></pre>
-<hr>
 <h2 id="2-slices">2. Slices</h2>
 <p>Slice သည် Array အပေါ်တွင် တည်ဆောက်ထားသော ပိုမို flexible ဖြစ်ပြီး အစွမ်းထက်သည့် data structure ဖြစ်သည်။ Array ကဲ့သို့ အရွယ်အစား ပုံသေမဟုတ်ဘဲ <strong>dynamic (ပြောင်းလွယ်ပြင်လွယ်)</strong> ဖြစ်သောကြောင့် Go developer များ အသုံးအများဆုံးဖြစ်သည်။</p>
 <p>Slice သည် အပိုင်းသုံးပိုင်းဖြင့် ဖွဲ့စည်းထားသည်-</p>
@@ -651,7 +633,6 @@ func main() {
     // array အသစ်ကို ညွှန်းဆိုသွားသောကြောင့် မူလ array ကို ထိခိုက်တော့မည် မဟုတ်ပါ။
     fmt.Println(&quot;Underlying Array remains unchanged:&quot;, numbersArray)
 }</code></pre>
-<hr>
 <h2 id="3-maps">3. Maps</h2>
 <p>Map ဆိုသည်မှာ <strong>key-value pair</strong> များဖြင့် data များကို သိမ်းဆည်းသော <strong>unordered collection</strong> တစ်ခုဖြစ်သည်။ အခြား language များရှိ hash tables သို့မဟုတ် dictionaries များနှင့် ဆင်တူသည်။</p>
 <pre><code class="lang-mermaid">graph TD
@@ -721,7 +702,6 @@ func main() {
 }</code></pre>
 <h1 id="-structs-and-methods">အခန်း ၆: Structs and Methods</h1>
 <p>ယခုအခန်းတွင် Go ၏ အစွမ်းထက်သော feature တစ်ခုဖြစ်သည့် <code>struct</code> နှင့် <code>method</code> တို့အကြောင်းကို လေ့လာသွားပါမည်။ Struct သည် data type အမျိုးမျိုးကို စုစည်း၍ ကိုယ်ပိုင် custom data type အသစ်များ တည်ဆောက်ရန် အသုံးပြုပြီး၊ Method များသည် ထို struct များနှင့် သက်ဆိုင်သော လုပ်ဆောင်ချက် (behavior) များကို သတ်မှတ်ပေးပါသည်။</p>
-<hr>
 <h2 id="1-struct-custom-data-types-">1. Struct (Custom Data Types)</h2>
 <p>Struct (structure) ဆိုသည်မှာ data type အမျိုးမျိုးရှိနိုင်သော <strong>fields</strong> (အချက်အလက်များ) ကို စုစည်းထားသည့် collection တစ်ခုဖြစ်သည်။ ဥပမာအားဖြင့်၊ လူတစ်ယောက် (<code>Person</code>) ကို ဖော်ပြရန်အတွက် နာမည် (<code>string</code>), အသက် (<code>int</code>) စသည်တို့ကို <code>Person</code> struct တစ်ခုတည်းတွင် စုစည်းထားနိုင်ပါသည်။</p>
 <pre><code class="lang-mermaid">graph TD
@@ -757,7 +737,6 @@ func main() {
     p1.Age = 31
     fmt.Println(&quot;Updated Age:&quot;, p1.Age)
 }</code></pre>
-<hr>
 <h2 id="2-methods-struct-functions-">2. Methods (Struct နှင့် သက်ဆိုင်သော Functions)</h2>
 <p>Method ဆိုသည်မှာ struct တစ်ခုနှင့် သီးသန့်သက်ဆိုင်သော function တစ်မျိုးဖြစ်သည်။ ၎င်းသည် function ကြေညာရာတွင် <code>func</code> keyword နှင့် function name အကြား၌ <strong>&quot;receiver&quot;</strong> ဟုခေါ်သော argument တစ်ခု ပိုမိုပါဝင်သည်။</p>
 <p>Receiver အမျိုးအစား နှစ်မျိုးရှိသည်-</p>
@@ -820,7 +799,6 @@ func main() {
     p.SetAge(26)
     fmt.Println(&quot;Age after SetAge():&quot;, p.Age) // Output: 26 (ပြောင်းလဲသွားသည်)
 }</code></pre>
-<hr>
 <h2 id="3-embedded-structs-composition-">3. Embedded Structs (Composition)</h2>
 <p>Go တွင် class inheritance (အမွေဆက်ခံခြင်း) မရှိပါ။ သို့သော် struct တစ်ခုကို အခြား struct တစ်ခုထဲတွင် ထည့်သွင်းခြင်း (<strong>embedding</strong>) ဖြင့် <strong>composition</strong> ကို အားပေးသည်။</p>
 <pre><code class="lang-mermaid">graph TD
@@ -884,7 +862,6 @@ func main() {
     fmt.Println(&quot;Employee&#39;s Email:&quot;, emp.Email)
     fmt.Println(&quot;Full Info:&quot;, emp)
 }</code></pre>
-<hr>
 <h2 id="4-constructor-functions">4. Constructor Functions</h2>
 <p>Go တွင် class မရှိသကဲ့သို့ <code>constructor</code> ဟူ၍လည်း သီးသန့်မရှိပါ။ သို့သော် struct အသစ်တစ်ခု ဆောက်လုပ်ရာတွင် လွယ်ကူစေရန်နှင့် default value များ သတ်မှတ်ပေးနိုင်ရန် <strong>Factory Pattern</strong> သဘောတရားဖြစ်သည့် Help function များကို ရေးသားလေ့ရှိကြသည်။ </p>
 <p>Convention အရ ထို helper function များကို <code>New</code> ဟု အစပြုလေ့ရှိသည်။</p>
@@ -915,7 +892,6 @@ func main() {
     p := NewPerson(&quot;Mg Mg&quot;, 25)
     fmt.Println(p)
 }</code></pre>
-<hr>
 <h2 id="5-struct-tags">5. Struct Tags</h2>
 <p>Struct tag များသည် struct field များ၏ metadata (အချက်အလက်အပို) များကို သိမ်းဆည်းပေးထားခြင်းဖြစ်သည်။ ၎င်းတို့ကို <code>reflection</code> အသုံးပြု၍ run-time တွင် ဖတ်ရှုအလုပ်လုပ်နိုင်သည်။</p>
 <p>အသုံးအများဆုံး ဥပမာမှာ <strong>JSON</strong> data များနှင့် အလုပ်လုပ်ရာတွင် ဖြစ်သည်။</p>
@@ -956,7 +932,6 @@ func main() {
 }</code></pre>
 <h1 id="-functions">အခန်း ၇: Functions</h1>
 <p>Function ဆိုသည်မှာ သီးခြားလုပ်ဆောင်ချက်တစ်ခုကို လုပ်ဆောင်ရန်အတွက် စုစည်းရေးသားထားသော code block တစ်ခုဖြစ်သည်။ Functions များသည် code များကို ပြန်လည်အသုံးပြုနိုင်ရန် (reusability)၊ စနစ်တကျခွဲခြားရန် (organization) နှင့် ဖတ်ရှုရလွယ်ကူစေရန် (readability) အတွက် အဓိကကျသော အစိတ်အပိုင်းများ ဖြစ်ကြသည်။</p>
-<hr>
 <h2 id="function-">Function ကြေညာခြင်း နှင့် ခေါ်ယူအသုံးပြုခြင်း</h2>
 <p>Go တွင် function တစ်ခုကို <code>func</code> keyword ဖြင့် ကြေညာသည်။ Function တစ်ခုတွင် အမည်၊ parameters (optional)၊ return types (optional) နှင့် code block (body) တို့ ပါဝင်သည်။</p>
 <pre><code class="lang-go">package main
@@ -982,7 +957,6 @@ func main() {
 <blockquote>
 <p><strong>မှတ်ချက်:</strong> Go တွင် <code>public</code> / <code>private</code> keyword များ မရှိပါ။ Function အမည်၏ <strong>ပထမစာလုံး အကြီး/အသေး (Capitalization)</strong> ပေါ်မူတည်၍ ခွဲခြားပါသည်။</p>
 </blockquote>
-<hr>
 <h2 id="parameters-return-values">Parameters နှင့် Return Values</h2>
 <p>Functions များသည် တန်ဖိုးများကို input အဖြစ် (parameters) လက်ခံနိုင်ပြီး၊ လုပ်ဆောင်ချက်များ ပြီးဆုံးသောအခါ တန်ဖိုးများကို output အဖြစ် (return values) ပြန်ပေးနိုင်ပါသည်။</p>
 <pre><code class="lang-go">package main
@@ -1007,7 +981,6 @@ func main() {
     difference := subtract(10, 5)
     fmt.Println(&quot;Difference:&quot;, difference)
 }</code></pre>
-<hr>
 <h2 id="multiple-return-values">Multiple Return Values</h2>
 <p>Go ၏ အစွမ်းထက်သော feature တစ်ခုမှာ function တစ်ခုမှ တန်ဖိုးများစွာကို တစ်ပြိုင်နက်တည်း return ပြန်ပေးနိုင်ခြင်းဖြစ်သည်။ ဤ feature ကို error handling ပြုလုပ်ရာတွင် တွင်ကျယ်စွာ အသုံးပြုလေ့ရှိသည်။ ပုံမှန်အားဖြင့် function သည် ရလဒ် (result) နှင့် error တစ်ခုကို အတူတကွ ပြန်ပေးလေ့ရှိသည်။</p>
 <pre><code class="lang-go">package main
@@ -1042,7 +1015,6 @@ func main() {
         fmt.Println(&quot;Result:&quot;, result)
     }
 }</code></pre>
-<hr>
 <h2 id="named-return-values">Named Return Values</h2>
 <p>Go ၏ ထူးခြားချက်တစ်ခုမှာ Return ပြန်မည့် variable များကို function signature တွင် အမည်နှင့်တကွ ကြိုတင်ကြေညာထားနိုင်ခြင်း ဖြစ်သည်။ ၎င်းသည် code ကို ပိုမိုရှင်းလင်းစေပြီး <code>return</code> ဟု ရေးလိုက်ရုံဖြင့် (naked return) လက်ရှိတန်ဖိုးများကို အလိုအလျောက် return ပြန်ပေးပါသည်။</p>
 <pre><code class="lang-go">package main
@@ -1058,7 +1030,6 @@ func split(sum int) (x, y int) {
 func main() {
     fmt.Println(split(17)) // 7, 10
 }</code></pre>
-<hr>
 <h2 id="defer-statement">Defer Statement</h2>
 <p><code>defer</code> statement သည် function တစ်ခု ပြီးဆုံးခါနီးအချိန် (return မပြန်ခင်) မှသာ လုပ်ဆောင်မည့် function call များကို သတ်မှတ်ရာတွင် အသုံးပြုသည်။ အဓိကအားဖြင့် resource များကို ရှင်းလင်းခြင်း (cleanup) အတွက် အလွန်အသုံးဝင်သည်။ ဥပမာ - file ပိတ်ခြင်း၊ database connection ပိတ်ခြင်း။</p>
 <pre><code class="lang-go">package main
@@ -1089,7 +1060,6 @@ func main() {
 // 2
 // 1
 // 0</code></pre>
-<hr>
 <h2 id="variadic-functions">Variadic Functions</h2>
 <p>Variadic function ဆိုသည်မှာ parameter အရေအတွက် မတူညီဘဲ လက်ခံနိုင်သော function ဖြစ်သည်။ Parameter ၏ type ရှေ့တွင် <code>...</code> ထည့်သွင်း၍ ကြေညာသည်။ Function အတွင်းတွင် ထို parameter ကို slice တစ်ခုအနေဖြင့် ရရှိမည်ဖြစ်သည်။</p>
 <pre><code class="lang-go">package main
@@ -1113,7 +1083,6 @@ func main() {
     nums := []int{5, 5, 5}
     fmt.Println(sumAll(nums...))
 }</code></pre>
-<hr>
 <h2 id="anonymous-functions-closures-">Anonymous Functions (Closures)</h2>
 <p>Anonymous function ဆိုသည်မှာ အမည်မရှိသော function ဖြစ်သည်။ ၎င်းကို variable တစ်ခုတွင် ထည့်သွင်း၍သော်လည်းကောင်း၊ အခြား function တစ်ခု၏ argument အဖြစ် pass လုပ်၍သော်လည်းကောင်း အသုံးပြုနိုင်သည်။</p>
 <p>Anonymous function သည် ၎င်း၏ ပတ်ဝန်းကျင် (surrounding scope) မှ variable များကို ရယူသုံးစွဲနိုင်သည့်အခါ ၎င်းကို <strong>closure</strong> ဟုခေါ်သည်။</p>
@@ -1187,7 +1156,6 @@ func main() {
 <p>ဤဥပမာတွင် <code>intSeq()</code> function ကို ခေါ်လိုက်သောအခါ <code>i</code> ဟူသော variable တစ်ခုကို 0 ဖြင့် စတင်ပြီး function တစ်ခုကို return ပြန်ပေးပါသည်။ <code>nextInt</code> သည် ထို return ပြန်လာသော function ဖြစ်ပြီး ၎င်းသည် <code>i</code> ကို မှတ်သားထားသည်။ <code>nextInt()</code> ကို ခေါ်လိုက်တိုင်း မှတ်သားထားသော <code>i</code> ၏ တန်ဖိုးကို တိုးခြင်း၊ ပြန်ပေးခြင်းတို့ကို လုပ်ဆောင်သောကြောင့် state ကို ဆက်တိုက် ထိန်းသိမ်းထားနိုင်ခြင်း ဖြစ်သည်။</p>
 <h1 id="-pointers">အခန်း ၈: Pointers</h1>
 <p>ယခုအခန်းတွင် Go ၏ အရေးကြီးသော concept တစ်ခုဖြစ်သည့် Pointers အကြောင်းကို လေ့လာသွားပါမည်။ Pointer သည် memory address များကို တိုက်ရိုက်ကိုင်တွယ်ရန် အသုံးပြုပြီး၊ function များသို့ data များ pass လုပ်ရာတွင် ပိုမိုထိရောက်စေရန်နှင့် မူလ data များကို ပြောင်းလဲနိုင်ရန်အတွက် အဓိက အသုံးပြုပါသည်။</p>
-<hr>
 <h2 id="pointer-memory-address-">Pointer ဆိုတာဘာလဲ။ (Memory Address)</h2>
 <p>Program တစ်ခုတွင် variable တိုင်းသည် ကွန်ပျူတာ၏ memory တွင် နေရာတစ်ခုယူ၍ တန်ဖိုးများကို သိမ်းဆည်းထားပါသည်။ ထို memory နေရာတိုင်းတွင် လိပ်စာ (address) တစ်ခုစီ ရှိပါသည်။</p>
 <p><strong>Pointer</strong> ဆိုသည်မှာ အခြား variable တစ်ခု၏ <strong>memory address</strong> ကို တန်ဖိုးအနေဖြင့် သိမ်းဆည်းထားသော variable တစ်မျိုးဖြစ်သည်။</p>
@@ -1204,7 +1172,6 @@ func main() {
 
     PointerP -- &quot;ညွှန်ပြနေသည် (points to)&quot; --&gt; Address1</code></pre>
 <p>Pointer type ကို ကြေညာရာတွင် ၎င်းညွှန်ပြမည့် variable ၏ type ရှေ့တွင် <code>*</code> သင်္ကေတကို ထည့်သွင်းရေးသားရသည်။ ဥပမာ၊ <code>int</code> variable တစ်ခုကို ညွှန်ပြမည့် pointer ၏ type မှာ <code>*int</code> ဖြစ်သည်။</p>
-<hr>
 <h2 id="-address-of-dereference-operators"><code>&amp;</code> (address of) နှင့် <code>*</code> (dereference) Operators</h2>
 <p>Pointers များနှင့် အလုပ်လုပ်ရာတွင် အဓိကကျသော operator နှစ်ခုမှာ <code>&amp;</code> နှင့် <code>*</code> ဖြစ်သည်။</p>
 <ul>
@@ -1233,7 +1200,6 @@ func main() {
     *p = &quot;Golang&quot;
     fmt.Println(&quot;Value of name after modification via pointer:&quot;, name)
 }</code></pre>
-<hr>
 <h2 id="pointer-">Pointer ကို ဘာကြောင့် သုံးသင့်သလဲ။</h2>
 <p>Pointer ကို အသုံးပြုရခြင်း၏ အဓိက အကြောင်းရင်းနှစ်ခုမှာ-</p>
 <p><strong>1. Function များအတွင်းမှ မူလ Variable ၏ တန်ဖိုးကို ပြောင်းလဲရန်</strong></p>
@@ -1266,7 +1232,6 @@ func main() {
 <p>Struct ကဲ့သို့သော data structure ကြီးများကို function သို့ pass လုပ်သည့်အခါ value ဖြင့် pass လုပ်ပါက data အားလုံးကို copy ကူးရသောကြောင့် memory နှင့် အချိန် ပိုမိုကုန်ကျစေသည်။ Pointer ဖြင့် pass လုပ်ပါက memory address (များသောအားဖြင့် 8 bytes) ကိုသာ copy ကူးရသောကြောင့် ပိုမိုမြန်ဆန်ပြီး ထိရောက်မှုရှိပါသည်။ ဤသည်မှာ အခန်း ၆ တွင် လေ့လာခဲ့သော pointer receivers များ၏ အလုပ်လုပ်ပုံနှင့် တူညီပါသည်။</p>
 <p><strong>Pointer ၏ Zero Value</strong></p>
 <p>Pointer တစ်ခု၏ zero value (တန်ဖိုးမထည့်သွင်းရသေးခင် default တန်ဖိုး) မှာ <code>nil</code> ဖြစ်သည်။ <code>nil</code> pointer ဆိုသည်မှာ မည်သည့် memory address ကိုမှ ညွှန်ပြမထားသော pointer ဖြစ်သည်။</p>
-<hr>
 <h2 id="the-new-function">The <code>new()</code> Function</h2>
 <p>Go တွင် pointer အသစ်တစ်ခု ဖန်တီးရန် <code>new()</code> function ကိုလည်း အသုံးပြုနိုင်သည်။ <code>new(Type)</code> သည် Type ထဲရှိ zero value (ဥပမာ <code>int</code> ဆိုလျှင် <code>0</code>, <code>string</code> ဆိုလျှင် <code>&quot;&quot;</code>) အတွက် memory နေရာချထားပေးပြီး၊ ထိုနေရာ၏ <strong>memory address (pointer)</strong> ကို ပြန်ပေးသည်။</p>
 <pre><code class="lang-go">package main
@@ -1290,7 +1255,6 @@ func main() {
 <li><strong><code>new(T)</code></strong>: <code>T</code> type အတွက် memory နေရာချထားပြီး၊ zero value <strong>(*T) pointer</strong> ကို ပြန်ပေးသည်။ (Variable အသစ်/Pointer ဖန်တီးရန် သုံးသည်)</li>
 <li><strong><code>make(T)</code></strong>: Slices, Maps, Channels ကဲ့သို့သော Reference type များအတွက်သာ သုံးပြီး၊ initialized လုပ်ထားသော <strong>T value (Non-pointer)</strong> ကို ပြန်ပေးသည်။ (အခန်း ၅ တွင် ပြန်ကြည့်နိုင်ပါသည်)</li>
 </ul>
-<hr>
 <h3 id="nil-pointer-dereference-">Nil Pointer Dereference (အမှားများနှင့် ကာကွယ်ခြင်း)</h3>
 <p><code>nil</code> pointer ဆိုသည်မှာ မည်သည့် memory address ကိုမှ ညွှန်ပြမထားသော pointer ဖြစ်သည်။</p>
 <p><code>nil</code> pointer တစ်ခုကို dereference လုပ်ရန် ကြိုးစားခြင်း (ဥပမာ <code>*p</code> ဟုရေးခြင်း) သည် Go တွင် အဖြစ်များသော runtime error တစ်ခုဖြစ်ပြီး၊ ၎င်းသည် program ကိုချက်ချင်းရပ်တန့်သွားစေသော <strong>panic</strong> ကို ဖြစ်စေပါသည်။</p>
@@ -1317,7 +1281,6 @@ func main() {
 <p><strong>အကောင်းဆုံး လိုက်နာရန် (Best Practice):</strong> Pointer တစ်ခုကို dereference မလုပ်မီ၊ ၎င်းသည် <code>nil</code> မဟုတ်ကြောင်း အမြဲတမ်း <code>if p != nil</code> ဖြင့် စစ်ဆေးခြင်းသည် program crash ဖြစ်ခြင်းမှ ကာကွယ်ပေးနိုင်သော အလေ့အကျင့်ကောင်းတစ်ခု ဖြစ်သည်။</p>
 <h1 id="-interfaces">အခန်း ၉: Interfaces</h1>
 <p>ယခုအခန်းတွင် Go ၏ အလွန်အရေးပါပြီး အစွမ်းထက်သော feature တစ်ခုဖြစ်သည့် <code>interface</code> အကြောင်းကို လေ့လာသွားပါမည်။ Interface သည် code များကို ပိုမို flexible, reusable, နှင့် decoupled ဖြစ်စေရန်အတွက် အဓိကကျသော concept တစ်ခုဖြစ်သည်။</p>
-<hr>
 <h2 id="interface-">Interface ဆိုတာဘာလဲ။</h2>
 <p>Go တွင် Interface ဆိုသည်မှာ method signatures (method အမည်၊ parameters, return types) များ၏ စုစည်းမှုတစ်ခုကို သတ်မှတ်ထားသော abstract type တစ်ခုဖြစ်သည်။ Interface သည် &quot;ဘာတွေလုပ်ဆောင်နိုင်ရမည်&quot; (<code>what it can do</code>) ဆိုသည့် <strong>behavior (အပြုအမူ)</strong> ကိုသာ သတ်မှတ်ပြီး၊ &quot;ဘယ်လိုလုပ်ဆောင်ရမည်&quot; (<code>how it does it</code>) ဆိုသည့် implementation ကို မသတ်မှတ်ပါ။</p>
 <p>Struct တစ်ခု သို့မဟုတ် အခြား type တစ်ခုက interface တွင် သတ်မှတ်ထားသော method များအားလုံးကို implement လုပ်ထားပါက၊ ထို type သည် ထို interface ကို &quot;satisfy&quot; လုပ်သည် (သို့မဟုတ် implement လုပ်သည်) ဟုခေါ်ဆိုနိုင်ပါသည်။ အခြား language များကဲ့သို့ <code>implements</code> keyword ကို တိတိကျကျ ရေးသားရန်မလိုဘဲ Go compiler က အလိုအလျောက် သိရှိပါသည်။</p>
@@ -1364,7 +1327,6 @@ func main() {
     fmt.Printf(&quot;Rectangle Area: %f\n&quot;, rect.Area())
     fmt.Printf(&quot;Circle Area: %f\n&quot;, circ.Area())
 }</code></pre>
-<hr>
 <h2 id="duck-typing-if-it-walks-like-a-duck-">Duck Typing (&quot;If it walks like a duck...&quot;)</h2>
 <p>Go ၏ Interface များကို <strong>Duck Typing</strong> concept ဖြင့် မကြာခဏ တင်စားလေ့ရှိသည်။ Duck Typing ၏ ဆိုလိုရင်းမှာ -</p>
 <blockquote>
@@ -1373,7 +1335,6 @@ func main() {
 </blockquote>
 <p>Go တွင်လည်း ထိုနည်းလည်းကောင်းပင်ဖြစ်သည်။ Type တစ်ခုသည် Interface တစ်ခုက သတ်မှတ်ထားသော method များကို ပိုင်ဆိုင်ထားလျှင်၊ ထို Type သည် ထို Interface ပင်ဖြစ်သည်။ ၎င်းသည် <strong>Explicit Declaration</strong> (ဥပမာ Java တွင် <code>implements</code> ဟု ကြေညာခြင်း) မလိုအပ်ဘဲ <strong>Implicit Satisfaction</strong> ဖြစ်သည်။</p>
 <p>ဤအချက်က Go ၏ code များကို အလွန် flexible ဖြစ်စေသည်။ Library အသစ်တစ်ခု ရေးသားရာတွင် အသုံးပြုမည့် Type များကို ကြိုတင်သိရှိရန် မလိုအပ်ဘဲ၊ လိုအပ်သော method များကိုသာ Interface အဖြစ် သတ်မှတ်ထားခဲ့လျှင်၊ နောင်တွင် မည်သူမဆို ထို method များပါဝင်သော Type အသစ်များ ဖန်တီး၍ တွဲဖက်အသုံးပြုနိုင်ပါသည်။</p>
-<hr>
 <h2 id="go-interfaces-vs-oop-interfaces-e-g-java-">Go Interfaces vs OOP Interfaces (e.g., Java)</h2>
 <p>Object-Oriented Programming (OOP) ဘာသာစကားများ (ဥပမာ Java, C#) နှင့် Go ၏ Interface ကွာခြားချက်များကို နှိုင်းယှဉ်ကြည့်ကြပါစို့။</p>
 <table>
@@ -1432,7 +1393,6 @@ func (d Dog) Speak() {
     fmt.Println(&quot;Woof!&quot;)
 }
 // Dog သည် Speak() ရှိသောကြောင့် အလိုအလျောက် Animal ဖြစ်သွားသည်</code></pre>
-<hr>
 <h2 id="polymorphism-interfaces-">Polymorphism ကို Interfaces ဖြင့် အကောင်အထည်ဖော်ခြင်း</h2>
 <p>Interface ၏ အဓိကအသုံးဝင်မှုမှာ polymorphism ကို အကောင်အထည်ဖော်နိုင်ခြင်းဖြစ်သည်။ Polymorphism ဆိုသည်မှာ code တစ်ခုတည်းက မတူညီသော data types များစွာနှင့် အလုပ်လုပ်နိုင်စွမ်းရှိခြင်း ဖြစ်သည်။</p>
 <p>Function တစ်ခု၏ parameter ကို interface type ဖြင့် သတ်မှတ်ထားပါက၊ ထို interface ကို satisfy လုပ်သော မည်သည့် concrete type (struct) ကိုမဆို ထို function သို့ pass လုပ်နိုင်ပါသည်။</p>
@@ -1470,7 +1430,6 @@ func main() {
     printArea(rect)
     printArea(circ)
 }</code></pre>
-<hr>
 <h2 id="empty-interface-interface-">Empty Interface (<code>interface{}</code>)</h2>
 <p>Empty interface (<code>interface{}</code>) ဆိုသည်မှာ method တစ်ခုမှ မပါဝင်သော interface ဖြစ်သည်။ ၎င်းတွင် method မည်မျှမှ မသတ်မှတ်ထားသောကြောင့် Go ရှိ <strong>မည်သည့် data type မဆို</strong> empty interface ကို အလိုအလျောက် satisfy လုပ်ပါသည်။</p>
 <p>၎င်းကို data type ကြိုတင်မသိနိုင်သော တန်ဖိုးများကို ကိုင်တွယ်ရန် အသုံးပြုသည်။ ဥပမာ၊ <code>int</code>, <code>string</code>, <code>bool</code>, <code>struct</code> စသည်ဖြင့် မည်သည့် type မဆို ဖြစ်နိုင်သည်။</p>
@@ -1590,7 +1549,6 @@ func main() {
         postgresDB.Close()
     }
 }</code></pre>
-<hr>
 <h2 id="design-pattern-strategy-pattern">Design Pattern: Strategy Pattern</h2>
 <p>Interface များကို အသုံးပြု၍ <strong>Strategy Pattern</strong> ကို အလွယ်တကူ တည်ဆောက်နိုင်သည်။ Strategy Pattern ဆိုသည်မှာ algorithm သို့မဟုတ် လုပ်ဆောင်ပုံလုပ်ဆောင်နည်း တစ်ခုကို runtime တွင် လိုအပ်သလို ပြောင်းလဲအသုံးပြုနိုင်သော နည်းလမ်းဖြစ်သည်။</p>
 <p>ဥပမာ - Online Shopping တစ်ခုတွင် ငွေပေးချေမှုပုံစံ (Payment Method) အမျိုးမျိုးရှိနိုင်သည်။ KBZPay, WaveMoney, သို့မဟုတ် Credit Card စသည်ဖြင့်။</p>
@@ -1650,7 +1608,6 @@ func main() {
 <p>ဤနည်းအားဖြင့် <code>ShoppingCart</code> struct သည် မည်သည့် payment method ကို သုံးထားသည်ကို အတိအကျ သိစရာမလိုဘဲ၊ <code>Pay()</code> method ပါဝင်သော မည်သည့် strategy ကိုမဆို လက်ခံအလုပ်လုပ်နိုင်ပါသည်။</p>
 <h1 id="-packages-modules">အခန်း ၁၀: Packages နှင့် Modules</h1>
 <p>ယခုအခန်းတွင် Go project များကို စနစ်တကျ တည်ဆောက်ရန်နှင့် code များကို ပြန်လည်အသုံးပြုရန်အတွက် အခြေခံကျသော Packages နှင့် Modules များအကြောင်းကို လေ့လာသွားပါမည်။</p>
-<hr>
 <h2 id="package-">Package ဆိုတာဘာလဲ။</h2>
 <p>Go တွင် <strong>Package</strong> ဆိုသည်မှာ code များကို စုစည်းရန်နှင့် organize လုပ်ရန်အတွက် အသုံးပြုသော mechanism တစ်ခုဖြစ်သည်။ ရိုးရှင်းစွာဆိုရလျှင်၊ directory တစ်ခုအတွင်းရှိ Go source file များအားလုံးသည် package တစ်ခုတည်းကို ဖွဲ့စည်းထားသည်။</p>
 <ul>
@@ -1668,7 +1625,6 @@ func main() {
     end
 
     MainFile -- &quot;imports&quot; --&gt; calculator</code></pre>
-<hr>
 <h2 id="standard-library-packages-import-">Standard Library မှ Packages များကို <code>import</code> လုပ်ခြင်း</h2>
 <p>Go တွင် အသုံးဝင်သော functions နှင့် types များစွာပါဝင်သည့် standard library တစ်ခု ပါရှိသည်။ ဤ packages များကို အသုံးပြုရန် <code>import</code> keyword ကို အသုံးပြုရသည်။</p>
 <pre><code class="lang-go">package main
@@ -1691,7 +1647,6 @@ func main() {
 <li><strong>Blank Identifier (<code>_</code>):</strong> Package ကို တိုက်ရိုက်အသုံးမပြုသော်လည်း ၎င်း၏ side-effects (ဥပမာ- <code>init</code> function ကို run စေခြင်း) အတွက်သာ import လုပ်လိုပါက blank identifier <code>_</code> ကို အသုံးပြုသည်။ Database drivers များကို import လုပ်ရာတွင် ဤပုံစံကို တွေ့ရလေ့ရှိသည်။<pre><code class="lang-go">import _ &quot;github.com/go-sql-driver/mysql&quot;</code></pre>
 </li>
 </ul>
-<hr>
 <h2 id="-package-">ကိုယ်ပိုင် Package များ တည်ဆောက်ခြင်း</h2>
 <p>Project ကြီးမားလာသည်နှင့်အမျှ code များကို သက်ဆိုင်ရာ package များအဖြစ် ခွဲထုတ်ရန် လိုအပ်လာသည်။</p>
 <h3 id="exported-vs-unexported-names">Exported vs. Unexported Names</h3>
@@ -1730,7 +1685,6 @@ func main() {
     // အဘယ်ကြောင့်ဆိုသော် &#39;secretValue&#39; သည် unexported ဖြစ်သောကြောင့် main package မှ ခေါ်ယူသုံးစွဲ၍မရပါ
     // fmt.Println(calculator.secretValue)
 }</code></pre>
-<hr>
 <h2 id="-init-function-initialization-"><code>init()</code> Function (Initialization)</h2>
 <p><code>init()</code> function သည် အထူး function တစ်ခုဖြစ်ပြီး package တစ်ခု initialize လုပ်ရာတွင် အသုံးပြုသည်။ <code>main()</code> function မစလုပ်မီ Go runtime က <code>init()</code> ကို အလိုအလျောက် ခေါ်ယူပေးသည်။</p>
 <ul>
@@ -1757,7 +1711,6 @@ func main() {
 // Output:
 // Initializing...
 // Main started with config: LOADED</code></pre>
-<hr>
 <h2 id="circular-dependencies-">Circular Dependencies (သတိပြုရန်)</h2>
 <p>Go တွင် Package A က Package B ကို import လုပ်ပြီး၊ Package B က Package A ကို ပြန်လည် import လုပ်ခြင်း (Circular Dependency) ကို <strong>ခွင့်မပြုပါ</strong>။ Compiler error တက်ပါလိမ့်မည်။</p>
 <pre><code class="lang-mermaid">graph LR
@@ -1770,7 +1723,6 @@ func main() {
 <li>Shared code များကို Package C (Third package) အဖြစ် ခွဲထုတ်ပြီး A နှင့် B နှစ်ခုလုံးက C ကို import လုပ်ပါ။</li>
 <li>Package structure ကို ပြန်လည်သုံးသပ်ပြီး design ပြောင်းလဲပါ။</li>
 </ol>
-<hr>
 <h2 id="go-modules-dependencies-">Go Modules ကို အသုံးပြု၍ Dependencies များကို စီမံခန့်ခွဲခြင်း</h2>
 <p><strong>Go Modules</strong> သည် Go project များ၏ dependencies (အခြား packages များအပေါ် မှီခိုမှု) များကို စီမံခန့်ခွဲသည့် စနစ်ဖြစ်သည်။ Project တစ်ခုကို module အဖြစ် သတ်မှတ်လိုက်သည်နှင့် Go က လိုအပ်သော packages များကို download လုပ်ခြင်း၊ version များကို မှတ်သားခြင်းတို့ကို အလိုအလျောက် ပြုလုပ်ပေးသည်။</p>
 <h3 id="-commands-">အဓိက Commands များ</h3>
@@ -1819,7 +1771,6 @@ require (
 </ul>
 </li>
 </ul>
-<hr>
 <h2 id="go-workspaces-multi-module-workspaces-">Go Workspaces (Multi-Module Workspaces)</h2>
 <p>Go 1.18 တွင် မိတ်ဆက်ခဲ့သော <strong>Go Workspaces</strong> သည် local machine ပေါ်ရှိ module များစွာကို တပြိုင်နက်တည်း အလုပ်လုပ်ရာတွင် လွယ်ကူစေသည်။ <code>go.mod</code> file များကို <code>replace</code> directive ဖြင့် ပြင်ဆင်စရာမလိုဘဲ local module များကို ညွှန်းဆိုနိုင်သည်။</p>
 <p><strong>အသုံးပြုပုံ:</strong></p>
@@ -1845,11 +1796,9 @@ use (
 <p>Workspace mode တွင် run သောအခါ Go command များသည် <code>go.work</code> ထဲရှိ module များကို အဓိကထား အလုပ်လုပ်မည်ဖြစ်ပြီး၊ local directory ထဲရှိ module များကို ဦးစားပေး ခေါ်ယူသုံးစွဲသွားမည်ဖြစ်သည်။</p>
 <h1 id="-generics">အခန်း ၁၁: Generics</h1>
 <p>Go 1.18 တွင် စတင်မိတ်ဆက်ခဲ့သော အစွမ်းထက်ဆုံး feature တစ်ခုဖြစ်သည့် <strong>Generics</strong> အကြောင်းကို ဤအခန်းတွင် လေ့လာသွားပါမည်။ Generics သည် ကျွန်ုပ်တို့အား data type မည်သို့ပင်ဖြစ်စေ အလုပ်လုပ်နိုင်သော functions နှင့် data structures များကို ရေးသားနိုင်စေပြီး ကျွန်ုပ်တို့၏ code များကို ပိုမို flexible ဖြစ်စေကာ ပြန်လည်အသုံးပြုရလွယ်ကူစေသည်။</p>
-<hr>
 <h2 id="generic-">Generic ဆိုတာဘာလဲ။</h2>
 <p>Generics ဆိုသည်မှာ တိကျသော data type များပေါ်တွင် မမှီခိုဘဲ အလုပ်လုပ်နိုင်သော code များကို ရေးသားနိုင်သည့် နည်းလမ်းတစ်ခုဖြစ်သည်။ Generics မတိုင်မီက၊ သင်သည် <code>int</code> များအတွက် function တစ်ခုနှင့် <code>float64</code> များအတွက် အလားတူ function တစ်ခု လိုအပ်ပါက၊ function နှစ်ခု သီးသန့် ရေးသားခဲ့ရသည်။ Generics ဖြင့်၊ သင်သည် type အမျိုးမျိုးအတွက် အလုပ်လုပ်နိုင်သော <em>type parameter</em> တစ်ခုကို လက်ခံသည့် function တစ်ခုတည်းကို ရေးသားနိုင်သည်။</p>
 <p><strong>Type parameter</strong> ဆိုသည်မှာ function သို့မဟုတ် type ကို အသုံးပြုသည့်အခါ သတ်မှတ်မည့် type အတွက် placeholder တစ်ခုဖြစ်သည်။</p>
-<hr>
 <h2 id="generic-functions">Generic Functions</h2>
 <p>Generic function ဆိုသည်မှာ type parameters တစ်ခု သို့မဟုတ် တစ်ခုထက်ပို၍ ကြေညာထားသော function ဖြစ်သည်။</p>
 <h3 id="-printslice-function">ဥပမာ: <code>PrintSlice</code> Function</h3>
@@ -1899,7 +1848,6 @@ func main() {
     PrintSlice(stringSlice) // Go သည် T type ကို string အဖြစ် အလိုအလျောက်သိရှိသည်
 }</code></pre>
 <p>ဤဥပမာတွင်၊ <code>[T any]</code> သည် <code>T</code> ဆိုသော type parameter ကို ကြေညာသည်။ <code>any</code> keyword သည် <code>T</code> ၏ type မည်သို့မဆို ဖြစ်နိုင်သည်ဟု ဆိုလိုသော <em>constraint</em> တစ်ခုဖြစ်သည်။ ကျွန်ုပ်တို့ <code>PrintSlice(intSlice)</code> ကို ခေါ်သောအခါ၊ Go compiler သည် <code>T</code> ကို <code>int</code> ဖြစ်သည်ဟု ကောက်ချက်ချသည်။</p>
-<hr>
 <h2 id="generic-types">Generic Types</h2>
 <p>ကျွန်ုပ်တို့သည် မည်သည့် type နှင့်မဆို အလုပ်လုပ်သော struct သို့မဟုတ် interface ကဲ့သို့သော generic type များကိုလည်း သတ်မှတ်နိုင်သည်။</p>
 <h3 id="-generic-stack-data-structure">ဥပမာ: Generic <code>Stack</code> Data Structure</h3>
@@ -1946,7 +1894,6 @@ func main() {
     fmt.Printf(&quot;Popped from stringStack: %s\n&quot;, strVal)
 }</code></pre>
 <p>ဤနေရာတွင်၊ <code>Stack[T any]</code> သည် <code>T</code> ဆိုသော type parameter ဖြင့် <code>Stack</code> struct ကို သတ်မှတ်သည်။ ထို့နောက် <code>Stack[int]</code> သို့မဟုတ် <code>Stack[string]</code> ကဲ့သို့သော instance များကို ဖန်တီးနိုင်သည်။</p>
-<hr>
 <h2 id="type-constraints">Type Constraints</h2>
 <p>တစ်ခါတစ်ရံတွင်၊ type parameters အဖြစ် အသုံးပြုနိုင်သော type များကို ကန့်သတ်ရန် လိုအပ်သည်။ ဥပမာအားဖြင့်၊ သင်သည် ကိန်းဂဏန်းများပေါ်တွင်သာ အလုပ်လုပ်သော function တစ်ခုကို ရေးလိုပေမည်။ ဤနေရာတွင် <strong>type constraints</strong> များ ဝင်လာပါသည်။</p>
 <p>Constraint ဆိုသည်မှာ type parameter အတွက် ခွင့်ပြုထားသော type များ၏ set ကို သတ်မှတ်သည့် interface တစ်ခုဖြစ်သည်။</p>
@@ -1984,7 +1931,6 @@ func main() {
     // SumNumbers(stringSlice)
 }</code></pre>
 <p>ဤဥပမာတွင်၊ ကျွန်ုပ်တို့သည် အမျိုးမျိုးသော integer နှင့် float type များ ပါဝင်သော <code>Number</code> interface ကို သတ်မှတ်သည်။ <code>~</code> သင်္ကေတသည် <code>int</code> သာမက၊ underlying type မှာ <code>int</code> ဖြစ်သော မည်သည့် type (custom type <code>type MyInt int</code> ကဲ့သို့) ကိုမဆို ခွင့်ပြုသည်ဟု ဆိုလိုသည်။ <code>[T Number]</code> ကို အသုံးပြုခြင်းဖြင့်၊ <code>SumNumbers</code> ကို <code>Number</code> constraint ၏ အစိတ်အပိုင်းဖြစ်သော type များ၏ slice များဖြင့်သာ ခေါ်ဆိုနိုင်သည်ဟု compiler ကို ပြောပြသည်။</p>
-<hr>
 <h2 id="built-in-comparable-constraint">Built-in <code>comparable</code> Constraint</h2>
 <p>Go တွင် <code>equality</code> (<code>==</code> နှင့် <code>!=</code>) ကို စစ်ဆေးရန်အတွက် အသင့်ပါရှိပြီးသား <code>comparable</code> constraint ကို အသုံးပြုနိုင်သည်။ <code>any</code> constraint သည် အရာအားလုံးကို လက်ခံသော်လည်း <code>==</code> စစ်ဆေးခြင်းကို ခွင့်မပြုပါ။</p>
 <h3 id="-slice-index-function">ဥပမာ: Slice Index ရှာဖွေခြင်း Function</h3>
@@ -2017,7 +1963,6 @@ func main() {
 <p>ဤ function သည် <code>int</code>, <code>string</code>, <code>bool</code>, <code>pointer</code> စသည့် <code>comparable</code> ဖြစ်သော မည်သည့် type နှင့်မဆို အလုပ်လုပ်သည်။</p>
 <h1 id="-goroutines">အခန်း ၁၂: Goroutines</h1>
 <p>ယခုအခန်းတွင် Go ၏ အကျော်ကြားဆုံးနှင့် အစွမ်းထက်ဆုံး feature ဖြစ်သော concurrency ကို စတင်လေ့လာပါမည်။ Go သည် Goroutines ဟုခေါ်သော အလွန်ပေါ့ပါးသည့် execution unit များကို အသုံးပြု၍ concurrent programming ကို အလွန်လွယ်ကူအောင် ပြုလုပ်ပေးထားသည်။</p>
-<hr>
 <h2 id="concurrency-parallelism-">Concurrency နှင့် Parallelism ကွာခြားချက်</h2>
 <p>Concurrency နှင့် Parallelism သည် ဆင်တူသယောင်ရှိသော်လည်း အဓိပ္ပာယ် မတူညီပါ။</p>
 <ul>
@@ -2041,7 +1986,6 @@ func main() {
         CPU_B[&quot;CPU Core 2&quot;] -- &quot;runs&quot; --&gt; Task_B[&quot;Task B&quot;]
     end</code></pre>
 <p>Go သည် concurrency ကို အဓိကထား ဒီဇိုင်းထုတ်ထားပြီး၊ multi-core processor များရှိပါက Go runtime က goroutines များကို cores များပေါ်တွင် parallel အဖြစ် အလိုအလျောက် run ပေးပါသည်။</p>
-<hr>
 <h2 id="goroutine-go-keyword-">Goroutine ဆိုတာဘာလဲ။ (<code>go</code> keyword)</h2>
 <p><strong>Goroutine</strong> ဆိုသည်မှာ Go runtime မှ စီမံခန့်ခွဲသော အလွန်ပေါ့ပါးသည့် thread (lightweight thread) တစ်ခုဖြစ်သည်။ OS thread များနှင့် နှိုင်းယှဉ်ပါက memory အသုံးပြုမှု အလွန်နည်းပါးပြီး (kilobytes အနည်းငယ်သာ)၊ ဖန်တီးရန်နှင့် ဖျက်သိမ်းရန် အလွန်မြန်ဆန်သည်။ ထို့ကြောင့် goroutines ထောင်ပေါင်းများစွာ၊ သိန်းပေါင်းများစွာကို တစ်ပြိုင်နက်တည်း run နိုင်ပါသည်။</p>
 <p>Function call တစ်ခု၏ ရှေ့တွင် <code>go</code> keyword ကို ထည့်သွင်းလိုက်ရုံဖြင့် goroutine အသစ်တစ်ခုကို အလွယ်တကူ ဖန်တီးနိုင်ပါသည်။</p>
@@ -2067,7 +2011,6 @@ func main() {
     say(&quot;Hello&quot;)
 }</code></pre>
 <p><strong>ပြဿနာ:</strong> အထက်ပါ code ကို run ကြည့်ပါက &quot;Hello&quot; ကိုသာ print ထုတ်ပြီး &quot;World&quot; ကို print ထုတ်သည်ကို မြင်ရချင်မှ မြင်ရမည်။ အကြောင်းမှာ <code>main</code> function (main goroutine) သည် <code>say(&quot;World&quot;)</code> goroutine ပြီးဆုံးသည်ကို <strong>မစောင့်ဘဲ</strong> ၎င်း၏အလုပ် ပြီးဆုံးသွားသည်နှင့် program တစ်ခုလုံးကို ရပ်တန့်လိုက်သောကြောင့် ဖြစ်သည်။</p>
-<hr>
 <h2 id="-sync-waitgroup-"><code>sync.WaitGroup</code> ကို အသုံးပြုခြင်း</h2>
 <p>Goroutines များအားလုံး ပြီးဆုံးသည်အထိ main goroutine ကို စောင့်ဆိုင်းစေရန်အတွက် <code>sync</code> package မှ <code>WaitGroup</code> ကို အသုံးပြုနိုင်ပါသည်။ <code>WaitGroup</code> သည် goroutines အစုအဝေးတစ်ခု ပြီးဆုံးသည်အထိ စောင့်ဆိုင်းရန်အတွက် counter တစ်ခုကို အသုံးပြုသည်။</p>
 <p><code>WaitGroup</code> တွင် အဓိက method ၃ ခုရှိသည်:</p>
@@ -2129,8 +2072,6 @@ func main() {
     fmt.Println(&quot;All workers have finished.&quot;)
 }</code></pre>
 <p>ဤ code တွင် <code>main</code> function သည် <code>wg.Wait()</code> နေရာတွင် worker goroutines ၃ ခုလုံး <code>wg.Done()</code> ကို ခေါ်ပြီးသည်အထိ စောင့်ဆိုင်းနေမည်ဖြစ်သောကြောင့် worker များအားလုံး၏ output များကို စနစ်တကျ မြင်တွေ့ရမည်ဖြစ်သည်။</p>
-<hr>
-<hr>
 <h2 id="race-conditions-sync-mutex-">Race Conditions နှင့် <code>sync.Mutex</code></h2>
 <p>Goroutines များစွာက variable တစ်ခုတည်းကို တစ်ပြိုင်နက်တည်း ပြောင်းလဲရန် ကြိုးစားသောအခါ <strong>Race Condition</strong> ဖြစ်ပေါ်တတ်သည်။ ၎င်းသည် program ၏ ရလဒ်ကို မမှန်ကန်စေဘဲ၊ ရှာဖွေရခက်ခဲသော bug များကို ဖြစ်စေသည်။</p>
 <p>ဤပြဿနာကို ဖြေရှင်းရန် <code>sync.Mutex</code> (Mutual Exclusion lock) ကို အသုံးပြုသည်။ <code>Mutex</code> သည် ကုဒ်၏ အစိတ်အပိုင်းတစ်ခုကို တစ်ချိန်တည်းတွင် goroutine တစ်ခုတည်းကသာ လုပ်ဆောင်ခွင့်ရစေရန် lock ချပေးသည်။</p>
@@ -2175,7 +2116,6 @@ func main() {
     wg.Wait()
     fmt.Println(&quot;Final Counter:&quot;, counter) // Output: 1000 (Correct)
 }</code></pre>
-<hr>
 <h2 id="singleton-pattern-sync-once-">Singleton Pattern (<code>sync.Once</code>)</h2>
 <p>Struct များနှင့် ပတ်သက်၍ အသုံးများသော Design Pattern တစ်ခုမှာ <strong>Singleton Pattern</strong> ဖြစ်သည်။ Singleton ဆိုသည်မှာ Application တစ်ခုလုံးတွင် struct instance တစ်ခုတည်းသာ ရှိစေရန် ကန့်သတ်ထားခြင်းဖြစ်သည်။ Concurrency ပါဝင်သော Application များတွင် Singleton ကို thread-safe ဖြစ်စေရန် <code>sync</code> package မှ <code>Once</code> ကို အသုံးပြုတည်ဆောက်လေ့ရှိသည်။</p>
 <pre><code class="lang-go">package main
@@ -2295,7 +2235,6 @@ func main() {
 }</code></pre>
 <h1 id="-channels">အခန်း ၁၃: Channels</h1>
 <p>ယခင်အခန်းတွင် goroutines များကို အသုံးပြု၍ concurrent tasks များ မည်သို့ run ရမည်ကို လေ့လာခဲ့ပြီးဖြစ်သည်။ ယခုအခန်းတွင် ထို goroutines များ အချင်းချင်း ဘေးကင်းလုံခြုံစွာ ဆက်သွယ်ရန်နှင့် data များ အပြန်အလှန် ပေးပို့ရန်အတွက် Go ၏ အဓိကကျသော feature ဖြစ်သည့် <strong>Channels</strong> အကြောင်းကို လေ့လာသွားပါမည်။</p>
-<hr>
 <h2 id="channel-goroutines-">Channel ဆိုတာဘာလဲ။ (Goroutines များကြား ဆက်သွယ်ရေး)</h2>
 <p><strong>Channel</strong> ဆိုသည်မှာ goroutines များ အချင်းချင်း data များ ပေးပို့ခြင်း (send) နှင့် လက်ခံခြင်း (receive) ပြုလုပ်နိုင်ရန်အတွက် တည်ဆောက်ထားသော ပိုက်လိုင်း (pipeline) သို့မဟုတ် conduit တစ်ခုဖြစ်သည်။ Channel တိုင်းတွင် သီးခြား data type တစ်ခု သတ်မှတ်ထားပြီး၊ ထို type နှင့် ကိုက်ညီသော data များကိုသာ ပေးပို့ လက်ခံနိုင်ပါသည်။</p>
 <p>Go ၏ ဆောင်ပုဒ်မှာ <strong>&quot;Don&#39;t communicate by sharing memory; share memory by communicating.&quot;</strong> ဖြစ်သည်။ ၎င်းမှာ memory ကို goroutines များစွာက တိုက်ရိုက် access လုပ်ခြင်းထက်၊ channel မှတစ်ဆင့် data များကို ပေးပို့ခြင်းဖြင့် ဆက်သွယ်ခြင်းက ပိုမိုဘေးကင်းပြီး ရိုးရှင်းသည်ဟု ဆိုလိုခြင်းဖြစ်သည်။</p>
@@ -2335,7 +2274,6 @@ func main() {
 
     fmt.Println(&quot;Main: Received message:&quot;, msg)
 }</code></pre>
-<hr>
 <h2 id="buffered-vs-unbuffered-channels">Buffered vs. Unbuffered Channels</h2>
 <p>Channels များကို unbuffered နှင့် buffered ဟူ၍ နှစ်မျိုးခွဲခြားနိုင်သည်။</p>
 <h3 id="unbuffered-channels">Unbuffered Channels</h3>
@@ -2381,8 +2319,6 @@ func main() {
     fmt.Println(&lt;-ch)
     fmt.Println(&lt;-ch)
 }</code></pre>
-<hr>
-<hr>
 <h2 id="closing-channels-and-range">Closing Channels and Range</h2>
 <p>Sender က ပေးပို့စရာ data ကုန်သွားတဲ့အခါ channel ကို <code>close()</code> function သုံးပြီး ပိတ်သိမ်းနိုင်ပါတယ်။ ဒါက Receiver ကို &quot;နောက်ထပ် data မလာတော့ဘူး&quot; လို့ အသိပေးလိုက်တာပါ။</p>
 <ul>
@@ -2406,7 +2342,6 @@ func main() {
         fmt.Println(n)
     }
 }</code></pre>
-<hr>
 <h2 id="directional-channels-channels-">Directional Channels (လမ်းကြောင်းတစ်ဖက်တည်း Channels)</h2>
 <p>Function parameters တွေမှာ channel ကို &quot;ပို့ဖို့သီးသန့်&quot; (Send-only) သို့မဟုတ် &quot;လက်ခံဖို့သီးသန့်&quot; (Receive-only) ဆိုပြီး ကန့်သတ်နိုင်ပါတယ်။ ဒါက Type-safety ကို ပိုမိုခိုင်မာစေပါတယ်။</p>
 <ul>
@@ -2429,7 +2364,6 @@ func main() {
     go send(ch)
     receive(ch)
 }</code></pre>
-<hr>
 <h2 id="-select-statement-channels-"><code>select</code> Statement ဖြင့် Channels များကို ကိုင်တွယ်ခြင်း</h2>
 <p><code>select</code> statement သည် goroutine တစ်ခုကို multiple channel operations များပေါ်တွင် တစ်ပြိုင်နက်တည်း စောင့်ဆိုင်းစေနိုင်သည်။ ၎င်းသည် <code>switch</code> statement နှင့် ဆင်တူသော်လည်း channels များအတွက်သာ ဖြစ်သည်။</p>
 <ul>
@@ -2494,7 +2428,6 @@ func main() {
 }</code></pre>
 <h1 id="-error-handling">အခန်း ၁၄: Error Handling</h1>
 <p>Go တွင် error handling သည် အခြား programming languages များစွာနှင့် ကွဲပြားပါသည်။ <code>try-catch</code> block များအစား Go သည် errors များကို function return values များအဖြစ် သာမန်တန်ဖိုးများကဲ့သို့ပင် ကိုင်တွယ်သည်။ ဤအခန်းတွင် Go ၏ error handling ပုံစံ၊ custom errors များ တည်ဆောက်ပုံ၊ နှင့် <code>panic</code>/<code>recover</code> တို့၏ အသုံးဝင်ပုံများကို လေ့လာသွားပါမည်။</p>
-<hr>
 <h2 id="go-error-handling-error-type-">Go ၏ Error Handling ပုံစံ (<code>error</code> type)</h2>
 <p>Go တွင် error ဖြစ်နိုင်ခြေရှိသော function များသည် <code>error</code> type ကို ၎င်းတို့၏ နောက်ဆုံး return value အဖြစ် ပြန်ပေးလေ့ရှိသည်။ <code>error</code> သည် အောက်ပါအတိုင်း method တစ်ခုတည်းသာပါဝင်သော built-in interface တစ်ခုဖြစ်သည်။</p>
 <pre><code class="lang-go">type error interface {
@@ -2525,7 +2458,6 @@ func main() {
         fmt.Println(&quot;Converted number:&quot;, num)
     }
 }</code></pre>
-<hr>
 <h2 id="custom-errors-">Custom Errors များ တည်ဆောက်ခြင်း</h2>
 <p>Go တွင် error message များကို ပိုမိုအသေးစိတ်ဖော်ပြရန် custom error များ တည်ဆောက်နိုင်သော နည်းလမ်းများစွာရှိသည်။</p>
 <h3 id="1-errors-new-">1. <code>errors.New()</code></h3>
@@ -2585,8 +2517,6 @@ func main() {
         fmt.Println(err)
     }
 }</code></pre>
-<hr>
-<hr>
 <h2 id="checking-wrapped-errors-errors-is-and-errors-as-">Checking Wrapped Errors (<code>errors.Is</code> and <code>errors.As</code>)</h2>
 <p>Error များကို <code>fmt.Errorf</code> နှင့် <code>%w</code> အသုံးပြု၍ wrap လုပ်လိုက်သောအခါ၊ မူလ error type ကို တိုက်ရိုက်စစ်ဆေး၍မရတော့ပါ။ (ဥပမာ - <code>err == os.ErrNotExist</code> သည် false ဖြစ်သွားနိုင်သည်)။ ထိုအခါမျိုးတွင် <code>errors</code> package မှ helper function များကို အသုံးပြုရပါမည်။</p>
 <h3 id="1-errors-is-">1. <code>errors.Is()</code></h3>
@@ -2625,7 +2555,6 @@ func main() {
         fmt.Println(&quot;It is MyError with code:&quot;, myErr.Code)
     }
 }</code></pre>
-<hr>
 <h2 id="-panic-recover-"><code>panic</code> နှင့် <code>recover</code></h2>
 <p><code>panic</code> နှင့် <code>recover</code> သည် Go ၏ error handling mechanism ၏ အစိတ်အပိုင်းတစ်ခုဖြစ်သော်လည်း၊ ၎င်းတို့ကို နေ့စဉ် error handling အတွက် <strong>အသုံးမပြုသင့်ပါ</strong>။</p>
 <ul>
@@ -2678,7 +2607,6 @@ func main() {
 }</code></pre>
 <h1 id="-standard-library-packages">အခန်း ၁၅: အသုံးများသော Standard Library Packages</h1>
 <p>Go ၏ အကြီးမားဆုံး အားသာချက်တစ်ခုမှာ အလွန်စွမ်းဆောင်ရည်မြင့်မားပြီး ကျယ်ပြန့်သော standard library ပါဝင်ခြင်းဖြစ်သည်။ ယခုအခန်းတွင် နေ့စဉ် programming ပြုလုပ်ရာတွင် အသုံးအများဆုံးဖြစ်သော standard library packages အချို့၏ အခြေခံအသုံးပြုပုံကို လေ့လာသွားပါမည်။</p>
-<hr>
 <h2 id="-fmt-formatted-i-o-"><code>fmt</code> (Formatted I/O)</h2>
 <p><code>fmt</code> package သည် console သို့ data များ print ထုတ်ခြင်း (output) နှင့် user ထံမှ data များ ဖတ်ရှုခြင်း (input) ကဲ့သို့သော formatted I/O (Input/Output) လုပ်ဆောင်ချက်များကို ကိုင်တွယ်သည်။</p>
 <ul>
@@ -2702,7 +2630,6 @@ func main() {
     // %v for any value (default format)
     fmt.Printf(&quot;Value: %v, Type: %T\n&quot;, version, version)
 }</code></pre>
-<hr>
 <h2 id="-os-operating-system-interactions-"><code>os</code> (Operating System Interactions)</h2>
 <p><code>os</code> package သည် operating system နှင့် တိုက်ရိုက်ဆက်နွယ်သော လုပ်ဆောင်ချက်များ (e.g., files, command-line arguments) ကို ကိုင်တွယ်ရန် platform-independent interface တစ်ခုကို ပေးသည်။</p>
 <ul>
@@ -2734,7 +2661,6 @@ func main() {
     }
     fmt.Println(&quot;Read from test.txt:&quot;, string(readData))
 }</code></pre>
-<hr>
 <h2 id="-embed-embedding-files-"><code>embed</code> (Embedding Files)</h2>
 <p>Go 1.16 မှစတင်၍ <code>embed</code> package ကို အသုံးပြုကာ static file များ (images, HTML, config files) ကို Go binary ထဲသို့ တိုက်ရိုက်ထည့်သွင်း (embed) လာနိုင်ပြီဖြစ်သည်။ ၎င်းသည် single-binary application များ deploy လုပ်ရာတွင် အလွန်အသုံးဝင်သည်။</p>
 <p><code>//go:embed</code> directive ကို အသုံးပြုရသည်။</p>
@@ -2768,8 +2694,6 @@ func main() {
 <blockquote>
 <p><strong>သတိပြုရန်:</strong> <code>//</code> နှင့် <code>go:embed</code> ကြားတွင် space မရှိရပါ (ဥပမာ <code>// go:embed</code> ဟု မရေးရပါ)။ ထို့ပြင် directive နှင့် variable ကြားတွင် empty line မရှိရပါ။</p>
 </blockquote>
-<hr>
-<hr>
 <h2 id="-log-package"><code>log</code> Package</h2>
 <p><code>log</code> package သည် program ၏ status message များနှင့် error များကို timestamp နှင့်တကွ မှတ်တမ်းတင်ရန် (print ထုတ်ရန်) အသုံးပြုသည်။ Production code များတွင် <code>fmt.Println</code> ထက် <code>log</code> package ကို ပိုမိုအသုံးပြုသင့်သည်။</p>
 <ul>
@@ -2792,7 +2716,6 @@ func main() {
     }
     log.Println(&quot;Successfully opened file:&quot;, file.Name())
 }</code></pre>
-<hr>
 <h2 id="-time-package"><code>time</code> Package</h2>
 <p><code>time</code> package သည် အချိန်နှင့်ပတ်သက်သော တွက်ချက်မှုများ၊ formatting နှင့် waiting (sleep) တို့ကို ကိုင်တွယ်သည်။</p>
 <ul>
@@ -2817,7 +2740,6 @@ func main() {
     elapsed := time.Since(start)
     fmt.Println(&quot;Program took:&quot;, elapsed)
 }</code></pre>
-<hr>
 <h2 id="-strings-and-strconv-"><code>strings</code> and <code>strconv</code></h2>
 <ul>
 <li><strong><code>strings</code> package:</strong> String များကို ကိုင်တွယ်ရန် အသုံးဝင်သော functions များစွာ ပါဝင်သည်။</li>
@@ -2851,7 +2773,6 @@ func main() {
     str := strconv.Itoa(numToConvert) // Itoa = Integer to ASCII
     fmt.Println(&quot;Converted string:&quot;, str)
 }</code></pre>
-<hr>
 <h2 id="-encoding-json-json-data-"><code>encoding/json</code> (JSON Data ကိုင်တွယ်ခြင်း)</h2>
 <p><code>encoding/json</code> package သည် Go data structures (structs, maps) နှင့် JSON data format အကြား အပြန်အလှန် ပြောင်းလဲရန် အသုံးပြုသည်။</p>
 <ul>
@@ -2897,7 +2818,6 @@ func main() {
     fmt.Println(&quot;\nUnmarshalled User:&quot;, anotherUser)
     fmt.Println(&quot;Unmarshalled User&#39;s Name:&quot;, anotherUser.Name)
 }</code></pre>
-<hr>
 <h2 id="-net-http-web-server-"><code>net/http</code> (Web Server တည်ဆောက်ခြင်း)</h2>
 <p><code>net/http</code> package သည် production-ready HTTP client နှင့် server များကို အလွယ်တကူ တည်ဆောက်နိုင်ရန် လိုအပ်သော tools များအားလုံးကို ပေးသည်။</p>
 <pre><code class="lang-mermaid">graph LR
@@ -2935,7 +2855,6 @@ func main() {
 <p>ဤ program ကို run ပြီး web browser တွင် <code>http://localhost:8080/hello</code> သို့ သွားရောက်ကြည့်ရှုပါက &quot;Hello, you&#39;ve requested: /hello&quot; ဟူသော စာသားကို မြင်တွေ့ရမည်ဖြစ်သည်။</p>
 <h1 id="-testing-in-go">အခန်း ၁၆: Testing in Go</h1>
 <p>Software development တွင် testing သည် code ၏ အရည်အသွေး၊ မှန်ကန်မှု၊ နှင့် ယုံကြည်စိတ်ချရမှုကို အာမခံရန်အတွက် မရှိမဖြစ်လိုအပ်သော အစိတ်အပိုင်းတစ်ခုဖြစ်သည်။ Go သည် <code>testing</code> package ကို standard library တွင် တပါတည်း ထည့်သွင်းပေးထားပြီး၊ unit tests နှင့် performance benchmark tests များကို ရိုးရှင်းလွယ်ကူစွာ ရေးသားနိုင်ရန် အားပေးသည်။</p>
-<hr>
 <h2 id="-testing-package-testing-conventions"><code>testing</code> package နှင့် Testing Conventions</h2>
 <p>Go တွင် test code များကို ရေးသားရန်အတွက် လိုက်နာရမည့် conventions အချို့ရှိသည်။</p>
 <ul>
@@ -2944,7 +2863,6 @@ func main() {
 <li><strong><code>*testing.T</code> Type:</strong> ဤ type သည် test ၏ state ကို စီမံခန့်ခွဲရန်နှင့် test failure များကို report လုပ်ရန် <code>t.Errorf()</code>, <code>t.Fatalf()</code>, <code>t.Log()</code> ကဲ့သို့သော methods များကို ပေးသည်။</li>
 <li><strong>Running Tests:</strong> Terminal တွင် <code>go test</code> command ကို အသုံးပြု၍ package တစ်ခုအတွင်းရှိ test များအားလုံးကို run နိုင်ပါသည်။</li>
 </ul>
-<hr>
 <h2 id="unit-tests-">Unit Tests ရေးသားခြင်း</h2>
 <p>Unit test ဆိုသည်မှာ program ၏ အစိတ်အပိုင်းငယ်တစ်ခု (function သို့မဟုတ် method တစ်ခု) ကို သီးခြားစမ်းသပ်ခြင်းဖြစ်သည်။</p>
 <p><strong>ဥပမာ:</strong> <code>calculator</code> package ထဲတွင် <code>Add</code> function တစ်ခုရှိသည်ဆိုပါစို့။</p>
@@ -2968,7 +2886,6 @@ func TestAdd(t *testing.T) {
         t.Errorf(&quot;Add(2, 3) = %d; want %d&quot;, result, expected)
     }
 }</code></pre>
-<hr>
 <h2 id="table-driven-tests">Table-Driven Tests</h2>
 <p>Function တစ်ခုကို input အမျိုးမျိုးဖြင့် စမ်းသပ်လိုသည့်အခါ test case တစ်ခုချင်းစီအတွက် test function တစ်ခုစီ ရေးသားခြင်းထက်၊ <strong>Table-driven test</strong> ပုံစံကို အသုံးပြုခြင်းက ပိုမိုရှင်းလင်းပြီး ထိရောက်မှုရှိသည်။ ဤပုံစံတွင် test cases များကို slice of structs အဖြစ် ကြိုတင်သတ်မှတ်ပြီး loop ပတ်၍ တစ်ခုချင်း စမ်းသပ်သည်။</p>
 <pre><code class="lang-mermaid">graph TD
@@ -3009,7 +2926,6 @@ func TestAddTableDriven(t *testing.T) {
         })
     }
 }</code></pre>
-<hr>
 <h2 id="test-coverage">Test Coverage</h2>
 <p>Test များရေးသားပြီးပါက၊ ထို test များသည် code ၏ မည်မျှရာခိုင်နှုန်းကို စမ်းသပ်ပေးနိုင်သည် (cover ဖြစ်သည်) ကို သိရှိရန် အရေးကြီးသည်။ Go တွင် coverage ကို တိုင်းတာရန် built-in support ပါရှိသည်။</p>
 <p><code>go test -cover</code> command ကို အသုံးပြု၍ coverage ကို ကြည့်ရှုနိုင်သည်။</p>
@@ -3020,7 +2936,6 @@ ok      myproject/calculator    0.005s</code></pre>
 <p>အသေးစိတ် report လိုချင်ပါက <code>-coverprofile</code> flag ကို အသုံးပြု၍ file ထုတ်နိုင်ပြီး၊ <code>go tool cover</code> ဖြင့် browser တွင် ကြည့်ရှုနိုင်သည်။</p>
 <pre><code class="lang-sh">go test -coverprofile=coverage.out
 go tool cover -html=coverage.out</code></pre>
-<hr>
 <h2 id="testmain-setup-and-teardown-">TestMain (Setup and Teardown)</h2>
 <p>Package တစ်ခုလုံးအတွက် initialization (setup) သို့မဟုတ် cleanup (teardown) လုပ်ရန် လိုအပ်ပါက (ဥပမာ - Database connection ဖွင့်ခြင်း/ပိတ်ခြင်း)၊ <code>TestMain</code> function ကို အသုံးပြုနိုင်သည်။</p>
 <p><strong>စည်းမျဉ်း:</strong> <code>TestMain</code> သည် <code>*testing.M</code> ကို parameter အဖြစ်လက်ခံပြီး၊ <code>m.Run()</code> ကို ခေါ်ယူမှသာ အခြား test များ အလုပ်လုပ်မည်ဖြစ်သည်။ <code>os.Exit()</code> ဖြင့် exit code ကို ပြန်ပေးရမည်။</p>
@@ -3037,7 +2952,6 @@ go tool cover -html=coverage.out</code></pre>
     // 4. Exit with code
     os.Exit(code)
 }</code></pre>
-<hr>
 <h2 id="benchmarking">Benchmarking</h2>
 <p>Benchmarking ဆိုသည်မှာ code ၏ performance (အထူးသဖြင့် speed) ကို တိုင်းတာခြင်းဖြစ်သည်။ Go တွင် benchmark tests များကို <code>testing</code> package ဖြင့် အလွယ်တကူ ရေးသားနိုင်သည်။</p>
 <ul>
@@ -3070,7 +2984,6 @@ ok      myproject/calculator    0.358s</code></pre>
 <li><code>1000000000</code>: <code>b.N</code> ၏ တန်ဖိုး (loop ကို အကြိမ်ပေါင်း ဘီလီယံ ၁ ထောင် run ခဲ့သည်)။</li>
 <li><code>0.2831 ns/op</code>: Operation တစ်ခု (loop တစ်ခါပတ်ခြင်း) အတွက် ပျမ်းမျှကြာချိန် (nanoseconds)။</li>
 </ul>
-<hr>
 <h2 id="fuzzing-go-1-18-">Fuzzing (Go 1.18+)</h2>
 <p><strong>Fuzzing</strong> သည် automated testing technique တစ်ခုဖြစ်ပြီး၊ မမျှော်လင့်ထားသော input များကို random ထည့်သွင်း၍ program ၏ stability နှင့် security ကို စစ်ဆေးခြင်းဖြစ်သည်။ Go 1.18 တွင် Fuzzing ကို <code>testing</code> package တွင် native support ပေးထားသည်။</p>
 <ul>
@@ -3117,7 +3030,6 @@ func FuzzReverse(f *testing.F) {
 <h1 id="-project-simple-rest-api-">အခန်း ၁၇: Project - Simple REST API တည်ဆောက်ခြင်း (အပိုင်း ၁)</h1>
 <p>ယခုအခန်းမှစ၍ ယခင်လေ့လာခဲ့သော Go ၏ concepts များကို ပေါင်းစပ်ပြီး လက်တွေ့ project တစ်ခုကို စတင်တည်ဆောက်ပါမည်။ ကျွန်ုပ်တို့ တည်ဆောက်မည့် project မှာ To-Do List တစ်ခုကို စီမံခန့်ခွဲနိုင်သော ရိုးရှင်းသည့် REST API တစ်ခုဖြစ်သည်။</p>
 <p>ဤအပိုင်း (Part 1) တွင် project အတွက် planning ပြုလုပ်ခြင်း၊ data structure များ သတ်မှတ်ခြင်း၊ နှင့် standard <code>net/http</code> package ကို အသုံးပြု၍ အခြေခံ routing နှင့် handlers များ ရေးသားခြင်းတို့ကို လေ့လာသွားပါမည်။</p>
-<hr>
 <h2 id="project-planning">Project Planning</h2>
 <p>Project တစ်ခုကို မစတင်မီ ဘာတွေလုပ်ဆောင်မည်ကို ကြိုတင် plan လုပ်ခြင်းသည် အလွန်အရေးကြီးပါသည်။</p>
 <p><strong>1. Project ၏ ရည်ရွယ်ချက်:</strong></p>
@@ -3147,7 +3059,6 @@ func FuzzReverse(f *testing.F) {
         A[&quot;GET /tasks&quot;] --&gt; B[&quot;Task အားလုံးကို JSON array အဖြစ် ပြန်ပေးမည်&quot;]
         C[&quot;POST /tasks&quot;] --&gt; D[&quot;Request body မှ JSON data ကို အသုံးပြု၍&lt;br/&gt;Task အသစ်တစ်ခု ဖန်တီးပြီး&lt;br/&gt;ထို task ကို JSON အဖြစ် ပြန်ပေးမည်&quot;]
     end</code></pre>
-<hr>
 <h2 id="project-structure-standard-layout-">Project Structure (Standard Layout)</h2>
 <p>Go community တွင် တွင်ကျယ်စွာအသုံးပြုသော project structure ပုံစံတစ်ခုရှိသည်။ ဤ project သည် သေးငယ်သော်လည်း၊ လုပ်ငန်းခွင်သုံး project ကြီးများအတွက် အဆင်သင့်ဖြစ်စေရန် standard layout ကို မိတ်ဆက်ပေးချင်ပါသည်။</p>
 <pre><code>my-todo-app/
@@ -3164,7 +3075,6 @@ func FuzzReverse(f *testing.F) {
 <li><strong><code>pkg/</code>:</strong> အခြား project များမှပါ အသုံးပြုနိုင်သော public library code များ (ဤ project တွင် လောလောဆယ် မပါဝင်ပါ)။</li>
 </ul>
 <p>သို့သော် ယခုအပိုင်း (Part 1) တွင် လေ့လာရလွယ်ကူစေရန် code များကို <code>main.go</code> တစ်ခုတည်းတွင် စုစည်းရေးသားပါမည်။ နောက်ပိုင်းအပိုင်းများတွင် code များကို အထက်ပါ structure အတိုင်း refactor လုပ်သွားပါမည်။</p>
-<hr>
 <h2 id="http-handlers-">HTTP Handlers များ ရေးသားခြင်း</h2>
 <p>HTTP Handler ဆိုသည်မှာ specific URL path သို့ ရောက်ရှိလာသော HTTP request များကို လက်ခံပြီး response ပြန်ပေးရန် တာဝန်ရှိသော function ဖြစ်သည်။</p>
 <p>ဤ project ၏ ပထမပိုင်းတွင် data များကို database တွင် မသိမ်းဆည်းဘဲ၊ program run နေစဉ်အတွင်း memory ထဲတွင်သာ သိမ်းဆည်းထားရန် in-memory slice တစ်ခုကို အသုံးပြုပါမည်။</p>
@@ -3254,7 +3164,6 @@ func main() {
 <li><code>tasksHandler</code> သည် request ၏ HTTP method ကို စစ်ဆေးပြီး သက်ဆိုင်ရာ function (<code>getTasks</code> or <code>createTask</code>) ကို ခေါ်ယူပေးသည်။</li>
 <li><code>getTasks</code> နှင့် <code>createTask</code> functions များသည် JSON data များကို encode/decode လုပ်ပြီး client သို့ response ပြန်ပေးသည်။</li>
 </ul>
-<hr>
 <h2 id="routing-">Routing ပြုလုပ်ခြင်း</h2>
 <p>Routing ဆိုသည်မှာ URL path တစ်ခုကို သက်ဆိုင်ရာ handler function တစ်ခုနှင့် ချိတ်ဆက်ပေးခြင်းဖြစ်သည်။ <code>net/http</code> package မှ <code>http.HandleFunc</code> ကို အသုံးပြု၍ routing ကို အလွယ်တကူ ပြုလုပ်နိုင်သည်။</p>
 <p><strong><code>main</code> function ကို ပြီးပြည့်စုံအောင် ရေးသားခြင်း:</strong></p>
@@ -3273,16 +3182,15 @@ func main() {
 <p>ယခု <code>main.go</code> file ကို <code>go run main.go</code> ဖြင့် run ပြီးနောက် <code>curl</code> သို့မဟုတ် Postman ကဲ့သို့သော tool များကို အသုံးပြု၍ API ကို စမ်းသပ်နိုင်ပြီဖြစ်သည်။</p>
 <ul>
 <li><strong>Get all tasks:</strong> <code>curl http://localhost:8080/tasks</code></li>
-<li><strong>Create a new task:</strong> <code>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{&quot;title&quot;:&quot;Learn Go&quot;, &quot;completed&quot;:false}&#39; http://localhost:8080/tasks</code><h1 id="-project-simple-rest-api-">အခန်း ၁၈: Project - Simple REST API တည်ဆောက်ခြင်း (အပိုင်း ၂)</h1>
-</li>
+<li><strong>Create a new task:</strong> <code>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{&quot;title&quot;:&quot;Learn Go&quot;, &quot;completed&quot;:false}&#39; http://localhost:8080/tasks</code></li>
 </ul>
+<h1 id="-project-simple-rest-api-">အခန်း ၁၈: Project - Simple REST API တည်ဆောက်ခြင်း (အပိုင်း ၂)</h1>
 <p>ယခင်အခန်းတွင် ကျွန်ုပ်တို့၏ To-Do List API အတွက် အခြေခံ server တစ်ခုကို <code>net/http</code> package ဖြင့် တည်ဆောက်ခဲ့ပြီး <code>GET /tasks</code> နှင့် <code>POST /tasks</code> endpoints များကို implement လုပ်ခဲ့ပါသည်။</p>
 <p>ယခုအခန်းတွင် API ကို ပိုမိုစွမ်းဆောင်ရည်ပြည့်ဝအောင် တိုးချဲ့တည်ဆောက်သွားပါမည်။</p>
 <ol>
 <li>Task တစ်ခုချင်းစီကို ID ဖြင့် <code>GET</code>, <code>PUT</code>, <code>DELETE</code> လုပ်နိုင်သော endpoints များ ထပ်မံထည့်သွင်းပါမည်။</li>
 <li>Go 1.22+ တွင် စတင်မိတ်ဆက်ခဲ့သော <strong>Enhanced <code>net/http</code> ServeMux</strong> ကို အသုံးပြု၍ routing ကို ပြန်လည်တည်ဆောက်ပါမည်။</li>
 </ol>
-<hr>
 <h2 id="go-1-22-standard-library-router">Go 1.22+ Standard Library Router</h2>
 <p>Go 1.22 မတိုင်မီက၊ URL path parameters (e.g., <code>/tasks/{id}</code>) များကို ကိုင်တွယ်ရန် <code>gorilla/mux</code> သို့မဟုတ် <code>chi</code> ကဲ့သို့သော third-party library များကို အသုံးပြုလေ့ရှိခဲ့သည်။</p>
 <p>သို့သော် Go 1.22 တွင် standard <code>net/http</code> router သည် သိသိသာသာ အဆင့်မြှင့်တင်မှုများ ပါဝင်လာပြီး၊ external dependencies မလိုဘဲ အောက်ပါတို့ကို လုပ်ဆောင်နိုင်ပြီဖြစ်သည်။</p>
@@ -3290,7 +3198,6 @@ func main() {
 <li><strong>Method Matching:</strong> HTTP method (<code>GET</code>, <code>POST</code> etc.) ကို pattern တွင် တိုက်ရိုက်သတ်မှတ်နိုင်ခြင်း (e.g., <code>&quot;GET /tasks&quot;</code>).</li>
 <li><strong>Path Variables:</strong> URL path အတွင်းရှိ dynamic တန်ဖိုးများကို <code>{name}</code> ပုံစံဖြင့် ဖမ်းယူနိုင်ခြင်း (e.g., <code>/tasks/{id}</code>).</li>
 </ul>
-<hr>
 <h2 id="api-endpoints-">API Endpoints အသစ်များ ထပ်တိုးခြင်း</h2>
 <p>ကျွန်ုပ်တို့၏ API ကို အောက်ပါ endpoints များဖြင့် တိုးချဲ့ပါမည်။</p>
 <pre><code class="lang-mermaid">graph TD
@@ -3299,7 +3206,6 @@ func main() {
         C[&quot;PUT /tasks/{id}&quot;] --&gt; D[&quot;ID ဖြင့် Task တစ်ခုကို ရှာဖွေပြီး&lt;br/&gt;Request body မှ JSON data ဖြင့်&lt;br/&gt;Update လုပ်ပြီး ပြန်ပေးမည်&quot;]
         E[&quot;DELETE /tasks/{id}&quot;] --&gt; F[&quot;ID ဖြင့် Task တစ်ခုကို ရှာဖွေပြီး&lt;br/&gt;ဖျက်ပစ်မည်&quot;]
     end</code></pre>
-<hr>
 <h2 id="code-refactor-handlers-">Code ကို Refactor လုပ်ခြင်း နှင့် Handlers အသစ်များ ရေးသားခြင်း</h2>
 <p>အောက်ပါ code သည် Go 1.22 ၏ router feature အသစ်များကို အသုံးပြု၍ ရေးသားထားသော <code>main.go</code> ၏ ပြီးပြည့်စုံသော version ဖြစ်သည်။</p>
 <p><strong><code>main.go</code> (Updated Version)</strong></p>
@@ -3457,11 +3363,9 @@ func main() {
 <p>ယခုအခါ Third-party library များကို အားကိုးစရာမလိုဘဲ Standard Library သက်သက်ဖြင့် Modern REST API တစ်ခုကို တည်ဆောက်နိုင်ပြီဖြစ်သည်။</p>
 <h1 id="-project-simple-rest-api-database-integration">အခန်း ၁၉: Project - Simple REST API တည်ဆောက်ခြင်း (အပိုင်း ၃) - Database Integration</h1>
 <p>ယခင် အခန်း ၁၇ နှင့် ၁၈ တွင်၊ ကျွန်ုပ်တို့သည် in-memory data store ကို အသုံးပြု၍ REST API တစ်ခုကို တည်ဆောက်ခဲ့သည်။ ၎င်းသည် API ၏ အလုပ်လုပ်ပုံကို လေ့လာရန် ကောင်းမွန်သော်လည်း၊ application ကို restart လုပ်လိုက်တိုင်း data များ ပျောက်ဆုံးသွားမည်ဖြစ်သည်။ ဤအခန်းတွင်၊ ကျွန်ုပ်တို့၏ data များကို PostgreSQL database တွင် သိမ်းဆည်းခြင်းဖြင့် data persistence ကို အကောင်အထည်ဖော်ပါမည်။</p>
-<hr>
 <h2 id="-database-sql-package-"><code>database/sql</code> Package ကို အသုံးပြုခြင်း</h2>
 <p>Go ၏ standard library တွင်ပါဝင်သော <code>database/sql</code> package သည် SQL (သို့မဟုတ် SQL-like) databases များနှင့် အလုပ်လုပ်ရန်အတွက် generic interface တစ်ခုကို ပံ့ပိုးပေးသည်။ ၎င်းသည် database-specific details များကို abstract လုပ်ပေးထားပြီး၊ ကျွန်ုပ်တို့အား တသမတ်တည်းဖြစ်သော API ဖြင့် database operations များ လုပ်ဆောင်နိုင်ရန် ကူညီပေးသည်။</p>
 <p><code>database/sql</code> package ကိုယ်တိုင်က database နှင့် တိုက်ရိုက်စကားပြောနိုင်စွမ်းမရှိပါ။ ၎င်းသည် <strong>database driver</strong> များနှင့်အတူ အလုပ်လုပ်သည်။ ကျွန်ုပ်တို့သည် PostgreSQL နှင့် ချိတ်ဆက်လိုပါက၊ PostgreSQL အတွက် driver တစ်ခုကို import လုပ်ပေးရန် လိုအပ်သည်။</p>
-<hr>
 <h2 id="database-driver-">Database Driver ထည့်သွင်းခြင်း နှင့် ချိတ်ဆက်ခြင်း</h2>
 <p>ဤ project အတွက်၊ ကျွန်ုပ်တို့သည် PostgreSQL ကို အသုံးပြုပြီး <code>pq</code> driver ကို ထည့်သွင်းပါမည်။</p>
 <p><strong>1. Driver ကို Install လုပ်ခြင်း:</strong></p>
@@ -3519,7 +3423,6 @@ func main() {
 <li><code>sql.Open</code> သည် database connection ကို ချက်ချင်းမဖွင့်ပါ။ ၎င်းသည် နောက်ကွယ်တွင် connection pool တစ်ခုကို setup လုပ်ပေးပြီး လိုအပ်မှသာ connection များကို တည်ဆောက်သည်။</li>
 <li><code>db.Ping()</code> ဖြင့် connection အမှန်တကယ်ရမရ စစ်ဆေးရန် အလွန်အရေးကြီးသည်။</li>
 </ul>
-<hr>
 <h2 id="crud-operations-">CRUD Operations များ ရေးသားခြင်း</h2>
 <p>HTTP handlers များထဲတွင် database logic များကို တိုက်ရိုက်ရေးသားခြင်းထက်၊ သီးသန့် file သို့မဟုတ် package (<code>store</code> သို့မဟုတ် <code>models</code> ကဲ့သို့) တစ်ခုတွင် ခွဲထုတ်ရေးသားခြင်းသည် code ကို ပိုမိုရှင်းလင်းစေသည်။</p>
 <p><strong>ဥပမာ: <code>products</code> table အတွက် CRUD functions များ</strong></p>
@@ -3606,7 +3509,6 @@ func DeleteProduct(db *sql.DB, id int) (int64, error) {
     }
     return res.RowsAffected()
 }</code></pre>
-<hr>
 <h2 id="api-endpoints-database-">API Endpoints များကို Database နှင့် ချိတ်ဆက်ခြင်း</h2>
 <p>ယခု ကျွန်ုပ်တို့၏ HTTP handlers များကို ယခင် in-memory store အစား database functions များကို ခေါ်သုံးရန် ပြင်ဆင်ပါမည်။ Handler များသည် <code>*sql.DB</code> instance ကို access လုပ်ရန် လိုအပ်မည်ဖြစ်သည်။</p>
 <pre><code class="lang-go">// main.go တွင် *sql.DB ကို handler များထံ pass လုပ်ရန် struct တစ်ခု သတ်မှတ်နိုင်သည်
@@ -3758,7 +3660,6 @@ func (e *Env) getProductHandler(w http.ResponseWriter, r *http.Request) {
 <p>ဤအခန်းပြီးဆုံးသောအခါ၊ သင်၏ REST API သည် data များကို database တွင် အမှန်တကယ် သိမ်းဆည်းနိုင်၊ ပြန်လည်ထုတ်ယူနိုင်၊ ပြင်ဆင်နိုင်၊ နှင့် ဖျက်ပစ်နိုင်ပြီ ဖြစ်သည်။ ၎င်းသည် production-ready application တစ်ခု တည်ဆောက်ရန်အတွက် အရေးကြီးသော ခြေလှမ်းတစ်ခုဖြစ်သည်။</p>
 <h1 id="-data-structures-algorithms-">အခန်း ၂၀: အသုံးများသော Data Structures နှင့် Algorithms များ</h1>
 <p>Software engineering တွင် ထိရောက်ပြီး စွမ်းဆောင်ရည်မြင့်မားသော program များ ရေးသားနိုင်ရန်အတွက် Data Structures (အချက်အလက် တည်ဆောက်ပုံ) နှင့် Algorithms (တွက်ချက်နည်းစနစ်) များကို နားလည်တတ်ကျွမ်းခြင်းသည် အလွန်အရေးကြီးပါသည်။ ဤအခန်းတွင် Go language ကို အသုံးပြု၍ အသုံးအများဆုံး DSA concept များကို လက်တွေ့ code များနှင့်တကွ အသေးစိတ် လေ့လာသွားပါမည်။</p>
-<hr>
 <h2 id="linked-lists">Linked Lists</h2>
 <p><strong>Linked List</strong> ဆိုသည်မှာ data element များ (Nodes) ကို sequence အလိုက် ချိတ်ဆက်ထားသော linear data structure တစ်ခုဖြစ်သည်။ Array/Slice နှင့်မတူဘဲ၊ linked list ၏ elements များသည် memory တွင် တစ်ဆက်တည်းရှိမနေဘဲ၊ node တစ်ခုစီက နောက် node တစ်ခု၏ memory address ကို pointer ဖြင့် ညွှန်ပြထားသည်။</p>
 <ul>
@@ -3836,7 +3737,6 @@ func main() {
     }
     fmt.Println(&quot;nil&quot;)
 }</code></pre>
-<hr>
 <h2 id="stacks-and-queues">Stacks and Queues</h2>
 <h3 id="stack-lifo-last-in-first-out-">Stack (LIFO - Last-In, First-Out)</h3>
 <p>Stack ဆိုသည်မှာ နောက်ဆုံးထည့်လိုက်သော element ကို ပထမဆုံး ပြန်ထုတ်ရသည့် data structure ဖြစ်သည်။ ဥပမာ- ပန်းကန်ပြားများ ထပ်ထားခြင်းနှင့်တူသည်။ Go တွင် slice ကို အသုံးပြု၍ stack ကို အလွယ်တကူ implement လုပ်နိုင်သည်။</p>
@@ -3879,7 +3779,6 @@ func (q *Queue) Dequeue() (string, bool) {
     *q = (*q)[1:]
     return element, true
 }</code></pre>
-<hr>
 <h2 id="trees-binary-search-tree-">Trees (Binary Search Tree)</h2>
 <p><strong>Binary Search Tree (BST)</strong> ဆိုသည်မှာ tree data structure တစ်မျိုးဖြစ်ပြီး node တိုင်းတွင် အောက်ပါ ဂုဏ်သတ္တိများရှိသည်။</p>
 <ol>
@@ -3930,7 +3829,6 @@ func (n *TreeNode) Search(value int) bool {
     }
     return true // value == n.Value
 }</code></pre>
-<hr>
 <h2 id="sorting-algorithms">Sorting Algorithms</h2>
 <h3 id="bubble-sort">Bubble Sort</h3>
 <p>Bubble Sort သည် ရိုးရှင်းသော sorting algorithm တစ်ခုဖြစ်ပြီး၊ ကပ်လျက် element နှစ်ခုကို နှိုင်းယှဉ်ကာ နေရာမှန်မရောက်မချင်း အပြန်အလှန် လဲလှယ်ပေးသည်။ ၎င်းသည် performance မကောင်းသော်လည်း (O(n²))၊ sorting ၏ အခြေခံကို နားလည်ရန်အတွက် ကောင်းမွန်သော ဥပမာတစ်ခုဖြစ်သည်။</p>
@@ -3975,7 +3873,6 @@ func (n *TreeNode) Search(value int) bool {
 
     return arr
 }</code></pre>
-<hr>
 <h2 id="backtracking-">Backtracking (နောက်ပြန်ဆုတ်၍ ရှာဖွေခြင်း)</h2>
 <p><strong>Backtracking</strong> ဆိုသည်မှာ ပြဿနာတစ်ခု၏ solution ကို ရှာဖွေရာတွင် ဖြစ်နိုင်ခြေရှိသော လမ်းကြောင်း (choices) အားလုံးကို တစ်ဆင့်ချင်း စမ်းသပ်တည်ဆောက်သွားသည့် algorithm နည်းစနစ်ဖြစ်သည်။ ဝင်္ကပါတစ်ခုကို ဖြေရှင်းသကဲ့သို့ပင်၊ လမ်းကြောင်းတစ်ခုသည် solution သို့ မရောက်နိုင်တော့ဟု သိရှိပါက (dead end)၊ နောက်ဆုံး ပြုလုပ်ခဲ့သော choice ကို ပြန်ဖျက်ပြီး နောက်ပြန်ဆုတ် (backtrack) ကာ အခြားလမ်းကြောင်းတစ်ခုကို ရွေးချယ်စမ်းသပ်သည်။</p>
 <pre><code class="lang-mermaid">graph TD
@@ -4072,7 +3969,6 @@ func isValid(board [][]byte, row, col, n int) bool {
     }
     return true
 }</code></pre>
-<hr>
 <h2 id="dynamic-programming-dp-">Dynamic Programming (DP)</h2>
 <p><strong>Dynamic Programming</strong> ဆိုသည်မှာ ပြဿနာကြီးတစ်ခုကို ပိုမိုသေးငယ်ပြီး <strong>ထပ်နေသော ပြဿနာငယ်များ (overlapping subproblems)</strong> အဖြစ် ခွဲခြမ်းစိတ်ဖြာပြီး၊ ထိုပြဿနာငယ်များ၏ အဖြေများကို မှတ်သားထားကာ (caching) နောက်တစ်ကြိမ် ထပ်မံတွက်ချက်ရန်မလိုဘဲ ပြန်လည်အသုံးပြုသည့် နည်းစနစ်ဖြစ်သည်။ ၎င်းသည် naive recursive solutions များ၏ performance ကို အဆများစွာ တိုးတက်စေသည်။</p>
 <p>DP တွင် အဓိက နည်းလမ်းနှစ်မျိုးရှိသည်။</p>
@@ -4126,7 +4022,6 @@ func fibDP(n int, memo map[int]int) int {
 }</code></pre>
 <h1 id="-context">အခန်း ၂၁: Context</h1>
 <p>Go တွင် concurrent programming နှင့် network applications များ ရေးသားရာတွင် <code>context</code> package သည် အလွန်အရေးပါသော အခန်းကဏ္ဍမှ ပါဝင်ပါသည်။ <code>context.Context</code> သည် API boundaries များ (ဥပမာ- function calls, goroutines) တစ်လျှောက်တွင် cancellation signals, deadlines, နှင့် request-scoped values များကို သယ်ဆောင်ရန်အတွက် standard mechanism တစ်ခုဖြစ်သည်။</p>
-<hr>
 <h2 id="-context-package-"><code>context</code> package ဆိုတာဘာလဲ။</h2>
 <p><code>Context</code> သည် program တစ်ခု၏ execution path တစ်လျှောက်တွင် သက်ဆိုင်ရာ အချက်အလက်များကို လက်ဆင့်ကမ်း သယ်ဆောင်သွားသော &quot;context&quot; သို့မဟုတ် ပတ်ဝန်းကျင်တစ်ခု ဖြစ်သည်။ ၎င်း၏ အဓိက အသုံးဝင်မှုများမှာ-</p>
 <ol>
@@ -4141,7 +4036,6 @@ func fibDP(n int, memo map[int]int) int {
 <p>Struct များထဲတွင် Context ကို သိမ်းဆည်းခြင်းမပြုသင့်ပါ။</p>
 </blockquote>
 <p><code>Context</code> သည် immutable ဖြစ်သည်။ <code>context</code> အသစ်တစ်ခုကို ဖန်တီးလိုပါက ရှိပြီးသား parent context မှ child context အသစ်တစ်ခုကို ထုတ်ယူ (derive) ရသည်။</p>
-<hr>
 <h2 id="context-">Context ဖန်တီးခြင်း</h2>
 <p>Context empty ဖြစ်နေသောနေရာ (Root of the context tree) တွင် စတင်အသုံးပြုရန် function နှစ်ခုရှိသည်။</p>
 <ol>
@@ -4158,7 +4052,6 @@ func fibDP(n int, memo map[int]int) int {
 </ul>
 </li>
 </ol>
-<hr>
 <h2 id="cancellation-">Cancellation (လုပ်ငန်းစဉ်များကို ရပ်တန့်စေခြင်း)</h2>
 <p><code>context.WithCancel()</code> function သည် parent context မှ cancel function တစ်ခုပါဝင်သော child context အသစ်တစ်ခုကို ဖန်တီးပေးသည်။ ထို cancel function ကို ခေါ်လိုက်သည့်အခါ၊ ထို child context နှင့် ၎င်းမှ ဆင်းသက်လာသော context များအားလုံးသည် cancelled ဖြစ်သွားပြီး၊ ၎င်းတို့၏ <code>Done()</code> channel သည် close ဖြစ်သွားသည်။</p>
 <p>Goroutines များသည် <code>ctx.Done()</code> channel ကို <code>select</code> statement ဖြင့် စောင့်ကြည့်နားထောင်ခြင်းဖြင့် cancellation signal ကို လက်ခံရရှိပြီး မိမိတို့၏ လုပ်ငန်းစဉ်များကို ဘေးကင်းစွာ ရပ်တန့်နိုင်သည်။</p>
@@ -4212,7 +4105,6 @@ func main() {
     time.Sleep(1 * time.Second)
     fmt.Println(&quot;Main: finished.&quot;)
 }</code></pre>
-<hr>
 <h2 id="timeouts-deadlines">Timeouts နှင့် Deadlines</h2>
 <p><code>context.WithTimeout()</code> နှင့် <code>context.WithDeadline()</code> functions များသည် အချိန်အကန့်အသတ်ဖြင့် context များကို ဖန်တီးရန် အသုံးပြုသည်။</p>
 <ul>
@@ -4249,7 +4141,6 @@ func main() {
         fmt.Println(&quot;Success!&quot;)
     }
 }</code></pre>
-<hr>
 <h2 id="request-scoped-values">Request-Scoped Values</h2>
 <p><code>context.WithValue(parent, key, value)</code> function ကို အသုံးပြု၍ context ထဲတွင် key-value pair များကို သိမ်းဆည်းပြီး function call chain တစ်လျှောက် လက်ဆင့်ကမ်း သယ်ဆောင်သွားနိုင်သည်။</p>
 <p><strong>အကောင်းဆုံး လိုက်နာရန် (Best Practice):</strong></p>
@@ -4295,11 +4186,9 @@ func main() {
 }</code></pre>
 <h1 id="-web-development-with-echo-framework">အခန်း ၂၂: Web Development with Echo Framework</h1>
 <p>Go ၏ standard library ဖြစ်သော <code>net/http</code> သည် အလွန်ကောင်းမွန်သော်လည်း၊ ကြီးမားသော web application များ တည်ဆောက်ရာတွင် ပိုမိုလွယ်ကူမြန်ဆန်စေရန် Web Framework များကို အသုံးပြုလေ့ရှိသည်။ <strong>Echo</strong> သည် Go အတွက် လူကြိုက်အများဆုံး၊ စွမ်းဆောင်ရည်မြင့်မားပြီး (High Performance)၊ ရိုးရှင်းသော (Minimalist) web framework တစ်ခုဖြစ်သည်။</p>
-<hr>
 <h2 id="echo-install-">Echo ကို Install ပြုလုပ်ခြင်း</h2>
 <p>ပထမဦးစွာ Echo package ကို download လုပ်ရန်လိုအပ်သည်။</p>
 <pre><code class="lang-sh">go get github.com/labstack/echo/v4</code></pre>
-<hr>
 <h2 id="data-binding">Data Binding</h2>
 <p>Echo သည် request payload (JSON, XML, Form) မှ data များကို Go struct သို့ပြောင်းလဲရန် <code>Bind</code> method ကို ထောက်ပံ့ပေးထားသည်။ ၎င်းသည် Content-Type header ကို ကြည့်ရှုပြီး အလိုအလျောက် mapping လုပ်ပေးသည်။</p>
 <pre><code class="lang-go">type User struct {
@@ -4314,7 +4203,6 @@ e.POST(&quot;/users&quot;, func(c echo.Context) error {
     }
     return c.JSON(http.StatusOK, u)
 })</code></pre>
-<hr>
 <h2 id="basic-echo-server">Basic Echo Server</h2>
 <p>အောက်ပါ code သည် အရိုးရှင်းဆုံး Echo web server တစ်ခုဖြစ်သည်။</p>
 <pre><code class="lang-go">package main
@@ -4341,7 +4229,6 @@ func main() {
 <li><code>e.GET(&quot;/&quot;, ...)</code>: HTTP GET request အတွက် route တစ်ခု သတ်မှတ်သည်။</li>
 <li><code>c.String(...)</code>: String response ပြန်ပေးသည်။</li>
 </ul>
-<hr>
 <h2 id="echo-request-lifecycle">Echo Request Lifecycle</h2>
 <p>Echo တွင် request တစ်ခု ဝင်ရောက်လာပုံနှင့် response ပြန်ထွက်သွားပုံကို နားလည်ရန် အရေးကြီးသည်။</p>
 <pre><code class="lang-mermaid">graph LR
@@ -4350,7 +4237,6 @@ func main() {
     Middleware --&gt; Handler[&quot;Handler Function&lt;br/&gt;(Business Logic)&quot;]
     Handler -- &quot;Returns Error/Data&quot; --&gt; Middleware
     Middleware -- &quot;HTTP Response&quot; --&gt; Client</code></pre>
-<hr>
 <h2 id="routing">Routing</h2>
 <p>Echo သည် routing ပိုင်းတွင် အလွန်စွမ်းဆောင်ရည်ကောင်းမွန်ပြီး ရေးသားရလွယ်ကူသည်။</p>
 <h3 id="path-parameters">Path Parameters</h3>
@@ -4368,7 +4254,6 @@ e.GET(&quot;/show&quot;, func(c echo.Context) error {
     member := c.QueryParam(&quot;member&quot;)
     return c.String(http.StatusOK, &quot;Team: &quot; + team + &quot;, Member: &quot; + member)
 })</code></pre>
-<hr>
 <h2 id="context-responses">Context &amp; Responses</h2>
 <p><code>echo.Context</code> သည် request နှင့် response ကို ကိုင်တွယ်ရန် အဓိက interface ဖြစ်သည်။</p>
 <ul>
@@ -4392,7 +4277,6 @@ e.GET(&quot;/json&quot;, func(c echo.Context) error {
 })</code></pre>
 </li>
 </ul>
-<hr>
 <h2 id="middleware">Middleware</h2>
 <p>Middleware ဆိုသည်မှာ request တစ်ခုကို handler function ဆီမရောက်ခင် သို့မဟုတ် response ပြန်မပေးခင် ကြားခံလုပ်ဆောင်ပေးသော function များဖြစ်သည်။ Echo တွင် built-in middleware များစွာပါဝင်သည်။</p>
 <pre><code class="lang-go">import &quot;github.com/labstack/echo/v4/middleware&quot;
@@ -4416,7 +4300,6 @@ func main() {
     e.Use(ServerHeader)
     // ...
 }</code></pre>
-<hr>
 <h2 id="example-simple-rest-api">Example: Simple REST API</h2>
 <p>အောက်ပါဥပမာသည် User များကို create လုပ်ခြင်းနှင့် get လုပ်ခြင်းအတွက် ရိုးရှင်းသော REST API တစ်ခုဖြစ်သည်။</p>
 <pre><code class="lang-go">package main
@@ -4479,7 +4362,6 @@ func createUser(c echo.Context) error {
 <p>ဤအခန်းတွင် Echo framework ၏ အခြေခံများကို မိတ်ဆက်ပေးခဲ့သည်။ Echo သည် အလွန်ကျယ်ပြန့်သော framework တစ်ခုဖြစ်ပြီး validation, JWT authentication, websocket စသည်တို့ကိုလည်း support ပေးပါသည်။ ပိုမိုလေ့လာရန် <a href="https://echo.labstack.com/">Echo Documentation</a> တွင် ဖတ်ရှုနိုင်ပါသည်။</p>
 <h1 id="-next-steps-">အခန်း ၂၃: နောက်ထပ် လေ့လာစရာများ (Next Steps)</h1>
 <p>ဤစာအုပ်တစ်လျှောက်တွင် သင်သည် Go programming language ၏ အခြေခံမှစ၍ concurrency, web development နှင့် data structures ကဲ့သို့သော အဆင့်မြင့် အကြောင်းအရာများအထိ လေ့လာခဲ့ပြီးဖြစ်ပါသည်။ သင်၏ Go programming ခရီးလမ်းသည် ဤနေရာတွင် မပြီးဆုံးသေးပါ။ ဤနောက်ဆုံးအခန်းသည် သင်၏ ကျွမ်းကျင်မှုကို ပိုမိုတိုးတက်စေရန်အတွက် နောက်ထပ် လေ့လာစရာများနှင့် အသုံးဝင်သော resources များကို လမ်းညွှန်ပေးသွားမည်ဖြစ်သည်။</p>
-<hr>
 <h2 id="go-community-resources-">Go Community နှင့် Resources များ</h2>
 <p>Programming language တစ်ခုကို သင်ယူရာတွင် community နှင့် ချိတ်ဆက်နေခြင်းသည် အလွန်အရေးကြီးပါသည်။ အကူအညီများ တောင်းခံရန်၊ အသိပညာများ မျှဝေရန်၊ နှင့် နောက်ဆုံးပေါ်သတင်းများကို သိရှိနိုင်ရန် အောက်ပါ resources များကို အသုံးပြုနိုင်ပါသည်။</p>
 <ul>
@@ -4491,7 +4373,6 @@ func createUser(c echo.Context) error {
 <li><strong>Reddit (r/golang):</strong> Go နှင့်ပတ်သက်သော သတင်းများ၊ ဆွေးနွေးမှုများ၊ နှင့် project showcases များအတွက် တက်ကြွသော subreddit တစ်ခုဖြစ်သည်။</li>
 <li><strong>Awesome Go (github.com/avelino/awesome-go):</strong> Go frameworks, libraries, နှင့် tools များ၏ အလွန်ကျယ်ပြန့်သော curated list တစ်ခုဖြစ်သည်။ Project အသစ်တစ်ခုအတွက် library ရှာဖွေလိုပါက ဤနေရာတွင် စတင်ကြည့်ရှုသင့်သည်။</li>
 </ul>
-<hr>
 <h2 id="-third-party-libraries-">အသုံးဝင်သော Third-party Libraries များ</h2>
 <p>Standard library သည် အစွမ်းထက်သော်လည်း၊ third-party libraries များက development process ကို ပိုမိုမြန်ဆန်လွယ်ကူစေပါသည်။ အသုံးများသော libraries အချို့မှာ-</p>
 <ul>
@@ -4520,7 +4401,6 @@ func createUser(c echo.Context) error {
 </ul>
 </li>
 </ul>
-<hr>
 <h2 id="-">ဆက်လက်လေ့လာရန် လမ်းညွှန်ချက်များ</h2>
 <p>သင်၏ Go ကျွမ်းကျင်မှုကို နောက်တစ်ဆင့်သို့ တက်လှမ်းရန်အတွက် အောက်ပါတို့ကို ဆက်လက်လုပ်ဆောင်သင့်သည်။</p>
 <ul>
@@ -4541,7 +4421,6 @@ func createUser(c echo.Context) error {
 <li><strong>Performance Tuning ကို လေ့လာပါ:</strong> Go ၏ built-in profiling tool ဖြစ်သော <code>pprof</code> ကို အသုံးပြု၍ သင်၏ application ၏ performance bottlenecks များကို ရှာဖွေပြီး optimize လုပ်နည်းကို လေ့လာပါ။</li>
 <li><strong>System Design ကို လေ့လာပါ:</strong> Go ကို microservices, distributed systems, နှင့် cloud-native applications များ တည်ဆောက်ရာတွင် မည်သို့အသုံးပြုသည်ကို လေ့လာခြင်းဖြင့် ဗိသုကာပိုင်းဆိုင်ရာ အမြင်ကို ကျယ်ပြန့်စေသည်။</li>
 </ul>
-<hr>
 <h2 id="-">နိဂုံး</h2>
 <p>Go programming language သည် ရိုးရှင်းမှု၊ စွမ်းဆောင်ရည်၊ နှင့် concurrency တို့ကြောင့် ခေတ်မီ software development တွင် နေရာတစ်ခု အခိုင်အမာ ရယူထားပါသည်။ ဤစာအုပ်သည် သင်၏ Go ခရီးလမ်းအတွက် ခိုင်မာသော အခြေခံအုတ်မြစ်တစ်ခု ချပေးနိုင်ခဲ့မည်ဟု မျှော်လင့်ပါသည်။ စဉ်ဆက်မပြတ် လေ့လာခြင်း၊ လက်တွေ့တည်ဆောက်ခြင်း၊ နှင့် community တွင် ပါဝင်ခြင်းတို့ဖြင့် သင်သည် ထူးချွန်သော Go developer တစ်ယောက် ဖြစ်လာနိုင်မည်မှာ မလွဲဧကန်ပင်။</p>
 <p>Happy coding!</p>

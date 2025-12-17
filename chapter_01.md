@@ -2,7 +2,7 @@
 
 Go (Golang ဟုလည်း ခေါ်ကြသည်) သည် Google မှ Robert Griesemer, Rob Pike, နှင့် Ken Thompson တို့က ၂၀၀၇ ခုနှစ်တွင် စတင်ရေးဆွဲခဲ့ပြီး ၂၀၀၉ ခုနှစ်တွင် အများပြည်သူသို့ မိတ်ဆက်ခဲ့သော open-source programming language တစ်ခုဖြစ်သည်။ Go သည် ရိုးရှင်းမှု (simplicity), စွမ်းဆောင်ရည်မြင့်မားမှု (high performance), နှင့် concurrency (တစ်ပြိုင်နက်တည်း အလုပ်များစွာ လုပ်ဆောင်နိုင်မှု) တို့ကို အဓိကထား၍ ဒီဇိုင်းထုတ်ထားပါသည်။
 
----
+
 
 ## Go ဆိုတာဘာလဲ။
 
@@ -10,7 +10,7 @@ Go သည် statically typed, compiled programming language တစ်ခုဖ�
 
 ၎င်း၏ အဓိကရည်ရွယ်ချက်မှာ ခေတ်မီ multi-core processor များ၊ computer network များနှင့် large codebases များအတွက် software များကို လွယ်ကူစွာ တည်ဆောက်နိုင်ရန် ဖြစ်သည်။
 
----
+
 
 ## ဘာကြောင့် Go ကို ရွေးချယ်သင့်သလဲ။
 
@@ -22,7 +22,7 @@ Go ကို software developer များစွာက နှစ်သက်�
 
 *   **Simplicity:** Go ၏ syntax သည် ရိုးရှင်းပြီး သင်ယူရန် လွယ်ကူသည်။ Language တွင် keywords အနည်းငယ်သာ ပါရှိသောကြောင့် code များကို ဖတ်ရှုရန်နှင့် ပြုပြင်ထိန်းသိမ်းရန် (maintain) လွယ်ကူစေပါသည်။
 
----
+
 
 ## Go ၏ အားသာချက်များနှင့် အသုံးဝင်မှုများ
 
@@ -38,7 +38,7 @@ Go ကို software developer များစွာက နှစ်သက်�
 *   Web Development (Backend APIs)
 *   DevOps & Site Reliability Engineering (SRE)
 
----
+
 
 ## Go ကို အသုံးပြုနေသော နာမည်ကြီး Company များ
 

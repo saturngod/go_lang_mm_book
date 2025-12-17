@@ -2,7 +2,7 @@
 
 Go ၏ standard library ဖြစ်သော `net/http` သည် အလွန်ကောင်းမွန်သော်လည်း၊ ကြီးမားသော web application များ တည်ဆောက်ရာတွင် ပိုမိုလွယ်ကူမြန်ဆန်စေရန် Web Framework များကို အသုံးပြုလေ့ရှိသည်။ **Echo** သည် Go အတွက် လူကြိုက်အများဆုံး၊ စွမ်းဆောင်ရည်မြင့်မားပြီး (High Performance)၊ ရိုးရှင်းသော (Minimalist) web framework တစ်ခုဖြစ်သည်။
 
----
+
 
 ## Echo ကို Install ပြုလုပ်ခြင်း
 
@@ -12,7 +12,7 @@ Go ၏ standard library ဖြစ်သော `net/http` သည် အလွန�
 go get github.com/labstack/echo/v4
 ```
 
----
+
 
 ## Data Binding
 
@@ -33,7 +33,7 @@ e.POST("/users", func(c echo.Context) error {
 })
 ```
 
----
+
 
 ## Basic Echo Server
 
@@ -65,7 +65,7 @@ func main() {
 *   `e.GET("/", ...)`: HTTP GET request အတွက် route တစ်ခု သတ်မှတ်သည်။
 *   `c.String(...)`: String response ပြန်ပေးသည်။
 
----
+
 
 ## Echo Request Lifecycle
 
@@ -80,7 +80,7 @@ graph LR
     Middleware -- "HTTP Response" --> Client
 ```
 
----
+
 
 ## Routing
 
@@ -111,7 +111,7 @@ e.GET("/show", func(c echo.Context) error {
 })
 ```
 
----
+
 
 ## Context & Responses
 
@@ -140,7 +140,7 @@ e.GET("/show", func(c echo.Context) error {
     })
     ```
 
----
+
 
 ## Middleware
 
@@ -175,7 +175,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Example: Simple REST API
 

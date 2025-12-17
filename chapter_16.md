@@ -2,7 +2,7 @@
 
 Software development တွင် testing သည် code ၏ အရည်အသွေး၊ မှန်ကန်မှု၊ နှင့် ယုံကြည်စိတ်ချရမှုကို အာမခံရန်အတွက် မရှိမဖြစ်လိုအပ်သော အစိတ်အပိုင်းတစ်ခုဖြစ်သည်။ Go သည် `testing` package ကို standard library တွင် တပါတည်း ထည့်သွင်းပေးထားပြီး၊ unit tests နှင့် performance benchmark tests များကို ရိုးရှင်းလွယ်ကူစွာ ရေးသားနိုင်ရန် အားပေးသည်။
 
----
+
 
 ## `testing` package နှင့် Testing Conventions
 
@@ -13,7 +13,7 @@ Go တွင် test code များကို ရေးသားရန်အ�
 *   **`*testing.T` Type:** ဤ type သည် test ၏ state ကို စီမံခန့်ခွဲရန်နှင့် test failure များကို report လုပ်ရန် `t.Errorf()`, `t.Fatalf()`, `t.Log()` ကဲ့သို့သော methods များကို ပေးသည်။
 *   **Running Tests:** Terminal တွင် `go test` command ကို အသုံးပြု၍ package တစ်ခုအတွင်းရှိ test များအားလုံးကို run နိုင်ပါသည်။
 
----
+
 
 ## Unit Tests ရေးသားခြင်း
 
@@ -47,7 +47,7 @@ func TestAdd(t *testing.T) {
 }
 ```
 
----
+
 
 ## Table-Driven Tests
 
@@ -98,7 +98,7 @@ func TestAddTableDriven(t *testing.T) {
 }
 ```
 
----
+
 
 ## Test Coverage
 
@@ -120,7 +120,7 @@ go test -coverprofile=coverage.out
 go tool cover -html=coverage.out
 ```
 
----
+
 
 ## TestMain (Setup and Teardown)
 
@@ -144,7 +144,7 @@ func TestMain(m *testing.M) {
 }
 ```
 
----
+
 
 ## Benchmarking
 
@@ -186,7 +186,7 @@ ok      myproject/calculator    0.358s
 *   `1000000000`: `b.N` ၏ တန်ဖိုး (loop ကို အကြိမ်ပေါင်း ဘီလီယံ ၁ ထောင် run ခဲ့သည်)။
 *   `0.2831 ns/op`: Operation တစ်ခု (loop တစ်ခါပတ်ခြင်း) အတွက် ပျမ်းမျှကြာချိန် (nanoseconds)။
 
----
+
 
 ## Fuzzing (Go 1.18+)
 

@@ -2,7 +2,7 @@
 
 Go 1.18 တွင် စတင်မိတ်ဆက်ခဲ့သော အစွမ်းထက်ဆုံး feature တစ်ခုဖြစ်သည့် **Generics** အကြောင်းကို ဤအခန်းတွင် လေ့လာသွားပါမည်။ Generics သည် ကျွန်ုပ်တို့အား data type မည်သို့ပင်ဖြစ်စေ အလုပ်လုပ်နိုင်သော functions နှင့် data structures များကို ရေးသားနိုင်စေပြီး ကျွန်ုပ်တို့၏ code များကို ပိုမို flexible ဖြစ်စေကာ ပြန်လည်အသုံးပြုရလွယ်ကူစေသည်။
 
----
+
 
 ## Generic ဆိုတာဘာလဲ။
 
@@ -10,7 +10,7 @@ Generics ဆိုသည်မှာ တိကျသော data type မျာ�
 
 **Type parameter** ဆိုသည်မှာ function သို့မဟုတ် type ကို အသုံးပြုသည့်အခါ သတ်မှတ်မည့် type အတွက် placeholder တစ်ခုဖြစ်သည်။
 
----
+
 
 ## Generic Functions
 
@@ -73,7 +73,7 @@ func main() {
 
 ဤဥပမာတွင်၊ `[T any]` သည် `T` ဆိုသော type parameter ကို ကြေညာသည်။ `any` keyword သည် `T` ၏ type မည်သို့မဆို ဖြစ်နိုင်သည်ဟု ဆိုလိုသော *constraint* တစ်ခုဖြစ်သည်။ ကျွန်ုပ်တို့ `PrintSlice(intSlice)` ကို ခေါ်သောအခါ၊ Go compiler သည် `T` ကို `int` ဖြစ်သည်ဟု ကောက်ချက်ချသည်။
 
----
+
 
 ## Generic Types
 
@@ -129,7 +129,7 @@ func main() {
 
 ဤနေရာတွင်၊ `Stack[T any]` သည် `T` ဆိုသော type parameter ဖြင့် `Stack` struct ကို သတ်မှတ်သည်။ ထို့နောက် `Stack[int]` သို့မဟုတ် `Stack[string]` ကဲ့သို့သော instance များကို ဖန်တီးနိုင်သည်။
 
----
+
 
 ## Type Constraints
 
@@ -177,7 +177,7 @@ func main() {
 
 ဤဥပမာတွင်၊ ကျွန်ုပ်တို့သည် အမျိုးမျိုးသော integer နှင့် float type များ ပါဝင်သော `Number` interface ကို သတ်မှတ်သည်။ `~` သင်္ကေတသည် `int` သာမက၊ underlying type မှာ `int` ဖြစ်သော မည်သည့် type (custom type `type MyInt int` ကဲ့သို့) ကိုမဆို ခွင့်ပြုသည်ဟု ဆိုလိုသည်။ `[T Number]` ကို အသုံးပြုခြင်းဖြင့်၊ `SumNumbers` ကို `Number` constraint ၏ အစိတ်အပိုင်းဖြစ်သော type များ၏ slice များဖြင့်သာ ခေါ်ဆိုနိုင်သည်ဟု compiler ကို ပြောပြသည်။
 
----
+
 
 ## Built-in `comparable` Constraint
 

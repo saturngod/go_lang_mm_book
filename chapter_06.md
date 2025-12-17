@@ -2,7 +2,7 @@
 
 ယခုအခန်းတွင် Go ၏ အစွမ်းထက်သော feature တစ်ခုဖြစ်သည့် `struct` နှင့် `method` တို့အကြောင်းကို လေ့လာသွားပါမည်။ Struct သည် data type အမျိုးမျိုးကို စုစည်း၍ ကိုယ်ပိုင် custom data type အသစ်များ တည်ဆောက်ရန် အသုံးပြုပြီး၊ Method များသည် ထို struct များနှင့် သက်ဆိုင်သော လုပ်ဆောင်ချက် (behavior) များကို သတ်မှတ်ပေးပါသည်။
 
----
+
 
 ## 1. Struct (Custom Data Types)
 
@@ -48,7 +48,7 @@ func main() {
 }
 ```
 
----
+
 
 ## 2. Methods (Struct နှင့် သက်ဆိုင်သော Functions)
 
@@ -120,7 +120,7 @@ func main() {
 }
 ```
 
----
+
 
 ## 3. Embedded Structs (Composition)
 
@@ -194,7 +194,7 @@ func main() {
 }
 ```
 
----
+
 
 ## 4. Constructor Functions
 
@@ -232,7 +232,7 @@ func main() {
 }
 ```
 
----
+
 
 ## 5. Struct Tags
 

@@ -2,7 +2,7 @@
 
 ယခင် အခန်း ၁၇ နှင့် ၁၈ တွင်၊ ကျွန်ုပ်တို့သည် in-memory data store ကို အသုံးပြု၍ REST API တစ်ခုကို တည်ဆောက်ခဲ့သည်။ ၎င်းသည် API ၏ အလုပ်လုပ်ပုံကို လေ့လာရန် ကောင်းမွန်သော်လည်း၊ application ကို restart လုပ်လိုက်တိုင်း data များ ပျောက်ဆုံးသွားမည်ဖြစ်သည်။ ဤအခန်းတွင်၊ ကျွန်ုပ်တို့၏ data များကို PostgreSQL database တွင် သိမ်းဆည်းခြင်းဖြင့် data persistence ကို အကောင်အထည်ဖော်ပါမည်။
 
----
+
 
 ## `database/sql` Package ကို အသုံးပြုခြင်း
 
@@ -10,7 +10,7 @@ Go ၏ standard library တွင်ပါဝင်သော `database/sql` pack
 
 `database/sql` package ကိုယ်တိုင်က database နှင့် တိုက်ရိုက်စကားပြောနိုင်စွမ်းမရှိပါ။ ၎င်းသည် **database driver** များနှင့်အတူ အလုပ်လုပ်သည်။ ကျွန်ုပ်တို့သည် PostgreSQL နှင့် ချိတ်ဆက်လိုပါက၊ PostgreSQL အတွက် driver တစ်ခုကို import လုပ်ပေးရန် လိုအပ်သည်။
 
----
+
 
 ## Database Driver ထည့်သွင်းခြင်း နှင့် ချိတ်ဆက်ခြင်း
 
@@ -82,7 +82,7 @@ func main() {
 *   `sql.Open` သည် database connection ကို ချက်ချင်းမဖွင့်ပါ။ ၎င်းသည် နောက်ကွယ်တွင် connection pool တစ်ခုကို setup လုပ်ပေးပြီး လိုအပ်မှသာ connection များကို တည်ဆောက်သည်။
 *   `db.Ping()` ဖြင့် connection အမှန်တကယ်ရမရ စစ်ဆေးရန် အလွန်အရေးကြီးသည်။
 
----
+
 
 ## CRUD Operations များ ရေးသားခြင်း
 
@@ -180,7 +180,7 @@ func DeleteProduct(db *sql.DB, id int) (int64, error) {
 }
 ```
 
----
+
 
 ## API Endpoints များကို Database နှင့် ချိတ်ဆက်ခြင်း
 

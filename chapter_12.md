@@ -2,7 +2,7 @@
 
 ယခုအခန်းတွင် Go ၏ အကျော်ကြားဆုံးနှင့် အစွမ်းထက်ဆုံး feature ဖြစ်သော concurrency ကို စတင်လေ့လာပါမည်။ Go သည် Goroutines ဟုခေါ်သော အလွန်ပေါ့ပါးသည့် execution unit များကို အသုံးပြု၍ concurrent programming ကို အလွန်လွယ်ကူအောင် ပြုလုပ်ပေးထားသည်။
 
----
+
 
 ## Concurrency နှင့် Parallelism ကွာခြားချက်
 
@@ -31,7 +31,7 @@ graph TD
 
 Go သည် concurrency ကို အဓိကထား ဒီဇိုင်းထုတ်ထားပြီး၊ multi-core processor များရှိပါက Go runtime က goroutines များကို cores များပေါ်တွင် parallel အဖြစ် အလိုအလျောက် run ပေးပါသည်။
 
----
+
 
 ## Goroutine ဆိုတာဘာလဲ။ (`go` keyword)
 
@@ -65,7 +65,7 @@ func main() {
 
 **ပြဿနာ:** အထက်ပါ code ကို run ကြည့်ပါက "Hello" ကိုသာ print ထုတ်ပြီး "World" ကို print ထုတ်သည်ကို မြင်ရချင်မှ မြင်ရမည်။ အကြောင်းမှာ `main` function (main goroutine) သည် `say("World")` goroutine ပြီးဆုံးသည်ကို **မစောင့်ဘဲ** ၎င်း၏အလုပ် ပြီးဆုံးသွားသည်နှင့် program တစ်ခုလုံးကို ရပ်တန့်လိုက်သောကြောင့် ဖြစ်သည်။
 
----
+
 
 ## `sync.WaitGroup` ကို အသုံးပြုခြင်း
 
@@ -138,9 +138,7 @@ func main() {
 
 ဤ code တွင် `main` function သည် `wg.Wait()` နေရာတွင် worker goroutines ၃ ခုလုံး `wg.Done()` ကို ခေါ်ပြီးသည်အထိ စောင့်ဆိုင်းနေမည်ဖြစ်သောကြောင့် worker များအားလုံး၏ output များကို စနစ်တကျ မြင်တွေ့ရမည်ဖြစ်သည်။
 
----
 
----
 
 ## Race Conditions နှင့် `sync.Mutex`
 
@@ -198,7 +196,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Singleton Pattern (`sync.Once`)
 

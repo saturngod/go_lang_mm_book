@@ -2,7 +2,7 @@
 
 ယခုအခန်းတွင် Go project များကို စနစ်တကျ တည်ဆောက်ရန်နှင့် code များကို ပြန်လည်အသုံးပြုရန်အတွက် အခြေခံကျသော Packages နှင့် Modules များအကြောင်းကို လေ့လာသွားပါမည်။
 
----
+
 
 ## Package ဆိုတာဘာလဲ။
 
@@ -25,7 +25,7 @@ graph TD
     MainFile -- "imports" --> calculator
 ```
 
----
+
 
 ## Standard Library မှ Packages များကို `import` လုပ်ခြင်း
 
@@ -58,7 +58,7 @@ func main() {
     import _ "github.com/go-sql-driver/mysql"
     ```
 
----
+
 
 ## ကိုယ်ပိုင် Package များ တည်ဆောက်ခြင်း
 
@@ -116,7 +116,7 @@ func main() {
 }
 ```
 
----
+
 
 ## `init()` Function (Initialization)
 
@@ -148,7 +148,7 @@ func main() {
 // Main started with config: LOADED
 ```
 
----
+
 
 ## Circular Dependencies (သတိပြုရန်)
 
@@ -166,7 +166,7 @@ graph LR
 1.  Shared code များကို Package C (Third package) အဖြစ် ခွဲထုတ်ပြီး A နှင့် B နှစ်ခုလုံးက C ကို import လုပ်ပါ။
 2.  Package structure ကို ပြန်လည်သုံးသပ်ပြီး design ပြောင်းလဲပါ။
 
----
+
 
 ## Go Modules ကို အသုံးပြု၍ Dependencies များကို စီမံခန့်ခွဲခြင်း
 
@@ -215,7 +215,7 @@ graph LR
     *   Dependency တိုင်း၏ cryptographic checksum (hash) ကို မှတ်သားထားသည်။
     *   `go build` လုပ်သည့်အခါ download လုပ်လာသော package သည် မူလ package အစစ်အမှန်ဖြစ်ကြောင်းနှင့် ကြားဖြတ်ပြောင်းလဲထားခြင်းမရှိကြောင်း ဤ file ဖြင့် တိုက်ဆိုင်စစ်ဆေးသည်။ ၎င်းသည် supply chain attacks များမှ ကာကွယ်ပေးသည်။
 
----
+
 
 ## Go Workspaces (Multi-Module Workspaces)
 

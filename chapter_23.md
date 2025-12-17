@@ -2,7 +2,7 @@
 
 ဤစာအုပ်တစ်လျှောက်တွင် သင်သည် Go programming language ၏ အခြေခံမှစ၍ concurrency, web development နှင့် data structures ကဲ့သို့သော အဆင့်မြင့် အကြောင်းအရာများအထိ လေ့လာခဲ့ပြီးဖြစ်ပါသည်။ သင်၏ Go programming ခရီးလမ်းသည် ဤနေရာတွင် မပြီးဆုံးသေးပါ။ ဤနောက်ဆုံးအခန်းသည် သင်၏ ကျွမ်းကျင်မှုကို ပိုမိုတိုးတက်စေရန်အတွက် နောက်ထပ် လေ့လာစရာများနှင့် အသုံးဝင်သော resources များကို လမ်းညွှန်ပေးသွားမည်ဖြစ်သည်။
 
----
+
 
 ## Go Community နှင့် Resources များ
 
@@ -16,7 +16,7 @@ Programming language တစ်ခုကို သင်ယူရာတွင် 
 *   **Reddit (r/golang):** Go နှင့်ပတ်သက်သော သတင်းများ၊ ဆွေးနွေးမှုများ၊ နှင့် project showcases များအတွက် တက်ကြွသော subreddit တစ်ခုဖြစ်သည်။
 *   **Awesome Go (github.com/avelino/awesome-go):** Go frameworks, libraries, နှင့် tools များ၏ အလွန်ကျယ်ပြန့်သော curated list တစ်ခုဖြစ်သည်။ Project အသစ်တစ်ခုအတွက် library ရှာဖွေလိုပါက ဤနေရာတွင် စတင်ကြည့်ရှုသင့်သည်။
 
----
+
 
 ## အသုံးဝင်သော Third-party Libraries များ
 
@@ -37,7 +37,7 @@ Standard library သည် အစွမ်းထက်သော်လည်း�
 *   **Testing:**
     *   `stretchr/testify`: Standard `testing` package ကို assertions နှင့် mocking tools များဖြင့် ပိုမိုလွယ်ကူအောင် ကူညီပေးသော library တစ်ခု။
 
----
+
 
 ## ဆက်လက်လေ့လာရန် လမ်းညွှန်ချက်များ
 
@@ -56,7 +56,7 @@ Standard library သည် အစွမ်းထက်သော်လည်း�
 *   **Performance Tuning ကို လေ့လာပါ:** Go ၏ built-in profiling tool ဖြစ်သော `pprof` ကို အသုံးပြု၍ သင်၏ application ၏ performance bottlenecks များကို ရှာဖွေပြီး optimize လုပ်နည်းကို လေ့လာပါ။
 *   **System Design ကို လေ့လာပါ:** Go ကို microservices, distributed systems, နှင့် cloud-native applications များ တည်ဆောက်ရာတွင် မည်သို့အသုံးပြုသည်ကို လေ့လာခြင်းဖြင့် ဗိသုကာပိုင်းဆိုင်ရာ အမြင်ကို ကျယ်ပြန့်စေသည်။
 
----
+
 
 ## နိဂုံး
 

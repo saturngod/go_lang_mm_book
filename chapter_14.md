@@ -2,7 +2,7 @@
 
 Go တွင် error handling သည် အခြား programming languages များစွာနှင့် ကွဲပြားပါသည်။ `try-catch` block များအစား Go သည် errors များကို function return values များအဖြစ် သာမန်တန်ဖိုးများကဲ့သို့ပင် ကိုင်တွယ်သည်။ ဤအခန်းတွင် Go ၏ error handling ပုံစံ၊ custom errors များ တည်ဆောက်ပုံ၊ နှင့် `panic`/`recover` တို့၏ အသုံးဝင်ပုံများကို လေ့လာသွားပါမည်။
 
----
+
 
 ## Go ၏ Error Handling ပုံစံ (`error` type)
 
@@ -43,7 +43,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Custom Errors များ တည်ဆောက်ခြင်း
 
@@ -121,9 +121,7 @@ func main() {
 }
 ```
 
----
 
----
 
 ## Checking Wrapped Errors (`errors.Is` and `errors.As`)
 
@@ -175,7 +173,7 @@ func main() {
 }
 ```
 
----
+
 
 ## `panic` နှင့် `recover`
 

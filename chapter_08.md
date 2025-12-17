@@ -2,7 +2,7 @@
 
 ယခုအခန်းတွင် Go ၏ အရေးကြီးသော concept တစ်ခုဖြစ်သည့် Pointers အကြောင်းကို လေ့လာသွားပါမည်။ Pointer သည် memory address များကို တိုက်ရိုက်ကိုင်တွယ်ရန် အသုံးပြုပြီး၊ function များသို့ data များ pass လုပ်ရာတွင် ပိုမိုထိရောက်စေရန်နှင့် မူလ data များကို ပြောင်းလဲနိုင်ရန်အတွက် အဓိက အသုံးပြုပါသည်။
 
----
+
 
 ## Pointer ဆိုတာဘာလဲ။ (Memory Address)
 
@@ -29,7 +29,7 @@ graph LR
 
 Pointer type ကို ကြေညာရာတွင် ၎င်းညွှန်ပြမည့် variable ၏ type ရှေ့တွင် `*` သင်္ကေတကို ထည့်သွင်းရေးသားရသည်။ ဥပမာ၊ `int` variable တစ်ခုကို ညွှန်ပြမည့် pointer ၏ type မှာ `*int` ဖြစ်သည်။
 
----
+
 
 ## `&` (address of) နှင့် `*` (dereference) Operators
 
@@ -63,7 +63,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Pointer ကို ဘာကြောင့် သုံးသင့်သလဲ။
 
@@ -110,7 +110,7 @@ Struct ကဲ့သို့သော data structure ကြီးများက
 Pointer တစ်ခု၏ zero value (တန်ဖိုးမထည့်သွင်းရသေးခင် default တန်ဖိုး) မှာ `nil` ဖြစ်သည်။ `nil` pointer ဆိုသည်မှာ မည်သည့် memory address ကိုမှ ညွှန်ပြမထားသော pointer ဖြစ်သည်။
 
 
----
+
 
 ## The `new()` Function
 
@@ -140,7 +140,7 @@ func main() {
 *   **`new(T)`**: `T` type အတွက် memory နေရာချထားပြီး၊ zero value **(*T) pointer** ကို ပြန်ပေးသည်။ (Variable အသစ်/Pointer ဖန်တီးရန် သုံးသည်)
 *   **`make(T)`**: Slices, Maps, Channels ကဲ့သို့သော Reference type များအတွက်သာ သုံးပြီး၊ initialized လုပ်ထားသော **T value (Non-pointer)** ကို ပြန်ပေးသည်။ (အခန်း ၅ တွင် ပြန်ကြည့်နိုင်ပါသည်)
 
----
+
 
 ### Nil Pointer Dereference (အမှားများနှင့် ကာကွယ်ခြင်း)
 

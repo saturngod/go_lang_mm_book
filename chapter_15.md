@@ -2,7 +2,7 @@
 
 Go ၏ အကြီးမားဆုံး အားသာချက်တစ်ခုမှာ အလွန်စွမ်းဆောင်ရည်မြင့်မားပြီး ကျယ်ပြန့်သော standard library ပါဝင်ခြင်းဖြစ်သည်။ ယခုအခန်းတွင် နေ့စဉ် programming ပြုလုပ်ရာတွင် အသုံးအများဆုံးဖြစ်သော standard library packages အချို့၏ အခြေခံအသုံးပြုပုံကို လေ့လာသွားပါမည်။
 
----
+
 
 ## `fmt` (Formatted I/O)
 
@@ -31,7 +31,7 @@ func main() {
 }
 ```
 
----
+
 
 ## `os` (Operating System Interactions)
 
@@ -68,7 +68,7 @@ func main() {
 }
 ```
 
----
+
 
 ## `embed` (Embedding Files)
 
@@ -108,9 +108,7 @@ func main() {
 
 > **သတိပြုရန်:** `//` နှင့် `go:embed` ကြားတွင် space မရှိရပါ (ဥပမာ `// go:embed` ဟု မရေးရပါ)။ ထို့ပြင် directive နှင့် variable ကြားတွင် empty line မရှိရပါ။
 
----
 
----
 
 ## `log` Package
 
@@ -138,7 +136,7 @@ func main() {
 }
 ```
 
----
+
 
 ## `time` Package
 
@@ -168,7 +166,7 @@ func main() {
 }
 ```
 
----
+
 
 ## `strings` and `strconv`
 
@@ -206,7 +204,7 @@ func main() {
 }
 ```
 
----
+
 
 ## `encoding/json` (JSON Data ကိုင်တွယ်ခြင်း)
 
@@ -261,7 +259,7 @@ func main() {
 }
 ```
 
----
+
 
 ## `net/http` (Web Server တည်ဆောက်ခြင်း)
 

@@ -2,7 +2,7 @@
 
 ယခုအခန်းတွင် Go ၏ အလွန်အရေးပါပြီး အစွမ်းထက်သော feature တစ်ခုဖြစ်သည့် `interface` အကြောင်းကို လေ့လာသွားပါမည်။ Interface သည် code များကို ပိုမို flexible, reusable, နှင့် decoupled ဖြစ်စေရန်အတွက် အဓိကကျသော concept တစ်ခုဖြစ်သည်။
 
----
+
 
 ## Interface ဆိုတာဘာလဲ။
 
@@ -56,7 +56,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Duck Typing ("If it walks like a duck...")
 
@@ -69,7 +69,7 @@ Go တွင်လည်း ထိုနည်းလည်းကောင်း�
 
 ဤအချက်က Go ၏ code များကို အလွန် flexible ဖြစ်စေသည်။ Library အသစ်တစ်ခု ရေးသားရာတွင် အသုံးပြုမည့် Type များကို ကြိုတင်သိရှိရန် မလိုအပ်ဘဲ၊ လိုအပ်သော method များကိုသာ Interface အဖြစ် သတ်မှတ်ထားခဲ့လျှင်၊ နောင်တွင် မည်သူမဆို ထို method များပါဝင်သော Type အသစ်များ ဖန်တီး၍ တွဲဖက်အသုံးပြုနိုင်ပါသည်။
 
----
+
 
 ## Go Interfaces vs OOP Interfaces (e.g., Java)
 
@@ -113,7 +113,7 @@ func (d Dog) Speak() {
 // Dog သည် Speak() ရှိသောကြောင့် အလိုအလျောက် Animal ဖြစ်သွားသည်
 ```
 
----
+
 
 ## Polymorphism ကို Interfaces ဖြင့် အကောင်အထည်ဖော်ခြင်း
 
@@ -162,7 +162,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Empty Interface (`interface{}`)
 
@@ -313,7 +313,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Design Pattern: Strategy Pattern
 

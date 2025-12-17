@@ -2,7 +2,7 @@
 
 `Control Flow` ဆိုသည်မှာ program တစ်ခု၏ code များ မည်သည့်အစဉ်အတိုင်း လုပ်ဆောင်ရမည်ကို ထိန်းချုပ်သော statements များ ဖြစ်သည်။ Go တွင် `if`/`else`, `switch`, နှင့် `for` တို့ကို အသုံးပြု၍ program ၏ စီးဆင်းမှုကို ထိန်းချုပ်နိုင်ပါသည်။
 
----
+
 
 ## `if`/`else` Statements
 
@@ -43,7 +43,7 @@ func main() {
 }
 ```
 
----
+
 
 ## `switch` Statements
 
@@ -112,7 +112,7 @@ func main() {
 }
 ```
 
----
+
 
 ## `for` Loops
 

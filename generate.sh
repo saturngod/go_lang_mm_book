@@ -18,7 +18,7 @@ trap 'rm -f "$tmp"' EXIT
 LC_ALL=C sort -V <<<"${chapters[*]}" | tr ' ' '\n' | while IFS= read -r file; do
   [[ -n "$file" ]] || continue
   cat "$file" >>"$tmp"
-  printf '\n' >>"$tmp"
+  printf '\n\n' >>"$tmp"
 done
 
 mv "$tmp" "$out"

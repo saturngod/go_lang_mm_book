@@ -2,7 +2,7 @@
 
 Go programming language ဖြင့် software များ စတင်ရေးသားရန်အတွက် လိုအပ်သော development environment ကို မည်သို့တည်ဆောက်ရမည်ကို ဤအခန်းတွင် လေ့လာသွားပါမည်။ Go ကို install ပြုလုပ်ခြင်းမှစ၍ သင်၏ ပထမဆုံး "Hello, World!" program ကို ရေးသား run ကြည့်ခြင်းအထိ အဆင့်ဆင့် လမ်းညွှန်ပေးသွားပါမည်။
 
----
+
 
 ## Go ကို Install ပြုလုပ်ခြင်း (Windows, macOS, Linux)
 
@@ -20,7 +20,7 @@ go version
 
 > **Note:** အကယ်၍ `command not found` ဟုပြနေပါက သင်၏ terminal ကို ပိတ်ပြီး ပြန်ဖွင့်ပါ (restart)၊ သို့မဟုတ် log out လုပ်ပြီး log in ပြန်ဝင်ကြည့်ပါ။
 
----
+
 
 ## Workspace နှင့် GOPATH ကို နားလည်ခြင်း
 
@@ -28,7 +28,7 @@ go version
 
 ယခုခေတ် Go development တွင် project များကို သင်၏ computer ရှိ မည်သည့် directory တွင်မဆို တည်ဆောက်နိုင်ပြီး `go mod` command ဖြင့် dependency များကို စီမံခန့်ခွဲနိုင်ပြီ ဖြစ်သောကြောင့် ပိုမိုလွယ်ကူလာပါသည်။ ဤစာအုပ်တွင်လည်း Go Modules ကို အခြေခံ၍ ဆက်လက်ရှင်းလင်းသွားပါမည်။
 
----
+
 
 ## Code Editor (VS Code) Setup ပြုလုပ်ခြင်း
 
@@ -40,7 +40,7 @@ Go code များကို ရေးသားရန်အတွက် text ed
 4.  ၎င်း extension က code completion, debugging, testing နှင့် အခြားသော အသုံးဝင်သည့် feature များစွာကို ထောက်ပံ့ပေးပါလိမ့်မည်။
 5.  Extension ကို Install ပြုလုပ်ပြီးနောက်ညာဘက်အောက်ထောင့်တွင် Analysis Tools များ install လုပ်ရန် message box ပေါ်လာပါက **Install All** ကို နှိပ်၍ install လုပ်ပေးပါ။
 
----
+
 
 ## သင်၏ ပထမဆုံး ပရိုဂရမ်: "Hello, World!"
 
@@ -66,7 +66,7 @@ func main() {
 *   `func main()`: Program စတင်ဆောင်ရွက်မည့် အဓိက function ဖြစ်သည်။
 *   `fmt.Println(...)`: Console တွင် စာသားများကို print ထုတ်ပေးသည်။
 
----
+
 
 ## `go run`, `go build`, `go install` Commands များ
 

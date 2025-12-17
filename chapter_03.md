@@ -2,7 +2,7 @@
 
 ယခုအခန်းတွင် Go programming language ၏ အခြေခံအကျဆုံးနှင့် အရေးအကြီးဆုံးဖြစ်သော syntax များကို လေ့လာသွားပါမည်။ Variables, constants, data types, operators နှင့် comments များ မည်သို့ရေးသားရမည်ကို ဥပမာများနှင့်တကွ ရှင်းလင်းဖော်ပြသွားပါမည်။
 
----
+
 
 ## Variables နှင့် Constants များ ကြေညာခြင်း
 
@@ -51,7 +51,7 @@ const PI = 3.14159
 const AppVersion = "1.0.2"
 ```
 
----
+
 
 ## အခြေခံ Data Types
 
@@ -70,7 +70,7 @@ Go သည် statically typed language ဖြစ်သောကြောင့�
     *   `bool`: မှန်/မှား (`true`/`false`) တန်ဖိုးနှစ်မျိုးတည်းသာ ရှိသည်။
     *   ဥပမာ: `var isReady bool = true`
 
----
+
 
 ## Operators
 
@@ -80,7 +80,7 @@ Operators များသည် variables နှင့် values များအ
 *   **Comparison Operators:** `==` (ညီမျှ), `!=` (မညီမျှ), `<` (ငယ်သည်), `>` (ကြီးသည်), `<=` (ငယ်သည် သို့မဟုတ် ညီမျှသည်), `>=` (ကြီးသည် သို့မဟုတ် ညီမျှသည်)
 *   **Logical Operators:** `&&` (and), `||` (or), `!` (not)
 
----
+
 
 ## Comments ရေးသားခြင်း
 

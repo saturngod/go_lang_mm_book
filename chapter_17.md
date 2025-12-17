@@ -4,7 +4,7 @@
 
 ဤအပိုင်း (Part 1) တွင် project အတွက် planning ပြုလုပ်ခြင်း၊ data structure များ သတ်မှတ်ခြင်း၊ နှင့် standard `net/http` package ကို အသုံးပြု၍ အခြေခံ routing နှင့် handlers များ ရေးသားခြင်းတို့ကို လေ့လာသွားပါမည်။
 
----
+
 
 ## Project Planning
 
@@ -39,7 +39,7 @@ graph TD
     end
 ```
 
----
+
 
 ## Project Structure (Standard Layout)
 
@@ -62,7 +62,7 @@ my-todo-app/
 
 သို့သော် ယခုအပိုင်း (Part 1) တွင် လေ့လာရလွယ်ကူစေရန် code များကို `main.go` တစ်ခုတည်းတွင် စုစည်းရေးသားပါမည်။ နောက်ပိုင်းအပိုင်းများတွင် code များကို အထက်ပါ structure အတိုင်း refactor လုပ်သွားပါမည်။
 
----
+
 
 ## HTTP Handlers များ ရေးသားခြင်း
 
@@ -159,7 +159,7 @@ func main() {
 *   `tasksHandler` သည် request ၏ HTTP method ကို စစ်ဆေးပြီး သက်ဆိုင်ရာ function (`getTasks` or `createTask`) ကို ခေါ်ယူပေးသည်။
 *   `getTasks` နှင့် `createTask` functions များသည် JSON data များကို encode/decode လုပ်ပြီး client သို့ response ပြန်ပေးသည်။
 
----
+
 
 ## Routing ပြုလုပ်ခြင်း
 

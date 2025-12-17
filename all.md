@@ -2,7 +2,7 @@
 
 Go (Golang ဟုလည်း ခေါ်ကြသည်) သည် Google မှ Robert Griesemer, Rob Pike, နှင့် Ken Thompson တို့က ၂၀၀၇ ခုနှစ်တွင် စတင်ရေးဆွဲခဲ့ပြီး ၂၀၀၉ ခုနှစ်တွင် အများပြည်သူသို့ မိတ်ဆက်ခဲ့သော open-source programming language တစ်ခုဖြစ်သည်။ Go သည် ရိုးရှင်းမှု (simplicity), စွမ်းဆောင်ရည်မြင့်မားမှု (high performance), နှင့် concurrency (တစ်ပြိုင်နက်တည်း အလုပ်များစွာ လုပ်ဆောင်နိုင်မှု) တို့ကို အဓိကထား၍ ဒီဇိုင်းထုတ်ထားပါသည်။
 
----
+
 
 ## Go ဆိုတာဘာလဲ။
 
@@ -10,7 +10,7 @@ Go သည် statically typed, compiled programming language တစ်ခုဖ�
 
 ၎င်း၏ အဓိကရည်ရွယ်ချက်မှာ ခေတ်မီ multi-core processor များ၊ computer network များနှင့် large codebases များအတွက် software များကို လွယ်ကူစွာ တည်ဆောက်နိုင်ရန် ဖြစ်သည်။
 
----
+
 
 ## ဘာကြောင့် Go ကို ရွေးချယ်သင့်သလဲ။
 
@@ -22,7 +22,7 @@ Go ကို software developer များစွာက နှစ်သက်�
 
 *   **Simplicity:** Go ၏ syntax သည် ရိုးရှင်းပြီး သင်ယူရန် လွယ်ကူသည်။ Language တွင် keywords အနည်းငယ်သာ ပါရှိသောကြောင့် code များကို ဖတ်ရှုရန်နှင့် ပြုပြင်ထိန်းသိမ်းရန် (maintain) လွယ်ကူစေပါသည်။
 
----
+
 
 ## Go ၏ အားသာချက်များနှင့် အသုံးဝင်မှုများ
 
@@ -38,7 +38,7 @@ Go ကို software developer များစွာက နှစ်သက်�
 *   Web Development (Backend APIs)
 *   DevOps & Site Reliability Engineering (SRE)
 
----
+
 
 ## Go ကို အသုံးပြုနေသော နာမည်ကြီး Company များ
 
@@ -50,11 +50,12 @@ Go ၏ စွမ်းဆောင်ရည်နှင့် ယုံကြည
 *   Dropbox
 *   SoundCloud
 *   Netflix
+
 # အခန်း ၂: Development Environment တည်ဆောက်ခြင်း
 
 Go programming language ဖြင့် software များ စတင်ရေးသားရန်အတွက် လိုအပ်သော development environment ကို မည်သို့တည်ဆောက်ရမည်ကို ဤအခန်းတွင် လေ့လာသွားပါမည်။ Go ကို install ပြုလုပ်ခြင်းမှစ၍ သင်၏ ပထမဆုံး "Hello, World!" program ကို ရေးသား run ကြည့်ခြင်းအထိ အဆင့်ဆင့် လမ်းညွှန်ပေးသွားပါမည်။
 
----
+
 
 ## Go ကို Install ပြုလုပ်ခြင်း (Windows, macOS, Linux)
 
@@ -72,7 +73,7 @@ go version
 
 > **Note:** အကယ်၍ `command not found` ဟုပြနေပါက သင်၏ terminal ကို ပိတ်ပြီး ပြန်ဖွင့်ပါ (restart)၊ သို့မဟုတ် log out လုပ်ပြီး log in ပြန်ဝင်ကြည့်ပါ။
 
----
+
 
 ## Workspace နှင့် GOPATH ကို နားလည်ခြင်း
 
@@ -80,7 +81,7 @@ go version
 
 ယခုခေတ် Go development တွင် project များကို သင်၏ computer ရှိ မည်သည့် directory တွင်မဆို တည်ဆောက်နိုင်ပြီး `go mod` command ဖြင့် dependency များကို စီမံခန့်ခွဲနိုင်ပြီ ဖြစ်သောကြောင့် ပိုမိုလွယ်ကူလာပါသည်။ ဤစာအုပ်တွင်လည်း Go Modules ကို အခြေခံ၍ ဆက်လက်ရှင်းလင်းသွားပါမည်။
 
----
+
 
 ## Code Editor (VS Code) Setup ပြုလုပ်ခြင်း
 
@@ -92,7 +93,7 @@ Go code များကို ရေးသားရန်အတွက် text ed
 4.  ၎င်း extension က code completion, debugging, testing နှင့် အခြားသော အသုံးဝင်သည့် feature များစွာကို ထောက်ပံ့ပေးပါလိမ့်မည်။
 5.  Extension ကို Install ပြုလုပ်ပြီးနောက်ညာဘက်အောက်ထောင့်တွင် Analysis Tools များ install လုပ်ရန် message box ပေါ်လာပါက **Install All** ကို နှိပ်၍ install လုပ်ပေးပါ။
 
----
+
 
 ## သင်၏ ပထမဆုံး ပရိုဂရမ်: "Hello, World!"
 
@@ -118,7 +119,7 @@ func main() {
 *   `func main()`: Program စတင်ဆောင်ရွက်မည့် အဓိက function ဖြစ်သည်။
 *   `fmt.Println(...)`: Console တွင် စာသားများကို print ထုတ်ပေးသည်။
 
----
+
 
 ## `go run`, `go build`, `go install` Commands များ
 
@@ -135,11 +136,12 @@ Terminal တွင် `main.go` file ရှိသော directory ထဲ၌ အ�
 - **`go install`**
   - Code ကို compile လုပ်ပြီး ရလာသော executable file ကို `$GOPATH/bin` (သို့မဟုတ် `GOBIN` သတ်မှတ်ထားလျှင် ထိုနေရာ) တွင် install ပြုလုပ်ပေးသည်။ ၎င်းသည် command-line tool များ ဖြန့်ဝေရန် အသုံးဝင်သည်။
 
+
 # အခန်း ၃: Go ၏ အခြေခံ Syntax များ
 
 ယခုအခန်းတွင် Go programming language ၏ အခြေခံအကျဆုံးနှင့် အရေးအကြီးဆုံးဖြစ်သော syntax များကို လေ့လာသွားပါမည်။ Variables, constants, data types, operators နှင့် comments များ မည်သို့ရေးသားရမည်ကို ဥပမာများနှင့်တကွ ရှင်းလင်းဖော်ပြသွားပါမည်။
 
----
+
 
 ## Variables နှင့် Constants များ ကြေညာခြင်း
 
@@ -188,7 +190,7 @@ const PI = 3.14159
 const AppVersion = "1.0.2"
 ```
 
----
+
 
 ## အခြေခံ Data Types
 
@@ -207,7 +209,7 @@ Go သည် statically typed language ဖြစ်သောကြောင့�
     *   `bool`: မှန်/မှား (`true`/`false`) တန်ဖိုးနှစ်မျိုးတည်းသာ ရှိသည်။
     *   ဥပမာ: `var isReady bool = true`
 
----
+
 
 ## Operators
 
@@ -217,7 +219,7 @@ Operators များသည် variables နှင့် values များအ
 *   **Comparison Operators:** `==` (ညီမျှ), `!=` (မညီမျှ), `<` (ငယ်သည်), `>` (ကြီးသည်), `<=` (ငယ်သည် သို့မဟုတ် ညီမျှသည်), `>=` (ကြီးသည် သို့မဟုတ် ညီမျှသည်)
 *   **Logical Operators:** `&&` (and), `||` (or), `!` (not)
 
----
+
 
 ## Comments ရေးသားခြင်း
 
@@ -231,11 +233,12 @@ Comment ဆိုသည်မှာ code ၏ လုပ်ဆောင်ချ�
   multi-line comment ဖြစ်သည်။
 */
 ```
+
 # အခန်း ၄: Control Flow (စီးဆင်းမှု ထိန်းချုပ်ခြင်း)
 
 `Control Flow` ဆိုသည်မှာ program တစ်ခု၏ code များ မည်သည့်အစဉ်အတိုင်း လုပ်ဆောင်ရမည်ကို ထိန်းချုပ်သော statements များ ဖြစ်သည်။ Go တွင် `if`/`else`, `switch`, နှင့် `for` တို့ကို အသုံးပြု၍ program ၏ စီးဆင်းမှုကို ထိန်းချုပ်နိုင်ပါသည်။
 
----
+
 
 ## `if`/`else` Statements
 
@@ -276,7 +279,7 @@ func main() {
 }
 ```
 
----
+
 
 ## `switch` Statements
 
@@ -345,7 +348,7 @@ func main() {
 }
 ```
 
----
+
 
 ## `for` Loops
 
@@ -383,11 +386,12 @@ for _, value := range fruits {
 }
 ```
 
+
 # အခန်း ၅: Composite Types - Arrays, Slices, and Maps
 
 ယခုအခန်းတွင် Go ၏ အသုံးအများဆုံး composite data types များဖြစ်သော Arrays, Slices, နှင့် Maps တို့အကြောင်းကို လေ့လာသွားပါမည်။ ဤ data types များသည် data အစုအဝေးများကို စုစည်းသိမ်းဆည်းရန်အတွက် အလွန်အရေးပါပါသည်။
 
----
+
 
 ## 1. Arrays
 
@@ -431,7 +435,7 @@ func main() {
 }
 ```
 
----
+
 
 ## 2. Slices
 
@@ -596,7 +600,7 @@ func main() {
 }
 ```
 
----
+
 
 ## 3. Maps
 
@@ -674,11 +678,12 @@ func main() {
     }
 }
 ```
+
 # အခန်း ၆: Structs and Methods
 
 ယခုအခန်းတွင် Go ၏ အစွမ်းထက်သော feature တစ်ခုဖြစ်သည့် `struct` နှင့် `method` တို့အကြောင်းကို လေ့လာသွားပါမည်။ Struct သည် data type အမျိုးမျိုးကို စုစည်း၍ ကိုယ်ပိုင် custom data type အသစ်များ တည်ဆောက်ရန် အသုံးပြုပြီး၊ Method များသည် ထို struct များနှင့် သက်ဆိုင်သော လုပ်ဆောင်ချက် (behavior) များကို သတ်မှတ်ပေးပါသည်။
 
----
+
 
 ## 1. Struct (Custom Data Types)
 
@@ -724,7 +729,7 @@ func main() {
 }
 ```
 
----
+
 
 ## 2. Methods (Struct နှင့် သက်ဆိုင်သော Functions)
 
@@ -796,7 +801,7 @@ func main() {
 }
 ```
 
----
+
 
 ## 3. Embedded Structs (Composition)
 
@@ -870,7 +875,7 @@ func main() {
 }
 ```
 
----
+
 
 ## 4. Constructor Functions
 
@@ -908,7 +913,7 @@ func main() {
 }
 ```
 
----
+
 
 ## 5. Struct Tags
 
@@ -953,11 +958,12 @@ func main() {
     // Password မပါဝင်ခြင်းမှာ "-" သတ်မှတ်ထားသောကြောင့်ဖြစ်သည်
 }
 ```
+
 # အခန်း ၇: Functions
 
 Function ဆိုသည်မှာ သီးခြားလုပ်ဆောင်ချက်တစ်ခုကို လုပ်ဆောင်ရန်အတွက် စုစည်းရေးသားထားသော code block တစ်ခုဖြစ်သည်။ Functions များသည် code များကို ပြန်လည်အသုံးပြုနိုင်ရန် (reusability)၊ စနစ်တကျခွဲခြားရန် (organization) နှင့် ဖတ်ရှုရလွယ်ကူစေရန် (readability) အတွက် အဓိကကျသော အစိတ်အပိုင်းများ ဖြစ်ကြသည်။
 
----
+
 
 ## Function ကြေညာခြင်း နှင့် ခေါ်ယူအသုံးပြုခြင်း
 
@@ -989,7 +995,7 @@ func main() {
 > **မှတ်ချက်:** Go တွင် `public` / `private` keyword များ မရှိပါ။ Function အမည်၏ **ပထမစာလုံး အကြီး/အသေး (Capitalization)** ပေါ်မူတည်၍ ခွဲခြားပါသည်။
 
 
----
+
 
 ## Parameters နှင့် Return Values
 
@@ -1020,7 +1026,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Multiple Return Values
 
@@ -1061,7 +1067,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Named Return Values
 
@@ -1083,7 +1089,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Defer Statement
 
@@ -1124,7 +1130,7 @@ func main() {
 // 0
 ```
 
----
+
 
 ## Variadic Functions
 
@@ -1154,7 +1160,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Anonymous Functions (Closures)
 
@@ -1241,11 +1247,12 @@ func main() {
 ```
 
 ဤဥပမာတွင် `intSeq()` function ကို ခေါ်လိုက်သောအခါ `i` ဟူသော variable တစ်ခုကို 0 ဖြင့် စတင်ပြီး function တစ်ခုကို return ပြန်ပေးပါသည်။ `nextInt` သည် ထို return ပြန်လာသော function ဖြစ်ပြီး ၎င်းသည် `i` ကို မှတ်သားထားသည်။ `nextInt()` ကို ခေါ်လိုက်တိုင်း မှတ်သားထားသော `i` ၏ တန်ဖိုးကို တိုးခြင်း၊ ပြန်ပေးခြင်းတို့ကို လုပ်ဆောင်သောကြောင့် state ကို ဆက်တိုက် ထိန်းသိမ်းထားနိုင်ခြင်း ဖြစ်သည်။
+
 # အခန်း ၈: Pointers
 
 ယခုအခန်းတွင် Go ၏ အရေးကြီးသော concept တစ်ခုဖြစ်သည့် Pointers အကြောင်းကို လေ့လာသွားပါမည်။ Pointer သည် memory address များကို တိုက်ရိုက်ကိုင်တွယ်ရန် အသုံးပြုပြီး၊ function များသို့ data များ pass လုပ်ရာတွင် ပိုမိုထိရောက်စေရန်နှင့် မူလ data များကို ပြောင်းလဲနိုင်ရန်အတွက် အဓိက အသုံးပြုပါသည်။
 
----
+
 
 ## Pointer ဆိုတာဘာလဲ။ (Memory Address)
 
@@ -1272,7 +1279,7 @@ graph LR
 
 Pointer type ကို ကြေညာရာတွင် ၎င်းညွှန်ပြမည့် variable ၏ type ရှေ့တွင် `*` သင်္ကေတကို ထည့်သွင်းရေးသားရသည်။ ဥပမာ၊ `int` variable တစ်ခုကို ညွှန်ပြမည့် pointer ၏ type မှာ `*int` ဖြစ်သည်။
 
----
+
 
 ## `&` (address of) နှင့် `*` (dereference) Operators
 
@@ -1306,7 +1313,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Pointer ကို ဘာကြောင့် သုံးသင့်သလဲ။
 
@@ -1353,7 +1360,7 @@ Struct ကဲ့သို့သော data structure ကြီးများက
 Pointer တစ်ခု၏ zero value (တန်ဖိုးမထည့်သွင်းရသေးခင် default တန်ဖိုး) မှာ `nil` ဖြစ်သည်။ `nil` pointer ဆိုသည်မှာ မည်သည့် memory address ကိုမှ ညွှန်ပြမထားသော pointer ဖြစ်သည်။
 
 
----
+
 
 ## The `new()` Function
 
@@ -1383,7 +1390,7 @@ func main() {
 *   **`new(T)`**: `T` type အတွက် memory နေရာချထားပြီး၊ zero value **(*T) pointer** ကို ပြန်ပေးသည်။ (Variable အသစ်/Pointer ဖန်တီးရန် သုံးသည်)
 *   **`make(T)`**: Slices, Maps, Channels ကဲ့သို့သော Reference type များအတွက်သာ သုံးပြီး၊ initialized လုပ်ထားသော **T value (Non-pointer)** ကို ပြန်ပေးသည်။ (အခန်း ၅ တွင် ပြန်ကြည့်နိုင်ပါသည်)
 
----
+
 
 ### Nil Pointer Dereference (အမှားများနှင့် ကာကွယ်ခြင်း)
 
@@ -1416,11 +1423,12 @@ func main() {
 ```
 
 **အကောင်းဆုံး လိုက်နာရန် (Best Practice):** Pointer တစ်ခုကို dereference မလုပ်မီ၊ ၎င်းသည် `nil` မဟုတ်ကြောင်း အမြဲတမ်း `if p != nil` ဖြင့် စစ်ဆေးခြင်းသည် program crash ဖြစ်ခြင်းမှ ကာကွယ်ပေးနိုင်သော အလေ့အကျင့်ကောင်းတစ်ခု ဖြစ်သည်။
+
 # အခန်း ၉: Interfaces
 
 ယခုအခန်းတွင် Go ၏ အလွန်အရေးပါပြီး အစွမ်းထက်သော feature တစ်ခုဖြစ်သည့် `interface` အကြောင်းကို လေ့လာသွားပါမည်။ Interface သည် code များကို ပိုမို flexible, reusable, နှင့် decoupled ဖြစ်စေရန်အတွက် အဓိကကျသော concept တစ်ခုဖြစ်သည်။
 
----
+
 
 ## Interface ဆိုတာဘာလဲ။
 
@@ -1474,7 +1482,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Duck Typing ("If it walks like a duck...")
 
@@ -1487,7 +1495,7 @@ Go တွင်လည်း ထိုနည်းလည်းကောင်း�
 
 ဤအချက်က Go ၏ code များကို အလွန် flexible ဖြစ်စေသည်။ Library အသစ်တစ်ခု ရေးသားရာတွင် အသုံးပြုမည့် Type များကို ကြိုတင်သိရှိရန် မလိုအပ်ဘဲ၊ လိုအပ်သော method များကိုသာ Interface အဖြစ် သတ်မှတ်ထားခဲ့လျှင်၊ နောင်တွင် မည်သူမဆို ထို method များပါဝင်သော Type အသစ်များ ဖန်တီး၍ တွဲဖက်အသုံးပြုနိုင်ပါသည်။
 
----
+
 
 ## Go Interfaces vs OOP Interfaces (e.g., Java)
 
@@ -1531,7 +1539,7 @@ func (d Dog) Speak() {
 // Dog သည် Speak() ရှိသောကြောင့် အလိုအလျောက် Animal ဖြစ်သွားသည်
 ```
 
----
+
 
 ## Polymorphism ကို Interfaces ဖြင့် အကောင်အထည်ဖော်ခြင်း
 
@@ -1580,7 +1588,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Empty Interface (`interface{}`)
 
@@ -1731,7 +1739,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Design Pattern: Strategy Pattern
 
@@ -1796,11 +1804,12 @@ func main() {
 ```
 
 ဤနည်းအားဖြင့် `ShoppingCart` struct သည် မည်သည့် payment method ကို သုံးထားသည်ကို အတိအကျ သိစရာမလိုဘဲ၊ `Pay()` method ပါဝင်သော မည်သည့် strategy ကိုမဆို လက်ခံအလုပ်လုပ်နိုင်ပါသည်။
+
 # အခန်း ၁၀: Packages နှင့် Modules
 
 ယခုအခန်းတွင် Go project များကို စနစ်တကျ တည်ဆောက်ရန်နှင့် code များကို ပြန်လည်အသုံးပြုရန်အတွက် အခြေခံကျသော Packages နှင့် Modules များအကြောင်းကို လေ့လာသွားပါမည်။
 
----
+
 
 ## Package ဆိုတာဘာလဲ။
 
@@ -1823,7 +1832,7 @@ graph TD
     MainFile -- "imports" --> calculator
 ```
 
----
+
 
 ## Standard Library မှ Packages များကို `import` လုပ်ခြင်း
 
@@ -1856,7 +1865,7 @@ func main() {
     import _ "github.com/go-sql-driver/mysql"
     ```
 
----
+
 
 ## ကိုယ်ပိုင် Package များ တည်ဆောက်ခြင်း
 
@@ -1914,7 +1923,7 @@ func main() {
 }
 ```
 
----
+
 
 ## `init()` Function (Initialization)
 
@@ -1946,7 +1955,7 @@ func main() {
 // Main started with config: LOADED
 ```
 
----
+
 
 ## Circular Dependencies (သတိပြုရန်)
 
@@ -1964,7 +1973,7 @@ graph LR
 1.  Shared code များကို Package C (Third package) အဖြစ် ခွဲထုတ်ပြီး A နှင့် B နှစ်ခုလုံးက C ကို import လုပ်ပါ။
 2.  Package structure ကို ပြန်လည်သုံးသပ်ပြီး design ပြောင်းလဲပါ။
 
----
+
 
 ## Go Modules ကို အသုံးပြု၍ Dependencies များကို စီမံခန့်ခွဲခြင်း
 
@@ -2013,7 +2022,7 @@ graph LR
     *   Dependency တိုင်း၏ cryptographic checksum (hash) ကို မှတ်သားထားသည်။
     *   `go build` လုပ်သည့်အခါ download လုပ်လာသော package သည် မူလ package အစစ်အမှန်ဖြစ်ကြောင်းနှင့် ကြားဖြတ်ပြောင်းလဲထားခြင်းမရှိကြောင်း ဤ file ဖြင့် တိုက်ဆိုင်စစ်ဆေးသည်။ ၎င်းသည် supply chain attacks များမှ ကာကွယ်ပေးသည်။
 
----
+
 
 ## Go Workspaces (Multi-Module Workspaces)
 
@@ -2048,11 +2057,12 @@ use (
 
 Workspace mode တွင် run သောအခါ Go command များသည် `go.work` ထဲရှိ module များကို အဓိကထား အလုပ်လုပ်မည်ဖြစ်ပြီး၊ local directory ထဲရှိ module များကို ဦးစားပေး ခေါ်ယူသုံးစွဲသွားမည်ဖြစ်သည်။
 
+
 # အခန်း ၁၁: Generics
 
 Go 1.18 တွင် စတင်မိတ်ဆက်ခဲ့သော အစွမ်းထက်ဆုံး feature တစ်ခုဖြစ်သည့် **Generics** အကြောင်းကို ဤအခန်းတွင် လေ့လာသွားပါမည်။ Generics သည် ကျွန်ုပ်တို့အား data type မည်သို့ပင်ဖြစ်စေ အလုပ်လုပ်နိုင်သော functions နှင့် data structures များကို ရေးသားနိုင်စေပြီး ကျွန်ုပ်တို့၏ code များကို ပိုမို flexible ဖြစ်စေကာ ပြန်လည်အသုံးပြုရလွယ်ကူစေသည်။
 
----
+
 
 ## Generic ဆိုတာဘာလဲ။
 
@@ -2060,7 +2070,7 @@ Generics ဆိုသည်မှာ တိကျသော data type မျာ�
 
 **Type parameter** ဆိုသည်မှာ function သို့မဟုတ် type ကို အသုံးပြုသည့်အခါ သတ်မှတ်မည့် type အတွက် placeholder တစ်ခုဖြစ်သည်။
 
----
+
 
 ## Generic Functions
 
@@ -2123,7 +2133,7 @@ func main() {
 
 ဤဥပမာတွင်၊ `[T any]` သည် `T` ဆိုသော type parameter ကို ကြေညာသည်။ `any` keyword သည် `T` ၏ type မည်သို့မဆို ဖြစ်နိုင်သည်ဟု ဆိုလိုသော *constraint* တစ်ခုဖြစ်သည်။ ကျွန်ုပ်တို့ `PrintSlice(intSlice)` ကို ခေါ်သောအခါ၊ Go compiler သည် `T` ကို `int` ဖြစ်သည်ဟု ကောက်ချက်ချသည်။
 
----
+
 
 ## Generic Types
 
@@ -2179,7 +2189,7 @@ func main() {
 
 ဤနေရာတွင်၊ `Stack[T any]` သည် `T` ဆိုသော type parameter ဖြင့် `Stack` struct ကို သတ်မှတ်သည်။ ထို့နောက် `Stack[int]` သို့မဟုတ် `Stack[string]` ကဲ့သို့သော instance များကို ဖန်တီးနိုင်သည်။
 
----
+
 
 ## Type Constraints
 
@@ -2227,7 +2237,7 @@ func main() {
 
 ဤဥပမာတွင်၊ ကျွန်ုပ်တို့သည် အမျိုးမျိုးသော integer နှင့် float type များ ပါဝင်သော `Number` interface ကို သတ်မှတ်သည်။ `~` သင်္ကေတသည် `int` သာမက၊ underlying type မှာ `int` ဖြစ်သော မည်သည့် type (custom type `type MyInt int` ကဲ့သို့) ကိုမဆို ခွင့်ပြုသည်ဟု ဆိုလိုသည်။ `[T Number]` ကို အသုံးပြုခြင်းဖြင့်၊ `SumNumbers` ကို `Number` constraint ၏ အစိတ်အပိုင်းဖြစ်သော type များ၏ slice များဖြင့်သာ ခေါ်ဆိုနိုင်သည်ဟု compiler ကို ပြောပြသည်။
 
----
+
 
 ## Built-in `comparable` Constraint
 
@@ -2267,11 +2277,12 @@ func main() {
 
 ဤ function သည် `int`, `string`, `bool`, `pointer` စသည့် `comparable` ဖြစ်သော မည်သည့် type နှင့်မဆို အလုပ်လုပ်သည်။
 
+
 # အခန်း ၁၂: Goroutines
 
 ယခုအခန်းတွင် Go ၏ အကျော်ကြားဆုံးနှင့် အစွမ်းထက်ဆုံး feature ဖြစ်သော concurrency ကို စတင်လေ့လာပါမည်။ Go သည် Goroutines ဟုခေါ်သော အလွန်ပေါ့ပါးသည့် execution unit များကို အသုံးပြု၍ concurrent programming ကို အလွန်လွယ်ကူအောင် ပြုလုပ်ပေးထားသည်။
 
----
+
 
 ## Concurrency နှင့် Parallelism ကွာခြားချက်
 
@@ -2300,7 +2311,7 @@ graph TD
 
 Go သည် concurrency ကို အဓိကထား ဒီဇိုင်းထုတ်ထားပြီး၊ multi-core processor များရှိပါက Go runtime က goroutines များကို cores များပေါ်တွင် parallel အဖြစ် အလိုအလျောက် run ပေးပါသည်။
 
----
+
 
 ## Goroutine ဆိုတာဘာလဲ။ (`go` keyword)
 
@@ -2334,7 +2345,7 @@ func main() {
 
 **ပြဿနာ:** အထက်ပါ code ကို run ကြည့်ပါက "Hello" ကိုသာ print ထုတ်ပြီး "World" ကို print ထုတ်သည်ကို မြင်ရချင်မှ မြင်ရမည်။ အကြောင်းမှာ `main` function (main goroutine) သည် `say("World")` goroutine ပြီးဆုံးသည်ကို **မစောင့်ဘဲ** ၎င်း၏အလုပ် ပြီးဆုံးသွားသည်နှင့် program တစ်ခုလုံးကို ရပ်တန့်လိုက်သောကြောင့် ဖြစ်သည်။
 
----
+
 
 ## `sync.WaitGroup` ကို အသုံးပြုခြင်း
 
@@ -2407,9 +2418,7 @@ func main() {
 
 ဤ code တွင် `main` function သည် `wg.Wait()` နေရာတွင် worker goroutines ၃ ခုလုံး `wg.Done()` ကို ခေါ်ပြီးသည်အထိ စောင့်ဆိုင်းနေမည်ဖြစ်သောကြောင့် worker များအားလုံး၏ output များကို စနစ်တကျ မြင်တွေ့ရမည်ဖြစ်သည်။
 
----
 
----
 
 ## Race Conditions နှင့် `sync.Mutex`
 
@@ -2467,7 +2476,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Singleton Pattern (`sync.Once`)
 
@@ -2606,11 +2615,12 @@ func main() {
     // cfg.apiKey = "NewKey" // Error: field သည် private ဖြစ်သောကြောင့် ပြင်၍မရပါ
 }
 ```
+
 # အခန်း ၁၃: Channels
 
 ယခင်အခန်းတွင် goroutines များကို အသုံးပြု၍ concurrent tasks များ မည်သို့ run ရမည်ကို လေ့လာခဲ့ပြီးဖြစ်သည်။ ယခုအခန်းတွင် ထို goroutines များ အချင်းချင်း ဘေးကင်းလုံခြုံစွာ ဆက်သွယ်ရန်နှင့် data များ အပြန်အလှန် ပေးပို့ရန်အတွက် Go ၏ အဓိကကျသော feature ဖြစ်သည့် **Channels** အကြောင်းကို လေ့လာသွားပါမည်။
 
----
+
 
 ## Channel ဆိုတာဘာလဲ။ (Goroutines များကြား ဆက်သွယ်ရေး)
 
@@ -2662,7 +2672,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Buffered vs. Unbuffered Channels
 
@@ -2721,9 +2731,7 @@ func main() {
 }
 ```
 
----
 
----
 
 ## Closing Channels and Range
 
@@ -2754,7 +2762,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Directional Channels (လမ်းကြောင်းတစ်ဖက်တည်း Channels)
 
@@ -2782,7 +2790,7 @@ func main() {
 }
 ```
 
----
+
 
 ## `select` Statement ဖြင့် Channels များကို ကိုင်တွယ်ခြင်း
 
@@ -2854,11 +2862,12 @@ func main() {
     }
 }
 ```
+
 # အခန်း ၁၄: Error Handling
 
 Go တွင် error handling သည် အခြား programming languages များစွာနှင့် ကွဲပြားပါသည်။ `try-catch` block များအစား Go သည် errors များကို function return values များအဖြစ် သာမန်တန်ဖိုးများကဲ့သို့ပင် ကိုင်တွယ်သည်။ ဤအခန်းတွင် Go ၏ error handling ပုံစံ၊ custom errors များ တည်ဆောက်ပုံ၊ နှင့် `panic`/`recover` တို့၏ အသုံးဝင်ပုံများကို လေ့လာသွားပါမည်။
 
----
+
 
 ## Go ၏ Error Handling ပုံစံ (`error` type)
 
@@ -2899,7 +2908,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Custom Errors များ တည်ဆောက်ခြင်း
 
@@ -2977,9 +2986,7 @@ func main() {
 }
 ```
 
----
 
----
 
 ## Checking Wrapped Errors (`errors.Is` and `errors.As`)
 
@@ -3031,7 +3038,7 @@ func main() {
 }
 ```
 
----
+
 
 ## `panic` နှင့် `recover`
 
@@ -3090,11 +3097,12 @@ func main() {
     fmt.Println("Program continues to run after panic was recovered.")
 }
 ```
+
 # အခန်း ၁၅: အသုံးများသော Standard Library Packages
 
 Go ၏ အကြီးမားဆုံး အားသာချက်တစ်ခုမှာ အလွန်စွမ်းဆောင်ရည်မြင့်မားပြီး ကျယ်ပြန့်သော standard library ပါဝင်ခြင်းဖြစ်သည်။ ယခုအခန်းတွင် နေ့စဉ် programming ပြုလုပ်ရာတွင် အသုံးအများဆုံးဖြစ်သော standard library packages အချို့၏ အခြေခံအသုံးပြုပုံကို လေ့လာသွားပါမည်။
 
----
+
 
 ## `fmt` (Formatted I/O)
 
@@ -3123,7 +3131,7 @@ func main() {
 }
 ```
 
----
+
 
 ## `os` (Operating System Interactions)
 
@@ -3160,7 +3168,7 @@ func main() {
 }
 ```
 
----
+
 
 ## `embed` (Embedding Files)
 
@@ -3200,9 +3208,7 @@ func main() {
 
 > **သတိပြုရန်:** `//` နှင့် `go:embed` ကြားတွင် space မရှိရပါ (ဥပမာ `// go:embed` ဟု မရေးရပါ)။ ထို့ပြင် directive နှင့် variable ကြားတွင် empty line မရှိရပါ။
 
----
 
----
 
 ## `log` Package
 
@@ -3230,7 +3236,7 @@ func main() {
 }
 ```
 
----
+
 
 ## `time` Package
 
@@ -3260,7 +3266,7 @@ func main() {
 }
 ```
 
----
+
 
 ## `strings` and `strconv`
 
@@ -3298,7 +3304,7 @@ func main() {
 }
 ```
 
----
+
 
 ## `encoding/json` (JSON Data ကိုင်တွယ်ခြင်း)
 
@@ -3353,7 +3359,7 @@ func main() {
 }
 ```
 
----
+
 
 ## `net/http` (Web Server တည်ဆောက်ခြင်း)
 
@@ -3399,11 +3405,12 @@ func main() {
 ```
 
 ဤ program ကို run ပြီး web browser တွင် `http://localhost:8080/hello` သို့ သွားရောက်ကြည့်ရှုပါက "Hello, you've requested: /hello" ဟူသော စာသားကို မြင်တွေ့ရမည်ဖြစ်သည်။
+
 # အခန်း ၁၆: Testing in Go
 
 Software development တွင် testing သည် code ၏ အရည်အသွေး၊ မှန်ကန်မှု၊ နှင့် ယုံကြည်စိတ်ချရမှုကို အာမခံရန်အတွက် မရှိမဖြစ်လိုအပ်သော အစိတ်အပိုင်းတစ်ခုဖြစ်သည်။ Go သည် `testing` package ကို standard library တွင် တပါတည်း ထည့်သွင်းပေးထားပြီး၊ unit tests နှင့် performance benchmark tests များကို ရိုးရှင်းလွယ်ကူစွာ ရေးသားနိုင်ရန် အားပေးသည်။
 
----
+
 
 ## `testing` package နှင့် Testing Conventions
 
@@ -3414,7 +3421,7 @@ Go တွင် test code များကို ရေးသားရန်အ�
 *   **`*testing.T` Type:** ဤ type သည် test ၏ state ကို စီမံခန့်ခွဲရန်နှင့် test failure များကို report လုပ်ရန် `t.Errorf()`, `t.Fatalf()`, `t.Log()` ကဲ့သို့သော methods များကို ပေးသည်။
 *   **Running Tests:** Terminal တွင် `go test` command ကို အသုံးပြု၍ package တစ်ခုအတွင်းရှိ test များအားလုံးကို run နိုင်ပါသည်။
 
----
+
 
 ## Unit Tests ရေးသားခြင်း
 
@@ -3448,7 +3455,7 @@ func TestAdd(t *testing.T) {
 }
 ```
 
----
+
 
 ## Table-Driven Tests
 
@@ -3499,7 +3506,7 @@ func TestAddTableDriven(t *testing.T) {
 }
 ```
 
----
+
 
 ## Test Coverage
 
@@ -3521,7 +3528,7 @@ go test -coverprofile=coverage.out
 go tool cover -html=coverage.out
 ```
 
----
+
 
 ## TestMain (Setup and Teardown)
 
@@ -3545,7 +3552,7 @@ func TestMain(m *testing.M) {
 }
 ```
 
----
+
 
 ## Benchmarking
 
@@ -3587,7 +3594,7 @@ ok      myproject/calculator    0.358s
 *   `1000000000`: `b.N` ၏ တန်ဖိုး (loop ကို အကြိမ်ပေါင်း ဘီလီယံ ၁ ထောင် run ခဲ့သည်)။
 *   `0.2831 ns/op`: Operation တစ်ခု (loop တစ်ခါပတ်ခြင်း) အတွက် ပျမ်းမျှကြာချိန် (nanoseconds)။
 
----
+
 
 ## Fuzzing (Go 1.18+)
 
@@ -3639,13 +3646,14 @@ Fuzzing run ရန်:
 ```sh
 go test -fuzz=Fuzz
 ```
+
 # အခန်း ၁၇: Project - Simple REST API တည်ဆောက်ခြင်း (အပိုင်း ၁)
 
 ယခုအခန်းမှစ၍ ယခင်လေ့လာခဲ့သော Go ၏ concepts များကို ပေါင်းစပ်ပြီး လက်တွေ့ project တစ်ခုကို စတင်တည်ဆောက်ပါမည်။ ကျွန်ုပ်တို့ တည်ဆောက်မည့် project မှာ To-Do List တစ်ခုကို စီမံခန့်ခွဲနိုင်သော ရိုးရှင်းသည့် REST API တစ်ခုဖြစ်သည်။
 
 ဤအပိုင်း (Part 1) တွင် project အတွက် planning ပြုလုပ်ခြင်း၊ data structure များ သတ်မှတ်ခြင်း၊ နှင့် standard `net/http` package ကို အသုံးပြု၍ အခြေခံ routing နှင့် handlers များ ရေးသားခြင်းတို့ကို လေ့လာသွားပါမည်။
 
----
+
 
 ## Project Planning
 
@@ -3680,7 +3688,7 @@ graph TD
     end
 ```
 
----
+
 
 ## Project Structure (Standard Layout)
 
@@ -3703,7 +3711,7 @@ my-todo-app/
 
 သို့သော် ယခုအပိုင်း (Part 1) တွင် လေ့လာရလွယ်ကူစေရန် code များကို `main.go` တစ်ခုတည်းတွင် စုစည်းရေးသားပါမည်။ နောက်ပိုင်းအပိုင်းများတွင် code များကို အထက်ပါ structure အတိုင်း refactor လုပ်သွားပါမည်။
 
----
+
 
 ## HTTP Handlers များ ရေးသားခြင်း
 
@@ -3800,7 +3808,7 @@ func main() {
 *   `tasksHandler` သည် request ၏ HTTP method ကို စစ်ဆေးပြီး သက်ဆိုင်ရာ function (`getTasks` or `createTask`) ကို ခေါ်ယူပေးသည်။
 *   `getTasks` နှင့် `createTask` functions များသည် JSON data များကို encode/decode လုပ်ပြီး client သို့ response ပြန်ပေးသည်။
 
----
+
 
 ## Routing ပြုလုပ်ခြင်း
 
@@ -3827,6 +3835,7 @@ func main() {
 
 *   **Get all tasks:** `curl http://localhost:8080/tasks`
 *   **Create a new task:** `curl -X POST -H "Content-Type: application/json" -d '{"title":"Learn Go", "completed":false}' http://localhost:8080/tasks`
+
 # အခန်း ၁၈: Project - Simple REST API တည်ဆောက်ခြင်း (အပိုင်း ၂)
 
 ယခင်အခန်းတွင် ကျွန်ုပ်တို့၏ To-Do List API အတွက် အခြေခံ server တစ်ခုကို `net/http` package ဖြင့် တည်ဆောက်ခဲ့ပြီး `GET /tasks` နှင့် `POST /tasks` endpoints များကို implement လုပ်ခဲ့ပါသည်။
@@ -3836,7 +3845,7 @@ func main() {
 1.  Task တစ်ခုချင်းစီကို ID ဖြင့် `GET`, `PUT`, `DELETE` လုပ်နိုင်သော endpoints များ ထပ်မံထည့်သွင်းပါမည်။
 2.  Go 1.22+ တွင် စတင်မိတ်ဆက်ခဲ့သော **Enhanced `net/http` ServeMux** ကို အသုံးပြု၍ routing ကို ပြန်လည်တည်ဆောက်ပါမည်။
 
----
+
 
 ## Go 1.22+ Standard Library Router
 
@@ -3847,7 +3856,7 @@ Go 1.22 မတိုင်မီက၊ URL path parameters (e.g., `/tasks/{id}`)
 *   **Method Matching:** HTTP method (`GET`, `POST` etc.) ကို pattern တွင် တိုက်ရိုက်သတ်မှတ်နိုင်ခြင်း (e.g., `"GET /tasks"`).
 *   **Path Variables:** URL path အတွင်းရှိ dynamic တန်ဖိုးများကို `{name}` ပုံစံဖြင့် ဖမ်းယူနိုင်ခြင်း (e.g., `/tasks/{id}`).
 
----
+
 
 ## API Endpoints အသစ်များ ထပ်တိုးခြင်း
 
@@ -3862,7 +3871,7 @@ graph TD
     end
 ```
 
----
+
 
 ## Code ကို Refactor လုပ်ခြင်း နှင့် Handlers အသစ်များ ရေးသားခြင်း
 
@@ -4025,11 +4034,12 @@ func main() {
 3.  **`r.PathValue("id")`:** Request object မှ `PathValue` methood ကို ခေါ်ယူ၍ URL path variable (`{id}`) ၏ တန်ဖိုးကို အလွယ်တကူ ရယူနိုင်သည်။
 
 ယခုအခါ Third-party library များကို အားကိုးစရာမလိုဘဲ Standard Library သက်သက်ဖြင့် Modern REST API တစ်ခုကို တည်ဆောက်နိုင်ပြီဖြစ်သည်။
+
 # အခန်း ၁၉: Project - Simple REST API တည်ဆောက်ခြင်း (အပိုင်း ၃) - Database Integration
 
 ယခင် အခန်း ၁၇ နှင့် ၁၈ တွင်၊ ကျွန်ုပ်တို့သည် in-memory data store ကို အသုံးပြု၍ REST API တစ်ခုကို တည်ဆောက်ခဲ့သည်။ ၎င်းသည် API ၏ အလုပ်လုပ်ပုံကို လေ့လာရန် ကောင်းမွန်သော်လည်း၊ application ကို restart လုပ်လိုက်တိုင်း data များ ပျောက်ဆုံးသွားမည်ဖြစ်သည်။ ဤအခန်းတွင်၊ ကျွန်ုပ်တို့၏ data များကို PostgreSQL database တွင် သိမ်းဆည်းခြင်းဖြင့် data persistence ကို အကောင်အထည်ဖော်ပါမည်။
 
----
+
 
 ## `database/sql` Package ကို အသုံးပြုခြင်း
 
@@ -4037,7 +4047,7 @@ Go ၏ standard library တွင်ပါဝင်သော `database/sql` pack
 
 `database/sql` package ကိုယ်တိုင်က database နှင့် တိုက်ရိုက်စကားပြောနိုင်စွမ်းမရှိပါ။ ၎င်းသည် **database driver** များနှင့်အတူ အလုပ်လုပ်သည်။ ကျွန်ုပ်တို့သည် PostgreSQL နှင့် ချိတ်ဆက်လိုပါက၊ PostgreSQL အတွက် driver တစ်ခုကို import လုပ်ပေးရန် လိုအပ်သည်။
 
----
+
 
 ## Database Driver ထည့်သွင်းခြင်း နှင့် ချိတ်ဆက်ခြင်း
 
@@ -4109,7 +4119,7 @@ func main() {
 *   `sql.Open` သည် database connection ကို ချက်ချင်းမဖွင့်ပါ။ ၎င်းသည် နောက်ကွယ်တွင် connection pool တစ်ခုကို setup လုပ်ပေးပြီး လိုအပ်မှသာ connection များကို တည်ဆောက်သည်။
 *   `db.Ping()` ဖြင့် connection အမှန်တကယ်ရမရ စစ်ဆေးရန် အလွန်အရေးကြီးသည်။
 
----
+
 
 ## CRUD Operations များ ရေးသားခြင်း
 
@@ -4207,7 +4217,7 @@ func DeleteProduct(db *sql.DB, id int) (int64, error) {
 }
 ```
 
----
+
 
 ## API Endpoints များကို Database နှင့် ချိတ်ဆက်ခြင်း
 
@@ -4364,11 +4374,12 @@ func (e *Env) getProductHandler(w http.ResponseWriter, r *http.Request) {
 
 ဤအခန်းပြီးဆုံးသောအခါ၊ သင်၏ REST API သည် data များကို database တွင် အမှန်တကယ် သိမ်းဆည်းနိုင်၊ ပြန်လည်ထုတ်ယူနိုင်၊ ပြင်ဆင်နိုင်၊ နှင့် ဖျက်ပစ်နိုင်ပြီ ဖြစ်သည်။ ၎င်းသည် production-ready application တစ်ခု တည်ဆောက်ရန်အတွက် အရေးကြီးသော ခြေလှမ်းတစ်ခုဖြစ်သည်။
 
+
 # အခန်း ၂၀: အသုံးများသော Data Structures နှင့် Algorithms များ
 
 Software engineering တွင် ထိရောက်ပြီး စွမ်းဆောင်ရည်မြင့်မားသော program များ ရေးသားနိုင်ရန်အတွက် Data Structures (အချက်အလက် တည်ဆောက်ပုံ) နှင့် Algorithms (တွက်ချက်နည်းစနစ်) များကို နားလည်တတ်ကျွမ်းခြင်းသည် အလွန်အရေးကြီးပါသည်။ ဤအခန်းတွင် Go language ကို အသုံးပြု၍ အသုံးအများဆုံး DSA concept များကို လက်တွေ့ code များနှင့်တကွ အသေးစိတ် လေ့လာသွားပါမည်။
 
----
+
 
 ## Linked Lists
 
@@ -4455,7 +4466,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Stacks and Queues
 
@@ -4508,7 +4519,7 @@ func (q *Queue) Dequeue() (string, bool) {
 }
 ```
 
----
+
 
 ## Trees (Binary Search Tree)
 
@@ -4568,7 +4579,7 @@ func (n *TreeNode) Search(value int) bool {
 }
 ```
 
----
+
 
 ## Sorting Algorithms
 
@@ -4624,7 +4635,7 @@ func QuickSort(arr []int) []int {
 }
 ```
 
----
+
 
 ## Backtracking (နောက်ပြန်ဆုတ်၍ ရှာဖွေခြင်း)
 
@@ -4737,7 +4748,7 @@ func isValid(board [][]byte, row, col, n int) bool {
 }
 ```
 
----
+
 
 ## Dynamic Programming (DP)
 
@@ -4799,11 +4810,12 @@ func climbStairs(n int) int {
 	return dp[n]
 }
 ```
+
 # အခန်း ၂၁: Context
 
 Go တွင် concurrent programming နှင့် network applications များ ရေးသားရာတွင် `context` package သည် အလွန်အရေးပါသော အခန်းကဏ္ဍမှ ပါဝင်ပါသည်။ `context.Context` သည် API boundaries များ (ဥပမာ- function calls, goroutines) တစ်လျှောက်တွင် cancellation signals, deadlines, နှင့် request-scoped values များကို သယ်ဆောင်ရန်အတွက် standard mechanism တစ်ခုဖြစ်သည်။
 
----
+
 
 ## `context` package ဆိုတာဘာလဲ။
 
@@ -4824,7 +4836,7 @@ Go တွင် concurrent programming နှင့် network applications မ�
 
 
 
----
+
 
 ## Context ဖန်တီးခြင်း
 
@@ -4838,7 +4850,7 @@ Context empty ဖြစ်နေသောနေရာ (Root of the context tree)
     *   မည်သည့် context ကို သုံးရမည်မသိသေးချိန်၊ သို့မဟုတ် code ကို မပြီးပြတ်သေးချိန် (work in progress) တွင် ယာယီအသုံးပြုသည်။
     *   `nil` context ကို ဘယ်တော့မှ မသုံးသင့်ပါ။
 
----
+
 
 ## Cancellation (လုပ်ငန်းစဉ်များကို ရပ်တန့်စေခြင်း)
 
@@ -4903,7 +4915,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Timeouts နှင့် Deadlines
 
@@ -4947,7 +4959,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Request-Scoped Values
 
@@ -4996,11 +5008,12 @@ func main() {
 	processRequest(ctx)
 }
 ```
+
 # အခန်း ၂၂: Web Development with Echo Framework
 
 Go ၏ standard library ဖြစ်သော `net/http` သည် အလွန်ကောင်းမွန်သော်လည်း၊ ကြီးမားသော web application များ တည်ဆောက်ရာတွင် ပိုမိုလွယ်ကူမြန်ဆန်စေရန် Web Framework များကို အသုံးပြုလေ့ရှိသည်။ **Echo** သည် Go အတွက် လူကြိုက်အများဆုံး၊ စွမ်းဆောင်ရည်မြင့်မားပြီး (High Performance)၊ ရိုးရှင်းသော (Minimalist) web framework တစ်ခုဖြစ်သည်။
 
----
+
 
 ## Echo ကို Install ပြုလုပ်ခြင်း
 
@@ -5010,7 +5023,7 @@ Go ၏ standard library ဖြစ်သော `net/http` သည် အလွန�
 go get github.com/labstack/echo/v4
 ```
 
----
+
 
 ## Data Binding
 
@@ -5031,7 +5044,7 @@ e.POST("/users", func(c echo.Context) error {
 })
 ```
 
----
+
 
 ## Basic Echo Server
 
@@ -5063,7 +5076,7 @@ func main() {
 *   `e.GET("/", ...)`: HTTP GET request အတွက် route တစ်ခု သတ်မှတ်သည်။
 *   `c.String(...)`: String response ပြန်ပေးသည်။
 
----
+
 
 ## Echo Request Lifecycle
 
@@ -5078,7 +5091,7 @@ graph LR
     Middleware -- "HTTP Response" --> Client
 ```
 
----
+
 
 ## Routing
 
@@ -5109,7 +5122,7 @@ e.GET("/show", func(c echo.Context) error {
 })
 ```
 
----
+
 
 ## Context & Responses
 
@@ -5138,7 +5151,7 @@ e.GET("/show", func(c echo.Context) error {
     })
     ```
 
----
+
 
 ## Middleware
 
@@ -5173,7 +5186,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Example: Simple REST API
 
@@ -5241,11 +5254,12 @@ func createUser(c echo.Context) error {
 
 ဤအခန်းတွင် Echo framework ၏ အခြေခံများကို မိတ်ဆက်ပေးခဲ့သည်။ Echo သည် အလွန်ကျယ်ပြန့်သော framework တစ်ခုဖြစ်ပြီး validation, JWT authentication, websocket စသည်တို့ကိုလည်း support ပေးပါသည်။ ပိုမိုလေ့လာရန် [Echo Documentation](https://echo.labstack.com/) တွင် ဖတ်ရှုနိုင်ပါသည်။
 
+
 # အခန်း ၂၃: နောက်ထပ် လေ့လာစရာများ (Next Steps)
 
 ဤစာအုပ်တစ်လျှောက်တွင် သင်သည် Go programming language ၏ အခြေခံမှစ၍ concurrency, web development နှင့် data structures ကဲ့သို့သော အဆင့်မြင့် အကြောင်းအရာများအထိ လေ့လာခဲ့ပြီးဖြစ်ပါသည်။ သင်၏ Go programming ခရီးလမ်းသည် ဤနေရာတွင် မပြီးဆုံးသေးပါ။ ဤနောက်ဆုံးအခန်းသည် သင်၏ ကျွမ်းကျင်မှုကို ပိုမိုတိုးတက်စေရန်အတွက် နောက်ထပ် လေ့လာစရာများနှင့် အသုံးဝင်သော resources များကို လမ်းညွှန်ပေးသွားမည်ဖြစ်သည်။
 
----
+
 
 ## Go Community နှင့် Resources များ
 
@@ -5259,7 +5273,7 @@ Programming language တစ်ခုကို သင်ယူရာတွင် 
 *   **Reddit (r/golang):** Go နှင့်ပတ်သက်သော သတင်းများ၊ ဆွေးနွေးမှုများ၊ နှင့် project showcases များအတွက် တက်ကြွသော subreddit တစ်ခုဖြစ်သည်။
 *   **Awesome Go (github.com/avelino/awesome-go):** Go frameworks, libraries, နှင့် tools များ၏ အလွန်ကျယ်ပြန့်သော curated list တစ်ခုဖြစ်သည်။ Project အသစ်တစ်ခုအတွက် library ရှာဖွေလိုပါက ဤနေရာတွင် စတင်ကြည့်ရှုသင့်သည်။
 
----
+
 
 ## အသုံးဝင်သော Third-party Libraries များ
 
@@ -5280,7 +5294,7 @@ Standard library သည် အစွမ်းထက်သော်လည်း�
 *   **Testing:**
     *   `stretchr/testify`: Standard `testing` package ကို assertions နှင့် mocking tools များဖြင့် ပိုမိုလွယ်ကူအောင် ကူညီပေးသော library တစ်ခု။
 
----
+
 
 ## ဆက်လက်လေ့လာရန် လမ်းညွှန်ချက်များ
 
@@ -5299,10 +5313,11 @@ Standard library သည် အစွမ်းထက်သော်လည်း�
 *   **Performance Tuning ကို လေ့လာပါ:** Go ၏ built-in profiling tool ဖြစ်သော `pprof` ကို အသုံးပြု၍ သင်၏ application ၏ performance bottlenecks များကို ရှာဖွေပြီး optimize လုပ်နည်းကို လေ့လာပါ။
 *   **System Design ကို လေ့လာပါ:** Go ကို microservices, distributed systems, နှင့် cloud-native applications များ တည်ဆောက်ရာတွင် မည်သို့အသုံးပြုသည်ကို လေ့လာခြင်းဖြင့် ဗိသုကာပိုင်းဆိုင်ရာ အမြင်ကို ကျယ်ပြန့်စေသည်။
 
----
+
 
 ## နိဂုံး
 
 Go programming language သည် ရိုးရှင်းမှု၊ စွမ်းဆောင်ရည်၊ နှင့် concurrency တို့ကြောင့် ခေတ်မီ software development တွင် နေရာတစ်ခု အခိုင်အမာ ရယူထားပါသည်။ ဤစာအုပ်သည် သင်၏ Go ခရီးလမ်းအတွက် ခိုင်မာသော အခြေခံအုတ်မြစ်တစ်ခု ချပေးနိုင်ခဲ့မည်ဟု မျှော်လင့်ပါသည်။ စဉ်ဆက်မပြတ် လေ့လာခြင်း၊ လက်တွေ့တည်ဆောက်ခြင်း၊ နှင့် community တွင် ပါဝင်ခြင်းတို့ဖြင့် သင်သည် ထူးချွန်သော Go developer တစ်ယောက် ဖြစ်လာနိုင်မည်မှာ မလွဲဧကန်ပင်။
 
 Happy coding!
+

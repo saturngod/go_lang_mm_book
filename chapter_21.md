@@ -2,7 +2,7 @@
 
 Go တွင် concurrent programming နှင့် network applications များ ရေးသားရာတွင် `context` package သည် အလွန်အရေးပါသော အခန်းကဏ္ဍမှ ပါဝင်ပါသည်။ `context.Context` သည် API boundaries များ (ဥပမာ- function calls, goroutines) တစ်လျှောက်တွင် cancellation signals, deadlines, နှင့် request-scoped values များကို သယ်ဆောင်ရန်အတွက် standard mechanism တစ်ခုဖြစ်သည်။
 
----
+
 
 ## `context` package ဆိုတာဘာလဲ။
 
@@ -23,7 +23,7 @@ Go တွင် concurrent programming နှင့် network applications မ�
 
 
 
----
+
 
 ## Context ဖန်တီးခြင်း
 
@@ -37,7 +37,7 @@ Context empty ဖြစ်နေသောနေရာ (Root of the context tree)
     *   မည်သည့် context ကို သုံးရမည်မသိသေးချိန်၊ သို့မဟုတ် code ကို မပြီးပြတ်သေးချိန် (work in progress) တွင် ယာယီအသုံးပြုသည်။
     *   `nil` context ကို ဘယ်တော့မှ မသုံးသင့်ပါ။
 
----
+
 
 ## Cancellation (လုပ်ငန်းစဉ်များကို ရပ်တန့်စေခြင်း)
 
@@ -102,7 +102,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Timeouts နှင့် Deadlines
 
@@ -146,7 +146,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Request-Scoped Values
 

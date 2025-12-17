@@ -1,6 +1,6 @@
 # Go Programming စာအုပ် မာတိကာ (TOC)
 
----
+
 
 ## အပိုင်း ၁: Go ဘာသာစကားနှင့် အခြေခံသဘောတရားများ
 
@@ -21,7 +21,7 @@
   - Operators (Arithmetic, Comparison, Logical)
   - Comments ရေးသားခြင်း
 
----
+
 
 ## အပိုင်း ၂: Control Flow နှင့် Data Structures
 
@@ -41,7 +41,7 @@
   - Methods (Struct နှင့် သက်ဆိုင်သော Functions)
   - Embedded Structs (Struct ထပ်ခြင်း)
 
----
+
 
 ## အပိုင်း ၃: Code များကို စနစ်တကျ ပြန်လည်အသုံးပြုခြင်း
 
@@ -71,7 +71,7 @@
   - Generic Types (Structs, Interfaces)
   - Type Constraints
 
----
+
 
 ## အပိုင်း ၄: Go ၏ အစွမ်းထက်ဆုံး Feature - Concurrency
 
@@ -85,7 +85,7 @@
   - Buffered vs. Unbuffered Channels
   - `select` statement ဖြင့် Channels များကို ကိုင်တွယ်ခြင်း
 
----
+
 
 ## အပိုင်း ၅: လက်တွေ့ အသုံးချခြင်း နှင့် Standard Library
 
@@ -107,7 +107,7 @@
   - Fuzzing (Go 1.18+)
   - Benchmarking
 
----
+
 
 ## အပိုင်း ၆: လက်တွေ့ Project (Simple REST API)
 
@@ -123,7 +123,7 @@
   - PostgreSQL driver ထည့်သွင်းခြင်း
   - CRUD (Create, Read, Update, Delete) operations များ ရေးသားခြင်း
 
----
+
 
 ## အပိုင်း ၇: အဆင့်မြင့် Data Structures နှင့် Algorithms
 
@@ -135,7 +135,7 @@
   - Backtracking
   - Dynamic Programming
 
----
+
 
 ## အပိုင်း ၈: အဆင့်မြင့် ခေါင်းစဉ်များနှင့် နောက်ဆက်တွဲ
 

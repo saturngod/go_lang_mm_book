@@ -2,7 +2,7 @@
 
 Function ဆိုသည်မှာ သီးခြားလုပ်ဆောင်ချက်တစ်ခုကို လုပ်ဆောင်ရန်အတွက် စုစည်းရေးသားထားသော code block တစ်ခုဖြစ်သည်။ Functions များသည် code များကို ပြန်လည်အသုံးပြုနိုင်ရန် (reusability)၊ စနစ်တကျခွဲခြားရန် (organization) နှင့် ဖတ်ရှုရလွယ်ကူစေရန် (readability) အတွက် အဓိကကျသော အစိတ်အပိုင်းများ ဖြစ်ကြသည်။
 
----
+
 
 ## Function ကြေညာခြင်း နှင့် ခေါ်ယူအသုံးပြုခြင်း
 
@@ -34,7 +34,7 @@ func main() {
 > **မှတ်ချက်:** Go တွင် `public` / `private` keyword များ မရှိပါ။ Function အမည်၏ **ပထမစာလုံး အကြီး/အသေး (Capitalization)** ပေါ်မူတည်၍ ခွဲခြားပါသည်။
 
 
----
+
 
 ## Parameters နှင့် Return Values
 
@@ -65,7 +65,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Multiple Return Values
 
@@ -106,7 +106,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Named Return Values
 
@@ -128,7 +128,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Defer Statement
 
@@ -169,7 +169,7 @@ func main() {
 // 0
 ```
 
----
+
 
 ## Variadic Functions
 
@@ -199,7 +199,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Anonymous Functions (Closures)
 

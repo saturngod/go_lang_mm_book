@@ -2,7 +2,7 @@
 
 ယခင်အခန်းတွင် goroutines များကို အသုံးပြု၍ concurrent tasks များ မည်သို့ run ရမည်ကို လေ့လာခဲ့ပြီးဖြစ်သည်။ ယခုအခန်းတွင် ထို goroutines များ အချင်းချင်း ဘေးကင်းလုံခြုံစွာ ဆက်သွယ်ရန်နှင့် data များ အပြန်အလှန် ပေးပို့ရန်အတွက် Go ၏ အဓိကကျသော feature ဖြစ်သည့် **Channels** အကြောင်းကို လေ့လာသွားပါမည်။
 
----
+
 
 ## Channel ဆိုတာဘာလဲ။ (Goroutines များကြား ဆက်သွယ်ရေး)
 
@@ -54,7 +54,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Buffered vs. Unbuffered Channels
 
@@ -113,9 +113,7 @@ func main() {
 }
 ```
 
----
 
----
 
 ## Closing Channels and Range
 
@@ -146,7 +144,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Directional Channels (လမ်းကြောင်းတစ်ဖက်တည်း Channels)
 
@@ -174,7 +172,7 @@ func main() {
 }
 ```
 
----
+
 
 ## `select` Statement ဖြင့် Channels များကို ကိုင်တွယ်ခြင်း
 

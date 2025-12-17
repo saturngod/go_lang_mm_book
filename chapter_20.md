@@ -2,7 +2,7 @@
 
 Software engineering တွင် ထိရောက်ပြီး စွမ်းဆောင်ရည်မြင့်မားသော program များ ရေးသားနိုင်ရန်အတွက် Data Structures (အချက်အလက် တည်ဆောက်ပုံ) နှင့် Algorithms (တွက်ချက်နည်းစနစ်) များကို နားလည်တတ်ကျွမ်းခြင်းသည် အလွန်အရေးကြီးပါသည်။ ဤအခန်းတွင် Go language ကို အသုံးပြု၍ အသုံးအများဆုံး DSA concept များကို လက်တွေ့ code များနှင့်တကွ အသေးစိတ် လေ့လာသွားပါမည်။
 
----
+
 
 ## Linked Lists
 
@@ -89,7 +89,7 @@ func main() {
 }
 ```
 
----
+
 
 ## Stacks and Queues
 
@@ -142,7 +142,7 @@ func (q *Queue) Dequeue() (string, bool) {
 }
 ```
 
----
+
 
 ## Trees (Binary Search Tree)
 
@@ -202,7 +202,7 @@ func (n *TreeNode) Search(value int) bool {
 }
 ```
 
----
+
 
 ## Sorting Algorithms
 
@@ -258,7 +258,7 @@ func QuickSort(arr []int) []int {
 }
 ```
 
----
+
 
 ## Backtracking (နောက်ပြန်ဆုတ်၍ ရှာဖွေခြင်း)
 
@@ -371,7 +371,7 @@ func isValid(board [][]byte, row, col, n int) bool {
 }
 ```
 
----
+
 
 ## Dynamic Programming (DP)
 
