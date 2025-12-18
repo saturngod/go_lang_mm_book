@@ -31,3 +31,5 @@ trap - EXIT
 echo "Wrote $out"
 
 node "scripts/build-print.js"
+node "scripts/generate-pdf.js"
+pandoc all.md --metadata title="GoLang" --metadata author="Gemini 3.0" -F mermaid-filter -o GoLang.epub
