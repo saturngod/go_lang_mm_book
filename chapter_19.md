@@ -49,9 +49,6 @@ const (
 	dbName = "your_dbname"   // သင်၏ database name ကို ပြောင်းပါ
 )
 
-> [!TIP]
-> **Security Best Practice**: Production တွင် password များကို code ထဲတွင် hardcode မရေးသင့်ပါ။ `os.Getenv("DB_PASSWORD")` ကဲ့သို့သော environment variable များမှတဆင့် ဖတ်ယူအသုံးပြုခြင်းသည် ပိုမိုလုံခြုံစိတ်ချရသည်။
-
 func main() {
 	// Connection string ကို တည်ဆောက်ခြင်း
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
@@ -76,6 +73,8 @@ func main() {
 }
 ```
 
+> **Security Best Practice**: Production တွင် password များကို code ထဲတွင် hardcode မရေးသင့်ပါ။ `os.Getenv("DB_PASSWORD")` ကဲ့သို့သော environment variable များမှတဆင့် ဖတ်ယူအသုံးပြုခြင်းသည် ပိုမိုလုံခြုံစိတ်ချရသည်။
+
 **အရေးကြီးသော မှတ်ချက်များ:**
 
 *   `import _ "github.com/lib/pq"`: `_` (blank identifier) ကို အသုံးပြုရခြင်းမှာ၊ ကျွန်ုပ်တို့သည် `pq` package ကို တိုက်ရိုက်ခေါ်သုံးနေခြင်းမဟုတ်ဘဲ၊ ၎င်း၏ `init` function ကို run စေခြင်းဖြင့် `database/sql` package တွင် "postgres" driver အဖြစ် register လုပ်စေလိုသောကြောင့် ဖြစ်သည်။
@@ -87,6 +86,8 @@ func main() {
 ## CRUD Operations များ ရေးသားခြင်း
 
 HTTP handlers များထဲတွင် database logic များကို တိုက်ရိုက်ရေးသားခြင်းထက်၊ သီးသန့် file သို့မဟုတ် package (`store` သို့မဟုတ် `models` ကဲ့သို့) တစ်ခုတွင် ခွဲထုတ်ရေးသားခြင်းသည် code ကို ပိုမိုရှင်းလင်းစေသည်။
+
+> **မှတ်ချက်:** ယခင်အခန်းများတွင် `Task` struct ကို အသုံးပြုခဲ့သော်လည်း ဤအခန်းတွင် `Product` struct ကို ဥပမာအသစ်အဖြစ် အသုံးပြု၍ database integration ၏ concept ကို ပိုမိုကျယ်ပြန့်စွာ ရှင်းလင်းဖော်ပြသွားပါမည်။ ဤနည်းလမ်းအတိုင်းပင် သင်၏ Task API ကိုလည်း database နှင့် ချိတ်ဆက်နိုင်ပါသည်။
 
 **ဥပမာ: `products` table အတွက် CRUD functions များ**
 
@@ -197,33 +198,29 @@ func main() {
 
 	env := &Env{db: db}
 
-	http.HandleFunc("/products", env.getProductsHandler)
-	http.HandleFunc("/products/create", env.createProductHandler)
-	
+	// Go 1.22: Method နှင့် Path Variable ကို pattern တွင် တိုက်ရိုက်သတ်မှတ်ခြင်း
+	mux := http.NewServeMux()
+	mux.HandleFunc("GET /products", env.getProductsHandler)
+	mux.HandleFunc("POST /products", env.createProductHandler)
+	mux.HandleFunc("GET /products/{id}", env.getProductHandler)
+	mux.HandleFunc("PUT /products/{id}", env.updateProductHandler)
+	mux.HandleFunc("DELETE /products/{id}", env.deleteProductHandler)
+
 	// ... server start
 }
 
 func (e *Env) getProductsHandler(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodGet {
-		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
-		return
-	}
-
 	products, err := GetProducts(e.db)
 	if err != nil {
 		http.Error(w, "Failed to fetch products", http.StatusInternalServerError)
 		return
 	}
 	
+	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(products)
 }
 
 func (e *Env) createProductHandler(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodPost {
-		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
-		return
-	}
-
 	var p Product
 	if err := json.NewDecoder(r.Body).Decode(&p); err != nil {
 		http.Error(w, "Invalid request body", http.StatusBadRequest)
@@ -242,14 +239,31 @@ func (e *Env) createProductHandler(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(p)
 }
 
-func (e *Env) updateProductHandler(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodPut {
-		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+func (e *Env) getProductHandler(w http.ResponseWriter, r *http.Request) {
+	// Go 1.22: r.PathValue("id") ကို အသုံးပြု၍ path variable ကို ရယူသည်
+	id, err := strconv.Atoi(r.PathValue("id"))
+	if err != nil {
+		http.Error(w, "Invalid product ID", http.StatusBadRequest)
 		return
 	}
 
-	idStr := r.URL.Path[len("/products/"):]
-	id, err := strconv.Atoi(idStr)
+	product, err := GetProduct(e.db, id)
+	if err != nil {
+		http.Error(w, "Failed to get product", http.StatusInternalServerError)
+		return
+	}
+
+	if product == nil {
+		http.Error(w, "Product not found", http.StatusNotFound)
+		return
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(product)
+}
+
+func (e *Env) updateProductHandler(w http.ResponseWriter, r *http.Request) {
+	id, err := strconv.Atoi(r.PathValue("id"))
 	if err != nil {
 		http.Error(w, "Invalid product ID", http.StatusBadRequest)
 		return
@@ -272,19 +286,13 @@ func (e *Env) updateProductHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Updated product with ID
 	p.ID = id
+	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(p)
 }
 
 func (e *Env) deleteProductHandler(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodDelete {
-		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
-		return
-	}
-
-	idStr := r.URL.Path[len("/products/"):]
-	id, err := strconv.Atoi(idStr)
+	id, err := strconv.Atoi(r.PathValue("id"))
 	if err != nil {
 		http.Error(w, "Invalid product ID", http.StatusBadRequest)
 		return
@@ -303,36 +311,6 @@ func (e *Env) deleteProductHandler(w http.ResponseWriter, r *http.Request) {
 
 	w.WriteHeader(http.StatusNoContent)
 }
-
-func (e *Env) getProductHandler(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodGet {
-		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
-		return
-	}
-
-	idStr := r.URL.Path[len("/products/"):]
-	id, err := strconv.Atoi(idStr)
-	if err != nil {
-		http.Error(w, "Invalid product ID", http.StatusBadRequest)
-		return
-	}
-
-	product, err := GetProduct(e.db, id)
-	if err != nil {
-		http.Error(w, "Failed to get product", http.StatusInternalServerError)
-		return
-	}
-
-	if product == nil {
-		http.Error(w, "Product not found", http.StatusNotFound)
-		return
-	}
-
-	json.NewEncoder(w).Encode(product)
-}
-
-
-// ... အခြား handlers များကိုလည်း အလားတူ ပြင်ဆင်ပါ
 ```
 
 ဤအခန်းပြီးဆုံးသောအခါ၊ သင်၏ REST API သည် data များကို database တွင် အမှန်တကယ် သိမ်းဆည်းနိုင်၊ ပြန်လည်ထုတ်ယူနိုင်၊ ပြင်ဆင်နိုင်၊ နှင့် ဖျက်ပစ်နိုင်ပြီ ဖြစ်သည်။ ၎င်းသည် production-ready application တစ်ခု တည်ဆောက်ရန်အတွက် အရေးကြီးသော ခြေလှမ်းတစ်ခုဖြစ်သည်။

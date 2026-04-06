@@ -193,6 +193,6 @@ func main() {
 
 1.  **`http.NewServeMux()`:** Standard library ၏ multiplexer အသစ်ကို အသုံးပြုသည်။
 2.  **Strict Routing Patterns:** `mux.HandleFunc` တွင် `"GET /tasks"` သို့မဟုတ် `"DELETE /tasks/{id}"` ကဲ့သို့ Method နှင့် Path ကို တိုက်ရိုက်တွဲလျက် သတ်မှတ်နိုင်သည်။ HTTP Method မှားယွင်းပါက `405 Method Not Allowed` ကို အလိုအလျောက် ပြန်ပေးသည်။
-3.  **`r.PathValue("id")`:** Request object မှ `PathValue` methood ကို ခေါ်ယူ၍ URL path variable (`{id}`) ၏ တန်ဖိုးကို အလွယ်တကူ ရယူနိုင်သည်။
+3.  **`r.PathValue("id")`:** Request object မှ `PathValue` method ကို ခေါ်ယူ၍ URL path variable (`{id}`) ၏ တန်ဖိုးကို အလွယ်တကူ ရယူနိုင်သည်။
 
 ယခုအခါ Third-party library များကို အားကိုးစရာမလိုဘဲ Standard Library သက်သက်ဖြင့် Modern REST API တစ်ခုကို တည်ဆောက်နိုင်ပြီဖြစ်သည်။

@@ -14,27 +14,6 @@ go get github.com/labstack/echo/v4
 
 
 
-## Data Binding
-
-Echo သည် request payload (JSON, XML, Form) မှ data များကို Go struct သို့ပြောင်းလဲရန် `Bind` method ကို ထောက်ပံ့ပေးထားသည်။ ၎င်းသည် Content-Type header ကို ကြည့်ရှုပြီး အလိုအလျောက် mapping လုပ်ပေးသည်။
-
-```go
-type User struct {
-    Name  string `json:"name" form:"name" query:"name"`
-    Email string `json:"email" form:"email" query:"email"`
-}
-
-e.POST("/users", func(c echo.Context) error {
-    u := new(User)
-    if err := c.Bind(u); err != nil {
-        return err
-    }
-    return c.JSON(http.StatusOK, u)
-})
-```
-
-
-
 ## Basic Echo Server
 
 အောက်ပါ code သည် အရိုးရှင်းဆုံး Echo web server တစ်ခုဖြစ်သည်။
@@ -64,6 +43,27 @@ func main() {
 *   `echo.New()`: Echo instance အသစ်တစ်ခုကို ဖန်တီးသည်။
 *   `e.GET("/", ...)`: HTTP GET request အတွက် route တစ်ခု သတ်မှတ်သည်။
 *   `c.String(...)`: String response ပြန်ပေးသည်။
+
+
+
+## Data Binding
+
+Echo သည် request payload (JSON, XML, Form) မှ data များကို Go struct သို့ပြောင်းလဲရန် `Bind` method ကို ထောက်ပံ့ပေးထားသည်။ ၎င်းသည် Content-Type header ကို ကြည့်ရှုပြီး အလိုအလျောက် mapping လုပ်ပေးသည်။
+
+```go
+type User struct {
+    Name  string `json:"name" form:"name" query:"name"`
+    Email string `json:"email" form:"email" query:"email"`
+}
+
+e.POST("/users", func(c echo.Context) error {
+    u := new(User)
+    if err := c.Bind(u); err != nil {
+        return err
+    }
+    return c.JSON(http.StatusOK, u)
+})
+```
 
 
 
