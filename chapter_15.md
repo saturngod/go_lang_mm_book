@@ -114,7 +114,7 @@ func main() {
 
 `log` package သည် program ၏ status message များနှင့် error များကို timestamp နှင့်တကွ မှတ်တမ်းတင်ရန် (print ထုတ်ရန်) အသုံးပြုသည်။ Production code များတွင် `fmt.Println` ထက် `log` package ကို ပိုမိုအသုံးပြုသင့်သည်။
 
-*   `log.Println()`: Standard output သို့ timestamp နှင့်တကွ စာသားကို print ထုတ်သည်။
+*   `log.Println()`: Standard error (stderr) သို့ timestamp နှင့်တကွ စာသားကို print ထုတ်သည်။
 *   `log.Printf()`: Format specifier များကို အသုံးပြု၍ print ထုတ်သည်။
 *   `log.Fatal()`: Error message ကို print ထုတ်ပြီးနောက် program ကို ချက်ချင်းရပ်တန့်သည် (`os.Exit(1)` ကို ခေါ်သည်)။
 

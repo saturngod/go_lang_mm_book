@@ -31,7 +31,8 @@ Context empty ဖြစ်နေသောနေရာ (Root of the context tree)
 
 1.  `context.Background()`:
     *   အသုံးအများဆုံးဖြစ်သည်။
-    *   Main functional, init function, tests, နှင့် incoming requests များ၏ top-level တွင် အသုံးပြုသည်။
+    *   `main` function, `init` function, နှင့် tests များ၏ top-level တွင် အသုံးပြုသည်။
+    *   **သတိပြုရန်:** HTTP handler function များအတွင်းတွင် `context.Background()` ကို မသုံးသင့်ပါ။ ၎င်းအစား `r.Context()` ကို အသုံးပြု၍ request ၏ context ကို ရယူသင့်သည်။ `r.Context()` သည် request ၏ cancellation နှင့် deadline များကို ပါဝင်ထားသောကြောင့် downstream operations များ (e.g., database query, HTTP call) ကို request cancel ဖြစ်သွားပါက အလိုအလျောက် ရပ်တန့်စေနိုင်သည်။
 
 2.  `context.TODO()`:
     *   မည်သည့် context ကို သုံးရမည်မသိသေးချိန်၊ သို့မဟုတ် code ကို မပြီးပြတ်သေးချိန် (work in progress) တွင် ယာယီအသုံးပြုသည်။

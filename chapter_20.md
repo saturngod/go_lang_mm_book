@@ -280,24 +280,28 @@ Backtracking ကို Sudoku solvers, N-Queens problem, နှင့် permuta
 
 String တစ်ခု (`"ABC"`) ၏ ဖြစ်နိုင်ခြေရှိသော ပြောင်းပြန်လှန်လှယ်မှု (permutations) အားလုံးကို ရှာဖွေခြင်း။
 
+> **သတိပြုရန်:** Go တွင် string ကို byte index ဖြင့် ကိုင်တွယ်ပါက multi-byte Unicode characters (ဥပမာ - မြန်မာစာ) များ ပျက်စီးနိုင်ပါသည်။ ထို့ကြောင့် `[]rune` အဖြစ် ပြောင်းလဲပြီး rune တစ်ခုချင်းစီဖြင့် ကိုင်တွယ်ရမည်။
+
 ```go
 func findPermutations(s string) []string {
 	var result []string
-	var permute func(prefix string, str string)
+	runes := []rune(s)
+	var permute func(prefix []rune, remaining []rune)
 
-	permute = func(prefix string, str string) {
-		n := len(str)
-		if n == 0 {
-			result = append(result, prefix)
+	permute = func(prefix []rune, remaining []rune) {
+		if len(remaining) == 0 {
+			result = append(result, string(prefix))
 		} else {
-			for i := 0; i < n; i++ {
-				// Recursive call: i-th character ကို prefix ထဲထည့်ပြီး ကျန် string ကို pass လုပ်သည်
-				permute(prefix+string(str[i]), str[0:i]+str[i+1:n])
+			for i := 0; i < len(remaining); i++ {
+				// i-th rune ကို prefix ထဲထည့်ပြီး ကျန် runes များကိ��� pass လုပ်သည်
+				newPrefix := append(append([]rune{}, prefix...), remaining[i])
+				newRemaining := append(append([]rune{}, remaining[:i]...), remaining[i+1:]...)
+				permute(newPrefix, newRemaining)
 			}
 		}
 	}
 
-	permute("", s)
+	permute([]rune{}, runes)
 	return result
 }
 ```

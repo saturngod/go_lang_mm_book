@@ -186,19 +186,23 @@ package main
 
 import (
     "net/http"
+    "strconv"
     "github.com/labstack/echo/v4"
     "github.com/labstack/echo/v4/middleware"
 )
 
 type User struct {
-    ID   string `json:"id"`
+    ID   int    `json:"id"`
     Name string `json:"name"`
 }
 
-var users = []User{
-    {ID: "1", Name: "Mg Mg"},
-    {ID: "2", Name: "Aung Aung"},
-}
+var (
+    users  = []User{
+        {ID: 1, Name: "Mg Mg"},
+        {ID: 2, Name: "Aung Aung"},
+    }
+    nextID = 3
+)
 
 func main() {
     e := echo.New()
@@ -222,7 +226,10 @@ func getUsers(c echo.Context) error {
 }
 
 func getUser(c echo.Context) error {
-    id := c.Param("id")
+    id, err := strconv.Atoi(c.Param("id"))
+    if err != nil {
+        return c.JSON(http.StatusBadRequest, map[string]string{"message": "Invalid ID"})
+    }
     for _, u := range users {
         if u.ID == id {
             return c.JSON(http.StatusOK, u)
@@ -236,6 +243,8 @@ func createUser(c echo.Context) error {
     if err := c.Bind(u); err != nil {
         return err
     }
+    u.ID = nextID
+    nextID++
     users = append(users, *u)
     return c.JSON(http.StatusCreated, u)
 }
